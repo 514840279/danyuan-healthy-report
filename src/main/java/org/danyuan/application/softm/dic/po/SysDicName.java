@@ -25,6 +25,8 @@ public class SysDicName implements Serializable {
 	private String				uuid;
 	
 	private String				code;
+	private String				page;
+	private int					ordernum;
 	
 	@Column(name = "discription", columnDefinition = "varchar(200) COMMENT '资源功能描述'")
 	private String				discription;				// discription
@@ -149,6 +151,40 @@ public class SysDicName implements Serializable {
 	 */
 	public void setButtonType(String buttonType) {
 		this.buttonType = buttonType;
+	}
+
+	/**
+	 * @方法名 getPage
+	 * @功能 返回变量 page 的值
+	 * @return String
+	 */
+	public String getPage() {
+		return page;
+	}
+
+	/**
+	 * @方法名 setPage
+	 * @功能 设置变量 page 的值
+	 */
+	public void setPage(String page) {
+		this.page = page;
+	}
+	
+	/**
+	 * @方法名 getOrdernum
+	 * @功能 返回变量 ordernum 的值
+	 * @return int
+	 */
+	public int getOrdernum() {
+		return ordernum;
+	}
+	
+	/**
+	 * @方法名 setOrdernum
+	 * @功能 设置变量 ordernum 的值
+	 */
+	public void setOrdernum(int ordernum) {
+		this.ordernum = ordernum;
 	}
 	
 }

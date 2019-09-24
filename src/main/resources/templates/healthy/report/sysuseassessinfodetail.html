@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title></title>
+</head>
+<body>
+	<section class="content">
+		<div class="box box-warning" id="section_healthy_report_sysUseAssessInfo">
+			<div class="box-header with-border">
+				<h3 class="box-title">企业信息</h3>
+				<div class="box-tools pull-right">
+					<button type="button" class="btn btn-box-tool" data-widget="collapse">
+						<i class="fa fa-minus"></i>
+					</button>
+					<button type="button" class="btn btn-box-tool" data-widget="remove">
+						<i class="fa fa-times"></i>
+					</button>
+				</div>
+			</div>
+			<div class="box-body">
+				<input type="text" style="display:none;" id="healthy_report_sysUseAssessInfo_uuid" name="uuid" th:value="${sysUseAssessInfo.uuid}"/>
+				<input type="text" style="display:none;" id="healthy_report_sysUseAssessInfo_deleteFlag" name="deleteFlag"  th:value="${sysUseAssessInfo.deleteFlag}"/>
+				<input type="text" style="display:none;" id="healthy_report_sysUseAssessInfo_discription" name="discription" th:value="${sysUseAssessInfo.discription}"/>
+					<div class=" row form-group">
+						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">已发放辅具名称:</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="healthy_report_sysUseAssessInfo_assistiveDevicesName" name="assistiveDevicesName" th:value="${sysUseAssessInfo['assistiveDevicesName']}" placeholder="已发放辅具名称" disabled="disabled"/>
+						</div>
+					</div>
+					<div class=" row form-group">
+						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">评估外键:</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="healthy_report_sysUseAssessInfo_baseUuid" name="baseUuid" th:value="${sysUseAssessInfo['baseUuid']}" placeholder="评估外键" disabled="disabled"/>
+						</div>
+					</div>
+					<div class=" row form-group">
+						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">发放时间:</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="healthy_report_sysUseAssessInfo_grantTime" name="grantTime" th:value="${sysUseAssessInfo['grantTime']}" placeholder="发放时间" disabled="disabled"/>
+						</div>
+					</div>
+					<div class=" row form-group">
+						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">现使用状况:</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="healthy_report_sysUseAssessInfo_useState" name="useState" th:value="${sysUseAssessInfo['useState']}" placeholder="现使用状况" disabled="disabled"/>
+						</div>
+					</div>
+				<div class="row text-center">
+					<button type="button" class="btn btn-primary" id="healthy_report_sysUseAssessInfo_edit_button">编辑</button>
+					<button type="button" class="btn btn-primary" id="healthy_report_sysUseAssessInfo_save_button" style="display: none;">提交</button>
+					<button type="button" class="btn btn-danger" id="healthy_report_sysUseAssessInfo_exit_button">关闭</button>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	
+	<script th:inline="javascript">
+		var sysUseAssessInfo = [[${sysUseAssessInfo}]];
+	</script>
+	<script type="text/javascript" src="/pages/healthy/report/sysuseassessinfodetail.js"></script>
+</body>
+</html>
+
+

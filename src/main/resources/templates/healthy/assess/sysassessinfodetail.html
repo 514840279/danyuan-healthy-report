@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title></title>
+</head>
+<body>
+	<section class="content">
+		<div class="box box-warning" id="section_healthy_assess_sysAssessInfo">
+			<div class="box-header with-border">
+				<h3 class="box-title">企业信息</h3>
+				<div class="box-tools pull-right">
+					<button type="button" class="btn btn-box-tool" data-widget="collapse">
+						<i class="fa fa-minus"></i>
+					</button>
+					<button type="button" class="btn btn-box-tool" data-widget="remove">
+						<i class="fa fa-times"></i>
+					</button>
+				</div>
+			</div>
+			<div class="box-body">
+				<input type="text" style="display:none;" id="healthy_assess_sysAssessInfo_uuid" name="uuid" th:value="${sysAssessInfo.uuid}"/>
+				<input type="text" style="display:none;" id="healthy_assess_sysAssessInfo_deleteFlag" name="deleteFlag"  th:value="${sysAssessInfo.deleteFlag}"/>
+				<input type="text" style="display:none;" id="healthy_assess_sysAssessInfo_discription" name="discription" th:value="${sysAssessInfo.discription}"/>
+					<div class=" row form-group">
+						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">意识状态:</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="healthy_assess_sysAssessInfo_yisizhuangtai" name="yisizhuangtai" th:value="${sysAssessInfo['yisizhuangtai']}" placeholder="意识状态" disabled="disabled"/>
+						</div>
+					</div>
+					<div class=" row form-group">
+						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">FIM评分:</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="healthy_assess_sysAssessInfo_fim" name="fim" th:value="${sysAssessInfo['fim']}" placeholder="FIM评分" disabled="disabled"/>
+						</div>
+					</div>
+					<div class=" row form-group">
+						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">过敏药物或食物:</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="healthy_assess_sysAssessInfo_guomin" name="guomin" th:value="${sysAssessInfo['guomin']}" placeholder="过敏药物或食物" disabled="disabled"/>
+						</div>
+					</div>
+					<div class=" row form-group">
+						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">评估外键:</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="healthy_assess_sysAssessInfo_baseUuid" name="baseUuid" th:value="${sysAssessInfo['baseUuid']}" placeholder="评估外键" disabled="disabled"/>
+						</div>
+					</div>
+					<div class=" row form-group">
+						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">大小便:</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="healthy_assess_sysAssessInfo_daxiaobian" name="daxiaobian" th:value="${sysAssessInfo['daxiaobian']}" placeholder="大小便" disabled="disabled"/>
+						</div>
+					</div>
+					<div class=" row form-group">
+						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">生命体征平稳:</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="healthy_assess_sysAssessInfo_tizheng" name="tizheng" th:value="${sysAssessInfo['tizheng']}" placeholder="生命体征平稳" disabled="disabled"/>
+						</div>
+					</div>
+					<div class=" row form-group">
+						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">手术外伤史:</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="healthy_assess_sysAssessInfo_waishang" name="waishang" th:value="${sysAssessInfo['waishang']}" placeholder="手术外伤史" disabled="disabled"/>
+						</div>
+					</div>
+					<div class=" row form-group">
+						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">ASIA分级:</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="healthy_assess_sysAssessInfo_asia" name="asia" th:value="${sysAssessInfo['asia']}" placeholder="ASIA分级" disabled="disabled"/>
+						</div>
+					</div>
+					<div class=" row form-group">
+						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">家族遗传病及传染病史:</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="healthy_assess_sysAssessInfo_yichuan" name="yichuan" th:value="${sysAssessInfo['yichuan']}" placeholder="家族遗传病及传染病史" disabled="disabled"/>
+						</div>
+					</div>
+					<div class=" row form-group">
+						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">ADL评分:</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="healthy_assess_sysAssessInfo_adl" name="adl" th:value="${sysAssessInfo['adl']}" placeholder="ADL评分" disabled="disabled"/>
+						</div>
+					</div>
+					<div class=" row form-group">
+						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">自主能力:</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="healthy_assess_sysAssessInfo_zizhunengli" name="zizhunengli" th:value="${sysAssessInfo['zizhunengli']}" placeholder="自主能力" disabled="disabled"/>
+						</div>
+					</div>
+					<div class=" row form-group">
+						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">Burnnstrom分级:</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="healthy_assess_sysAssessInfo_burnnstrom" name="burnnstrom" th:value="${sysAssessInfo['burnnstrom']}" placeholder="Burnnstrom分级" disabled="disabled"/>
+						</div>
+					</div>
+					<div class=" row form-group">
+						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">Ashworth评级:</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="healthy_assess_sysAssessInfo_ashworth" name="ashworth" th:value="${sysAssessInfo['ashworth']}" placeholder="Ashworth评级" disabled="disabled"/>
+						</div>
+					</div>
+				<div class="row text-center">
+					<button type="button" class="btn btn-primary" id="healthy_assess_sysAssessInfo_edit_button">编辑</button>
+					<button type="button" class="btn btn-primary" id="healthy_assess_sysAssessInfo_save_button" style="display: none;">提交</button>
+					<button type="button" class="btn btn-danger" id="healthy_assess_sysAssessInfo_exit_button">关闭</button>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	
+	<script th:inline="javascript">
+		var sysAssessInfo = [[${sysAssessInfo}]];
+	</script>
+	<script type="text/javascript" src="/pages/healthy/assess/sysassessinfodetail.js"></script>
+</body>
+</html>
+
+
