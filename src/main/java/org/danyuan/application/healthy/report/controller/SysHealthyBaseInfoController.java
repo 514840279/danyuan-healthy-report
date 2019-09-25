@@ -22,17 +22,17 @@ import org.springframework.web.servlet.ModelAndView;
 @RestController
 @RequestMapping("/sysHealthyBaseInfo")
 public class SysHealthyBaseInfoController extends BaseControllerImpl<SysHealthyBaseInfo> implements BaseController<SysHealthyBaseInfo> {
-
+	
 	@Autowired
 	SysHealthyBaseInfoService sysHealthyBaseInfoService;
-
-		@GetMapping("/detail/{uuid}")
-		public ModelAndView name(@PathVariable("uuid") String uuid) {
-			ModelAndView modelAndView = new ModelAndView("healthy/report/syshealthybaseinfodetail");
-			SysHealthyBaseInfo info = new SysHealthyBaseInfo();
-			info.setUuid(uuid);
-			modelAndView.addObject("sysHealthyBaseInfo", sysHealthyBaseInfoService.findOne(info));
-			return modelAndView;
-		}
-
+	
+	@GetMapping("/detail/{uuid}")
+	public ModelAndView name(@PathVariable("uuid") String uuid) {
+		ModelAndView modelAndView = new ModelAndView("healthy/report/syshealthybaseinfodetail");
+		SysHealthyBaseInfo info = new SysHealthyBaseInfo();
+		info.setUuid(uuid);
+		modelAndView.addObject("sysHealthyBaseInfo", sysHealthyBaseInfoService.findOne(info));
+		return modelAndView;
+	}
+	
 }

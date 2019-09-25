@@ -1,7 +1,6 @@
-_history = [];
 (function($) {
-	var menu_data = [];
-	// console.log(username);
+	
+	var hasHome=false;
 	// 请求数据地址
 	var url = "/sysMenuInfo/findzTreeByUser";
 	// 请求数据
@@ -14,27 +13,36 @@ _history = [];
 			$(".sidebar-menu").append(sidebar_menu_add_li(value));
 		});
 		// console.log(JSON.stringify(result));
-		$("a[data-url]").click(
-			function(evt) {
-				loadPage($(this).data("url"), $(this).data("id"), $(this)
-						.data("name"));
-				$("ul.treeview-menu li").removeClass("active");
-				$(this).parent().addClass("active");
-			});
-		loadMainPage()
+		$("a[data-url]").click(function(evt) {
+			loadPage($(this).data("url"), $(this).data("id"), $(this).data("name"));
+			$("ul.treeview-menu li").removeClass("active");
+			$(this).parent().addClass("active");
+		});
+		// 选中状态
+		$.each($(".sidebar-menu").find("li").find("ul").find("li").find("a"),function(index,value){
+			if($(value).data("homepage") == true){
+				$(value).parent("li").addClass("active");
+				$(value).parent("li").parent("ul").parent("li").addClass("active");
+				hasHome=true;
+			}
+		});
+		// 默认欢迎页面、主页
+		if(hasHome == false){
+			loadMainPage();
+		}
 	}
 
 	// 添加《li》
 	function sidebar_menu_add_li(item) {
 		// 返回值
-		html = '';
+		var html = '';
 		if (item.children.length == 0) {
 			html = "<li><a href='#' data-url='" + item.url + "' data-id='"
-					+ item.id + "' data-name='" + item.name + "' ><i class='"
+					+ item.id + "' data-name='" + item.name + "' data-homepage='" + item.homePage + "'  ><i class='"
 					+ item.icon + "'></i>" + item.name + "</a></li>";
-//			if (item.homePage) {
-//				loadPage(item.url);
-//			}
+			if (item.homePage) {
+				loadPage(item.url);
+			}
 		} else {
 			html = "<li class='treeview'>" + "<a href='#'>" + "<i class='"
 					+ item.icon + "'></i>" + "<span>" + item.name + "</span>"
@@ -44,6 +52,7 @@ _history = [];
 					+ "</span>" + "</a>" + "<ul class='treeview-menu'>";
 			$.each(item.children, function(index, value) {
 				html = html + sidebar_menu_add_li(value);
+				
 			});
 			html = html + "</ul>" + "</li>";
 		}

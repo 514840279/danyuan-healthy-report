@@ -1,5 +1,5 @@
 -- 表创建 表创建语句并不完全正确，需要确认后在执行 
-create table healthy.sys_use_assess_info(
+create table sys_use_assess_info(
  uuid varchar(36) NOT NULL COMMENT '主键' primary key,
  uuid varchar(36)(500) COMMENT '主键',
  assistive_devices_name varchar(255)(500) COMMENT '已发放辅具名称',
@@ -14,37 +14,37 @@ create table healthy.sys_use_assess_info(
  discription varchar(200) COMMENT '数据描述',
 );
 -- 修改字段非空 
- update healthy.sys_use_assess_info set uuid = UUID();
- alter table healthy.sys_use_assess_info add primary key(uuid); 
- alter table healthy.sys_use_assess_info  MODIFY `create_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL;
- alter table healthy.sys_use_assess_info  MODIFY `update_time` TIMESTAMP ON UPDATE CURRENT_TIMESTAMP   NOT NULL;
- alter table healthy.sys_use_assess_info  MODIFY `create_user` varchar(50)  NOT NULL;
- alter table healthy.sys_use_assess_info  MODIFY `update_user` varchar(50)  NOT NULL;
- alter table healthy.sys_use_assess_info  MODIFY `delete_flag` int  NOT NULL;
+ update sys_use_assess_info set uuid = UUID();
+ alter table sys_use_assess_info add primary key(uuid); 
+ alter table sys_use_assess_info  MODIFY `create_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL;
+ alter table sys_use_assess_info  MODIFY `update_time` TIMESTAMP ON UPDATE CURRENT_TIMESTAMP   NOT NULL;
+ alter table sys_use_assess_info  MODIFY `create_user` varchar(50)  NOT NULL;
+ alter table sys_use_assess_info  MODIFY `update_user` varchar(50)  NOT NULL;
+ alter table sys_use_assess_info  MODIFY `delete_flag` int  NOT NULL;
 
 -- 表注释 
- alter table healthy.sys_use_assess_info comment '辅具使用评估'; 
+ alter table sys_use_assess_info comment '辅具使用评估'; 
 
 -- 修改字段 注释 
  -- uuid注释 
-  alter table healthy.sys_use_assess_info  modify column uuid VARCHAR(500) comment '主键'; 
+  alter table sys_use_assess_info  modify column uuid VARCHAR(500) comment '主键'; 
 
  -- assistive_devices_name注释 
-  alter table healthy.sys_use_assess_info  modify column assistive_devices_name VARCHAR(500) comment '已发放辅具名称'; 
+  alter table sys_use_assess_info  modify column assistive_devices_name VARCHAR(500) comment '已发放辅具名称'; 
 
  -- base_uuid注释 
-  alter table healthy.sys_use_assess_info  modify column base_uuid VARCHAR(500) comment '评估外键'; 
+  alter table sys_use_assess_info  modify column base_uuid VARCHAR(500) comment '评估外键'; 
 
  -- grant_time注释 
-  alter table healthy.sys_use_assess_info  modify column grant_time VARCHAR(500) comment '发放时间'; 
+  alter table sys_use_assess_info  modify column grant_time VARCHAR(500) comment '发放时间'; 
 
  -- use_state注释 
-  alter table healthy.sys_use_assess_info  modify column use_state VARCHAR(500) comment '现使用状况'; 
+  alter table sys_use_assess_info  modify column use_state VARCHAR(500) comment '现使用状况'; 
 
 
 -- 生成索引命令 
  -- 评估外键索引
-  alter table healthy.sys_use_assess_info add index index_p0O24OOEp21zzEI0 (base_uuid) ; 
+  alter table sys_use_assess_info add index index_p0O24OOEp21zzEI0 (base_uuid) ; 
 
 
 

@@ -13,6 +13,8 @@ import javax.persistence.TemporalType;
 import org.danyuan.application.common.base.BaseEntity;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 /**
  * @文件名 SysHealthyBaseInfo.java
  * @包名 org.danyuan.application.healthy.report.po
@@ -77,7 +79,8 @@ public class SysHealthyBaseInfo extends BaseEntity implements Serializable {
 	
 	// 评估时间
 	@Temporal(TemporalType.DATE)
-	@DateTimeFormat(style = "yyyy-MM-dd")
+	@DateTimeFormat(style = "yyyy-MM-dd") // json格式化
+	@JsonFormat(locale = "zh", timezone = "GMT+8", pattern = "yyyy-MM-dd") // 调用时格式化
 	@Column(name = "assess_time")
 	private Date				assessTime;
 	

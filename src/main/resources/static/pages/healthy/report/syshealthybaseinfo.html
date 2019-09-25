@@ -35,165 +35,56 @@
 			</div>
 			<div class="box-body">
 				<div class="row">
-					<div class=" col-md-6">
-						<div class=" col-md-12 form-group">
-							<label class="col-sm-3 control-label text-right font16">残疾证号:</label>
-							<div class="col-sm-9">
-								<input type="text" class="form-control" id="search_healthy_report_sysHealthyBaseInfo_disableCard" name="disableCard" placeholder="残疾证号" />
-							</div>
-						</div>
+					<div class=" col-md-3">
+						<input type="text" class="form-control" id="search_healthy_report_sysHealthyBaseInfo_idcard" name="idcard" placeholder="身份证" />
 					</div>
-					<div class=" col-md-6">
-						<div class=" col-md-12 form-group">
-							<label class="col-sm-3 control-label text-right font16">姓名:</label>
-							<div class="col-sm-9">
-								<input type="text" class="form-control" id="search_healthy_report_sysHealthyBaseInfo_name" name="name" placeholder="姓名" />
-							</div>
-						</div>
+					<div class=" col-md-3">
+						<input type="text" class="form-control" id="search_healthy_report_sysHealthyBaseInfo_name" name="name" placeholder="姓名" />
 					</div>
-					<div class=" col-md-6">
-						<div class=" col-md-12 form-group">
-							<label class="col-sm-3 control-label text-right font16">身份证:</label>
-							<div class="col-sm-9">
-								<input type="text" class="form-control" id="search_healthy_report_sysHealthyBaseInfo_idcard" name="idcard" placeholder="身份证" />
-							</div>
-						</div>
+					<div class=" col-md-5">
+						<input type="text" class="form-control" id="search_healthy_report_sysHealthyBaseInfo_disableCard" name="disableCard" placeholder="残疾证号" />
 					</div>
 					<div class=" col-md-1 text-right">
 						<button class="btn btn-primary" id="make_sure_search_healthy_report_sysHealthyBaseInfo_button_id">确定</button>
 					</div>
 				</div>
-				<div id="healthy_report_sysHealthyBaseInfo_toolbar" class="btn-group">
-					<button type="button" class="btn btn-default" id="addnew_healthy_report_sysHealthyBaseInfo">
-						<i class="glyphicon glyphicon-plus"></i> 新增
-					</button>
-					<button type="button" class="btn btn-default" id="editold_healthy_report_sysHealthyBaseInfo">
-						<i class="glyphicon glyphicon-pencil"></i> 修改
-					</button>
-					<button type="button" class="btn btn-default" id="deleteold_healthy_report_sysHealthyBaseInfo">
-						<i class="glyphicon glyphicon-remove"></i> 删除
-					</button>
-				</div>
-				<table class="table table-striped table-bordered" id="healthy_report_sysHealthyBaseInfo_datagrid" data-toggle="healthy_report_sysHealthyBaseInfo_datagrid"></table>
 			</div>
+		</div>
+		
+		<div class="list_d ">
+			<div  id="main_context" style="width: 100%;">
+				<div class="item box " style="margin-top: 0px;display: none;">
+					<div class="item_a row_a">
+						<div class="item_a_a col_1"><span  style="color: #3861a4;cursor: pointer;"></span></div>
+						<div class="item_a_b">
+							<span></span>
+							<span></span>
+						</div>
+					</div>
+					<div class="item_b row_a">
+						<div style="display: none;margin-left: 2px;">
+							<span class="label label-primary" > </span>
+						</div>
+					</div>
+					<div class="item_c" ></div>
+					<div class="item_d row_a " >
+						<div class="row" style="width: 100%;">
+							<span class="col-lg-8 col-xs-12 "></span> 
+							<span class="col-lg-2 col-xs-12"></span>
+							<span class="col-lg-2 col-xs-12"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="page-box text-center">
+			<ul id="example"></ul>
 		</div>
 	</section>
 	
-	<!-- 添加模态框 -->
-	<div class="modal fade" id="healthy_report_sysHealthyBaseInfo_modal" tabindex="-1" role="dialog" aria-labelledby="my_healthy_report_sysHealthyBaseInfo" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content" style="width:85%">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title" id="my_healthy_report_sysHealthyBaseInfo">编辑信息</h4>
-				</div>
-				<div class="modal-body">
-					<input type="text" style="display:none;" id="healthy_report_sysHealthyBaseInfo_uuid" name="uuid" />
-					<input type="text" style="display:none;" id="healthy_report_sysHealthyBaseInfo_deleteFlag" name="deleteFlag" />
-					<input type="text" style="display:none;" id="healthy_report_sysHealthyBaseInfo_discription" name="discription" />
-					<div class=" row form-group">
-						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">联系人:</label>
-						<div class="col-sm-9">
-							<input type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_contactName" name="contactName" placeholder="联系人"/>
-						</div>
-					</div>
-					<div class=" row form-group">
-						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">残疾证号:</label>
-						<div class="col-sm-9">
-							<input type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_disableCard" name="disableCard" placeholder="残疾证号"/>
-						</div>
-					</div>
-					<div class=" row form-group">
-						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">肢体残疾:</label>
-						<div class="col-sm-9">
-							<input type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_disableTypeName" name="disableTypeName" placeholder="肢体残疾"/>
-						</div>
-					</div>
-					<div class=" row form-group">
-						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">环境评估:</label>
-						<div class="col-sm-9">
-							<input type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_pathAssess" name="pathAssess" placeholder="环境评估"/>
-						</div>
-					</div>
-					<div class=" row form-group">
-						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">身体功能评估:</label>
-						<div class="col-sm-9">
-							<input type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_bodyAssess" name="bodyAssess" placeholder="身体功能评估"/>
-						</div>
-					</div>
-					<div class=" row form-group">
-						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">主评人签字:</label>
-						<div class="col-sm-9">
-							<input type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_mainAssessPerson" name="mainAssessPerson" placeholder="主评人签字"/>
-						</div>
-					</div>
-					<div class=" row form-group">
-						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">性别:</label>
-						<div class="col-sm-9">
-							<input type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_gender" name="gender" placeholder="性别"/>
-						</div>
-					</div>
-					<div class=" row form-group">
-						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">残疾类别:</label>
-						<div class="col-sm-9">
-							<input type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_disableType" name="disableType" placeholder="残疾类别"/>
-						</div>
-					</div>
-					<div class=" row form-group">
-						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">家庭地址:</label>
-						<div class="col-sm-9">
-							<input type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_homeAddress" name="homeAddress" placeholder="家庭地址"/>
-						</div>
-					</div>
-					<div class=" row form-group">
-						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">联系电话:</label>
-						<div class="col-sm-9">
-							<input type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_contactTelphone" name="contactTelphone" placeholder="联系电话"/>
-						</div>
-					</div>
-					<div class=" row form-group">
-						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">姓名:</label>
-						<div class="col-sm-9">
-							<input type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_name" name="name" placeholder="姓名"/>
-						</div>
-					</div>
-					<div class=" row form-group">
-						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">专职委员签字:</label>
-						<div class="col-sm-9">
-							<input type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_fullTimeMember" name="fullTimeMember" placeholder="专职委员签字"/>
-						</div>
-					</div>
-					<div class=" row form-group">
-						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">评估时间:</label>
-						<div class="col-sm-9">
-							<input type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_assessTime" name="assessTime" placeholder="评估时间"/>
-						</div>
-					</div>
-					<div class=" row form-group">
-						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">身份证:</label>
-						<div class="col-sm-9">
-							<input type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_idcard" name="idcard" placeholder="身份证"/>
-						</div>
-					</div>
-					<div class=" row form-group">
-						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">副评人签字:</label>
-						<div class="col-sm-9">
-							<input type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_secondAssessPerson" name="secondAssessPerson" placeholder="副评人签字"/>
-						</div>
-					</div>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-					<button type="button" class="btn btn-primary" id="healthy_report_sysHealthyBaseInfo_save_button">提交</button>
-				</div>
-			</div>
-		</div>
-	</div>
 	
-	<!-- context menu -->
-	<ul id="context-menu" class="dropdown-menu">
-		<li data-item="edit"><a>待定。。。</a></li>
-	</ul>
+	<script type="text/javascript" src="/plugins/bootstrap/bootstrap-paginator.min.js"></script>
 	<script type="text/javascript" src="/pages/healthy/report/syshealthybaseinfo.js"></script>
 </body>
 </html>

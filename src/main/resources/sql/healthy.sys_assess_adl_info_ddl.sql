@@ -1,5 +1,5 @@
 -- 表创建 表创建语句并不完全正确，需要确认后在执行 
-create table healthy.sys_assess_adl_info(
+create table sys_assess_adl_info(
  uuid varchar(36) NOT NULL COMMENT '主键' primary key,
  score int(11)(8) COMMENT '评分',
  uuid varchar(36)(500) COMMENT '主键',
@@ -15,40 +15,40 @@ create table healthy.sys_assess_adl_info(
  discription varchar(200) COMMENT '数据描述',
 );
 -- 修改字段非空 
- update healthy.sys_assess_adl_info set uuid = UUID();
- alter table healthy.sys_assess_adl_info add primary key(uuid); 
- alter table healthy.sys_assess_adl_info  MODIFY `create_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL;
- alter table healthy.sys_assess_adl_info  MODIFY `update_time` TIMESTAMP ON UPDATE CURRENT_TIMESTAMP   NOT NULL;
- alter table healthy.sys_assess_adl_info  MODIFY `create_user` varchar(50)  NOT NULL;
- alter table healthy.sys_assess_adl_info  MODIFY `update_user` varchar(50)  NOT NULL;
- alter table healthy.sys_assess_adl_info  MODIFY `delete_flag` int  NOT NULL;
+ update sys_assess_adl_info set uuid = UUID();
+ alter table sys_assess_adl_info add primary key(uuid); 
+ alter table sys_assess_adl_info  MODIFY `create_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL;
+ alter table sys_assess_adl_info  MODIFY `update_time` TIMESTAMP ON UPDATE CURRENT_TIMESTAMP   NOT NULL;
+ alter table sys_assess_adl_info  MODIFY `create_user` varchar(50)  NOT NULL;
+ alter table sys_assess_adl_info  MODIFY `update_user` varchar(50)  NOT NULL;
+ alter table sys_assess_adl_info  MODIFY `delete_flag` int  NOT NULL;
 
 -- 表注释 
- alter table healthy.sys_assess_adl_info comment 'ADL评分'; 
+ alter table sys_assess_adl_info comment 'ADL评分'; 
 
 -- 修改字段 注释 
  -- score注释 
-  alter table healthy.sys_assess_adl_info  modify column score VARCHAR(500) comment '评分'; 
+  alter table sys_assess_adl_info  modify column score VARCHAR(500) comment '评分'; 
 
  -- uuid注释 
-  alter table healthy.sys_assess_adl_info  modify column uuid VARCHAR(500) comment '主键'; 
+  alter table sys_assess_adl_info  modify column uuid VARCHAR(500) comment '主键'; 
 
  -- assess_uuid注释 
-  alter table healthy.sys_assess_adl_info  modify column assess_uuid VARCHAR(500) comment '一般外键'; 
+  alter table sys_assess_adl_info  modify column assess_uuid VARCHAR(500) comment '一般外键'; 
 
  -- name注释 
-  alter table healthy.sys_assess_adl_info  modify column name VARCHAR(500) comment '字段名'; 
+  alter table sys_assess_adl_info  modify column name VARCHAR(500) comment '字段名'; 
 
  -- discription注释 
-  alter table healthy.sys_assess_adl_info  modify column discription VARCHAR(500) comment '描述'; 
+  alter table sys_assess_adl_info  modify column discription VARCHAR(500) comment '描述'; 
 
  -- order_num注释 
-  alter table healthy.sys_assess_adl_info  modify column order_num VARCHAR(500) comment '排序'; 
+  alter table sys_assess_adl_info  modify column order_num VARCHAR(500) comment '排序'; 
 
 
 -- 生成索引命令 
  -- 一般外键索引
-  alter table healthy.sys_assess_adl_info add index index_9AK1t7O6bShz4ChK (assess_uuid) ; 
+  alter table sys_assess_adl_info add index index_9AK1t7O6bShz4ChK (assess_uuid) ; 
 
 
 
