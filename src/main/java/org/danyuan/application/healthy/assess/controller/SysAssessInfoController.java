@@ -1,5 +1,7 @@
 package org.danyuan.application.healthy.assess.controller;
 
+import java.util.UUID;
+
 import org.danyuan.application.common.base.BaseController;
 import org.danyuan.application.common.base.BaseControllerImpl;
 import org.danyuan.application.healthy.assess.po.SysAssessInfo;
@@ -22,17 +24,24 @@ import org.springframework.web.servlet.ModelAndView;
 @RestController
 @RequestMapping("/sysAssessInfo")
 public class SysAssessInfoController extends BaseControllerImpl<SysAssessInfo> implements BaseController<SysAssessInfo> {
-
+	
 	@Autowired
 	SysAssessInfoService sysAssessInfoService;
-
-		@GetMapping("/detail/{uuid}")
-		public ModelAndView name(@PathVariable("uuid") String uuid) {
-			ModelAndView modelAndView = new ModelAndView("healthy/assess/sysassessinfodetail");
-			SysAssessInfo info = new SysAssessInfo();
-			info.setUuid(uuid);
-			modelAndView.addObject("sysAssessInfo", sysAssessInfoService.findOne(info));
-			return modelAndView;
+	
+	@GetMapping("/detail/{uuid}")
+	public ModelAndView name(@PathVariable("uuid") String uuid) {
+		ModelAndView modelAndView = new ModelAndView("healthy/assess/sysassessinfodetail");
+		SysAssessInfo info = new SysAssessInfo();
+		info.setBaseUuid(uuid);
+		info = sysAssessInfoService.findOne(info);
+		if (info == null) {
+			info = new SysAssessInfo();
+			info.setUuid(UUID.randomUUID().toString());
+			info.setBaseUuid(uuid);
+			sysAssessInfoService.save(info);
 		}
-
+		modelAndView.addObject("sysAssessInfo", info);
+		return modelAndView;
+	}
+	
 }

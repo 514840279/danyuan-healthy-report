@@ -5,74 +5,69 @@
 <title></title>
 </head>
 <body>
-	<section class="content">
-		<div class="box box-warning" id="section_healthy_assess_sysAssessRiskInfo">
-			<div class="box-header with-border">
-				<h3 class="box-title">企业信息</h3>
-				<div class="box-tools pull-right">
-					<button type="button" class="btn btn-box-tool" data-widget="collapse">
-						<i class="fa fa-minus"></i>
-					</button>
-					<button type="button" class="btn btn-box-tool" data-widget="remove">
-						<i class="fa fa-times"></i>
-					</button>
-				</div>
-			</div>
+<!-- 	<section class="content"> -->
+<!-- 		<div class="box box-warning" id="section_healthy_assess_sysAssessRiskInfo"> -->
+<!-- 			<div class="box-header with-border"> -->
+<!-- 				<h3 class="box-title">企业信息</h3> -->
+<!-- 				<div class="box-tools pull-right"> -->
+<!-- 					<button type="button" class="btn btn-box-tool" data-widget="collapse"> -->
+<!-- 						<i class="fa fa-minus"></i> -->
+<!-- 					</button> -->
+<!-- 					<button type="button" class="btn btn-box-tool" data-widget="remove"> -->
+<!-- 						<i class="fa fa-times"></i> -->
+<!-- 					</button> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
 			<div class="box-body">
 				<input type="text" style="display:none;" id="healthy_assess_sysAssessRiskInfo_uuid" name="uuid" th:value="${sysAssessRiskInfo.uuid}"/>
 				<input type="text" style="display:none;" id="healthy_assess_sysAssessRiskInfo_deleteFlag" name="deleteFlag"  th:value="${sysAssessRiskInfo.deleteFlag}"/>
 				<input type="text" style="display:none;" id="healthy_assess_sysAssessRiskInfo_discription" name="discription" th:value="${sysAssessRiskInfo.discription}"/>
+				<input type="text" style="display:none;" id="healthy_assess_sysAssessRiskInfo_baseUuid" name="baseUuid" th:value="${sysAssessRiskInfo['baseUuid']}" />
 					<div class=" row form-group">
-						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">神经系统病史:</label>
-						<div class="col-sm-9">
+						<label class="col-sm-2 control-label text-right font16" style="height: 34px;padding-top: 5px;">神经系统病史:</label>
+						<div class="col-sm-10">
 							<input type="text" class="form-control" id="healthy_assess_sysAssessRiskInfo_shenjing" name="shenjing" th:value="${sysAssessRiskInfo['shenjing']}" placeholder="神经系统病史" disabled="disabled"/>
 						</div>
 					</div>
 					<div class=" row form-group">
-						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">是否服用抗凝药物:</label>
-						<div class="col-sm-9">
+						<label class="col-sm-2 control-label text-right font16" style="height: 34px;padding-top: 5px;">是否服用抗凝药物:</label>
+						<div class="col-sm-10">
 							<input type="text" class="form-control" id="healthy_assess_sysAssessRiskInfo_yongguokangneng" name="yongguokangneng" th:value="${sysAssessRiskInfo['yongguokangneng']}" placeholder="是否服用抗凝药物" disabled="disabled"/>
 						</div>
 					</div>
 					<div class=" row form-group">
-						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">服用β受体阻滞剂:</label>
-						<div class="col-sm-9">
+						<label class="col-sm-2 control-label text-right font16" style="height: 34px;padding-top: 5px;">服用β受体阻滞剂:</label>
+						<div class="col-sm-10">
 							<input type="text" class="form-control" id="healthy_assess_sysAssessRiskInfo_zuzhiji" name="zuzhiji" th:value="${sysAssessRiskInfo['zuzhiji']}" placeholder="服用β受体阻滞剂" disabled="disabled"/>
 						</div>
 					</div>
 					<div class=" row form-group">
-						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">心脑血管病史:</label>
-						<div class="col-sm-9">
+						<label class="col-sm-2 control-label text-right font16" style="height: 34px;padding-top: 5px;">心脑血管病史:</label>
+						<div class="col-sm-10">
 							<input type="text" class="form-control" id="healthy_assess_sysAssessRiskInfo_xueguanbingshi" name="xueguanbingshi" th:value="${sysAssessRiskInfo['xueguanbingshi']}" placeholder="心脑血管病史" disabled="disabled"/>
 						</div>
 					</div>
 					<div class=" row form-group">
-						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">深静脉血栓/肺栓塞风险:</label>
-						<div class="col-sm-9">
+						<label class="col-sm-2 control-label text-right font16" style="height: 34px;padding-top: 5px;">深静脉血栓/肺栓塞风险:</label>
+						<div class="col-sm-10">
 							<input type="text" class="form-control" id="healthy_assess_sysAssessRiskInfo_xueshuan" name="xueshuan" th:value="${sysAssessRiskInfo['xueshuan']}" placeholder="深静脉血栓/肺栓塞风险" disabled="disabled"/>
 						</div>
 					</div>
 					<div class=" row form-group">
-						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">呼吸系统病史:</label>
-						<div class="col-sm-9">
+						<label class="col-sm-2 control-label text-right font16" style="height: 34px;padding-top: 5px;">呼吸系统病史:</label>
+						<div class="col-sm-10">
 							<input type="text" class="form-control" id="healthy_assess_sysAssessRiskInfo_huxi" name="huxi" th:value="${sysAssessRiskInfo['huxi']}" placeholder="呼吸系统病史" disabled="disabled"/>
 						</div>
 					</div>
 					<div class=" row form-group">
-						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">消化系统病史:</label>
-						<div class="col-sm-9">
+						<label class="col-sm-2 control-label text-right font16" style="height: 34px;padding-top: 5px;">消化系统病史:</label>
+						<div class="col-sm-10">
 							<input type="text" class="form-control" id="healthy_assess_sysAssessRiskInfo_xiaohua" name="xiaohua" th:value="${sysAssessRiskInfo['xiaohua']}" placeholder="消化系统病史" disabled="disabled"/>
 						</div>
 					</div>
 					<div class=" row form-group">
-						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">评估外键:</label>
-						<div class="col-sm-9">
-							<input type="text" class="form-control" id="healthy_assess_sysAssessRiskInfo_baseUuid" name="baseUuid" th:value="${sysAssessRiskInfo['baseUuid']}" placeholder="评估外键" disabled="disabled"/>
-						</div>
-					</div>
-					<div class=" row form-group">
-						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">其他:</label>
-						<div class="col-sm-9">
+						<label class="col-sm-2 control-label text-right font16" style="height: 34px;padding-top: 5px;">其他:</label>
+						<div class="col-sm-10">
 							<input type="text" class="form-control" id="healthy_assess_sysAssessRiskInfo_qita" name="qita" th:value="${sysAssessRiskInfo['qita']}" placeholder="其他" disabled="disabled"/>
 						</div>
 					</div>
@@ -82,8 +77,8 @@
 					<button type="button" class="btn btn-danger" id="healthy_assess_sysAssessRiskInfo_exit_button">关闭</button>
 				</div>
 			</div>
-		</div>
-	</section>
+<!-- 		</div> -->
+<!-- 	</section> -->
 	
 	
 	<script th:inline="javascript">

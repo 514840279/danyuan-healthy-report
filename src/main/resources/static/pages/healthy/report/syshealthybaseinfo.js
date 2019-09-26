@@ -30,19 +30,18 @@
 //		});
 //	}
 //}
-var pageNumber=1;
 $(function() {
-	pageNumber=1;
+	
 	// 查询按钮事件
 	searchButtonClick()
 });
 
 
 function searchButtonClick() {
-	 
+	// 绑定提交
 	$("#make_sure_search_healthy_report_sysHealthyBaseInfo_button_id").bind("click", function() {
 		var param ={
-				"pageNumber":pageNumber,
+				"pageNumber":1,
 				"pageSize":5,
 				"info":{
 					"idcard" : $("#search_healthy_report_sysHealthyBaseInfo_idcard").val(),
@@ -54,12 +53,33 @@ function searchButtonClick() {
 		var url = '/sysHealthyBaseInfo/page';
 		ajaxPost(url, param, findAllBaseInfoSucess);
 	});
+	
+	// 默认提交
 	$("#make_sure_search_healthy_report_sysHealthyBaseInfo_button_id").click();
+	
+	// 按键方法
+	$("#search_healthy_report-group").bind("keypress",function(e){
+		if(e.keyCode == 13){
+	        //模拟点击登陆按钮，触发上面的 Click 事件
+			var param ={
+					"pageNumber":1,
+					"pageSize":5,
+					"info":{
+						"idcard" : $("#search_healthy_report_sysHealthyBaseInfo_idcard").val(),
+						"name" : $("#search_healthy_report_sysHealthyBaseInfo_name").val(),
+						"disableCard" : $("#search_healthy_report_sysHealthyBaseInfo_disableCard").val(),
+						"username":username
+					}
+				}
+			var url = '/sysHealthyBaseInfo/page';
+			ajaxPost(url, param, findAllBaseInfoSucess);
+	    }
+	});
 }
 
 // 数据show
 function findAllBaseInfoSucess(result){
-	console.log(result);
+	$('#example').show();
 	var context = $("#main_context");
 	
 	$.each(context.find("div.item"),function(index,value){
@@ -68,7 +88,7 @@ function findAllBaseInfoSucess(result){
 		}
 	})
 	
-	if(result.data!==null){
+	if(result.data.content!==null&&result.data.content.length>0){
 		$.each(result.data.content,function(index,value){
 			var row = context.find("div.item:eq(0)").clone(false);
 			row.css({"display":""});
@@ -76,7 +96,8 @@ function findAllBaseInfoSucess(result){
 			// 名称|id|disid
 			row.find(".item_a_a span").text(value.name+"("+value.idcard+")"+"("+value.disableCard+")");
 			row.find(".item_a_a span").click(function(){
-				var url ="/sysHealthyBaseInfo/detail/"+value.uuid;
+				var url ="/sysHealthyBaseInfo/demo/"+value.uuid;
+//				var url ="/sysHealthyBaseInfo/detail/"+value.uuid;
 //				window.open(url);
 				loadPage(url);
 			})
@@ -158,7 +179,7 @@ function findAllBaseInfoSucess(result){
 				var searchText = $("#keyword").val();
 				var userDesc = $(".search_bar").find("li.active").text();
 				var param ={
-					"pageNumber":pageNumber,
+					"pageNumber":page,
 					"pageSize":5,
 					"info":{
 						"idcard" : $("#search_healthy_report_sysHealthyBaseInfo_idcard").val(),
@@ -168,15 +189,29 @@ function findAllBaseInfoSucess(result){
 					}
 				};
 				var url = '/sysHealthyBaseInfo/page';
-				ajaxPost(url, param, findAllShareFileSucess);
+				ajaxPost(url, param, findAllBaseInfoSucess);
 			}
 		}
 		
 		$('#example').bootstrapPaginator(options);
 	}else{
-		// show add button TODO
-		
-		
+		$('#example').hide();
 	}
+}
+
+function addNewbase(){
+	var param = {
+		"idcard" : $("#search_healthy_report_sysHealthyBaseInfo_idcard").val(),
+		"name" : $("#search_healthy_report_sysHealthyBaseInfo_name").val(),
+		"disableCard" : $("#search_healthy_report_sysHealthyBaseInfo_disableCard").val(),
+		"username":username
+	};
+	var url="/sysHealthyBaseInfo/save";
+	ajaxPost(url,param,successAddnewBase);
+	function successAddnewBase(result){
+		var url ="/sysHealthyBaseInfo/demo/"+result.data.uuid;
+		loadPage(url);
+	}
+	
 }
 

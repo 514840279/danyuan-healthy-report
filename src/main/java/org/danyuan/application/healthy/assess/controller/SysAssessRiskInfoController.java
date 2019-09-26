@@ -1,5 +1,7 @@
 package org.danyuan.application.healthy.assess.controller;
 
+import java.util.UUID;
+
 import org.danyuan.application.common.base.BaseController;
 import org.danyuan.application.common.base.BaseControllerImpl;
 import org.danyuan.application.healthy.assess.po.SysAssessRiskInfo;
@@ -22,17 +24,24 @@ import org.springframework.web.servlet.ModelAndView;
 @RestController
 @RequestMapping("/sysAssessRiskInfo")
 public class SysAssessRiskInfoController extends BaseControllerImpl<SysAssessRiskInfo> implements BaseController<SysAssessRiskInfo> {
-
+	
 	@Autowired
 	SysAssessRiskInfoService sysAssessRiskInfoService;
-
-		@GetMapping("/detail/{uuid}")
-		public ModelAndView name(@PathVariable("uuid") String uuid) {
-			ModelAndView modelAndView = new ModelAndView("healthy/assess/sysassessriskinfodetail");
-			SysAssessRiskInfo info = new SysAssessRiskInfo();
-			info.setUuid(uuid);
-			modelAndView.addObject("sysAssessRiskInfo", sysAssessRiskInfoService.findOne(info));
-			return modelAndView;
+	
+	@GetMapping("/detail/{uuid}")
+	public ModelAndView name(@PathVariable("uuid") String uuid) {
+		ModelAndView modelAndView = new ModelAndView("healthy/assess/sysassessriskinfodetail");
+		SysAssessRiskInfo info = new SysAssessRiskInfo();
+		info.setUuid(uuid);
+		info = sysAssessRiskInfoService.findOne(info);
+		if (info == null) {
+			info = new SysAssessRiskInfo();
+			info.setUuid(UUID.randomUUID().toString());
+			info.setBaseUuid(uuid);
+			sysAssessRiskInfoService.save(info);
 		}
-
+		modelAndView.addObject("sysAssessRiskInfo", info);
+		return modelAndView;
+	}
+	
 }

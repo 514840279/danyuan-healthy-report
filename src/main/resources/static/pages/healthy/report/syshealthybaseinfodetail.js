@@ -5,7 +5,7 @@ $(function(){
 function init(){
 	
 	$("#healthy_report_sysHealthyBaseInfo_edit_button").bind("click",function(){
-		$("#section_healthy_report_sysHealthyBaseInfo").find(".box-body").find('.row input').removeAttr("disabled");
+		$("#section_healthy_report_sysHealthyBaseInfo").find(".box-body").find('.row input,.row textarea').removeAttr("disabled");
 		$("#healthy_report_sysHealthyBaseInfo_save_button").css({"display":""});
 		$(this).css({"display":"none"});
 	})
@@ -44,7 +44,7 @@ function init(){
 // 状态修改，
 function reloadSysHealthyBaseInfoDetail(result){
 	if(result.code=="200"){
-		$("#section_healthy_report_sysHealthyBaseInfo").find(".box-body").find('.row input').attr("disabled","disabled");
+		$("#section_healthy_report_sysHealthyBaseInfo").find(".box-body").find('.row input,.row textarea').attr("disabled","disabled");
 		$("#healthy_report_sysHealthyBaseInfo_edit_button").css({"display":""});
 		$("#healthy_report_sysHealthyBaseInfo_save_button").css({"display":"none"});
 	}else{

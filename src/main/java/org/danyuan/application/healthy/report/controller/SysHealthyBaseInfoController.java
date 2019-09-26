@@ -1,5 +1,7 @@
 package org.danyuan.application.healthy.report.controller;
 
+import java.util.UUID;
+
 import org.danyuan.application.common.base.BaseController;
 import org.danyuan.application.common.base.BaseControllerImpl;
 import org.danyuan.application.healthy.report.po.SysHealthyBaseInfo;
@@ -32,6 +34,23 @@ public class SysHealthyBaseInfoController extends BaseControllerImpl<SysHealthyB
 		SysHealthyBaseInfo info = new SysHealthyBaseInfo();
 		info.setUuid(uuid);
 		modelAndView.addObject("sysHealthyBaseInfo", sysHealthyBaseInfoService.findOne(info));
+		return modelAndView;
+	}
+	
+	@GetMapping("/demo/{uuid}")
+	public ModelAndView demo(@PathVariable("uuid") String uuid) {
+		ModelAndView modelAndView = new ModelAndView("healthy/report/demo");
+		modelAndView.addObject("sysHealthyBaseInfoUuid", uuid);
+		return modelAndView;
+	}
+	
+	@GetMapping("/demo2")
+	public ModelAndView demo2() {
+		ModelAndView modelAndView = new ModelAndView("healthy/report/demo");
+		SysHealthyBaseInfo info = new SysHealthyBaseInfo();
+		info.setUuid(UUID.randomUUID().toString());
+		sysHealthyBaseInfoService.save(info);
+		modelAndView.addObject("sysHealthyBaseInfoUuid", info.getUuid());
 		return modelAndView;
 	}
 	

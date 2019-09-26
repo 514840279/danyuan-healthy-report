@@ -1,4 +1,4 @@
-window.operateEvents = {
+window.operateSysUseAssessInfoEvents = {
 	// 修改
 	'click #clickA ': function (e, value, row, index) {
 		var url="/sysUseAssessInfo/detail/"+row['uuid'];
@@ -49,7 +49,7 @@ function init() {
 		$("#healthy_report_sysUseAssessInfo_deleteFlag").val("");
 		$("#healthy_report_sysUseAssessInfo_discription").val("");
 		$("#healthy_report_sysUseAssessInfo_assistiveDevicesName").val("");
-		$("#healthy_report_sysUseAssessInfo_baseUuid").val("");
+		$("#healthy_report_sysUseAssessInfo_baseUuid").val(sysHealthyBaseInfoUuid);
 		$("#healthy_report_sysUseAssessInfo_grantTime").val("");
 		$("#healthy_report_sysUseAssessInfo_useState").val("");
 		$('#healthy_report_sysUseAssessInfo_modal').modal({
@@ -112,6 +112,7 @@ function init() {
 			discription:$("#healthy_report_sysUseAssessInfo_discription").val(),
 			createUser:username,
 			updateUser:username,
+			
 		};
 		ajaxPost(url, info, refreshSysUseAssessInfo );
 		$('#healthy_report_sysUseAssessInfo_modal').modal("hide");
@@ -134,7 +135,7 @@ function init() {
 		showRefresh : true, // 是否显示刷新按钮
 		minimumCountColumns : 2, // 最少允许的列数
 		clickToSelect : true, // 是否启用点击选中行
-		height : 500, // 行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度
+//		height : 500, // 行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度
 		uniqueId : "uuid", // 每一行的唯一标识，一般为主键列
 		showToggle : true, // 是否显示详细视图和列表视图的切换按钮
 		cardView : false, // 是否显示详细视图
@@ -156,30 +157,30 @@ function init() {
 				sortName:params.sortName,
 				filter:params.filter,
 				info:{
-					baseUuid: $("#search_healthy_report_sysUseAssessInfo_baseUuid").val()==""?null:$("#search_healthy_report_sysUseAssessInfo_baseUuid").val(),
+					baseUuid:sysHealthyBaseInfoUuid
 				}
 			}; 
 			return param;
 		},
 		columns : [ 
 			{title : '全选',	checkbox : true,align : 'center',valign : 'middle'}, 
-			{title : 'id',field : 'uuid',align : 'left',sortable : true,valign : 'middle',switchable:true,visible:false},
+			{title : 'id',field : 'uuid',align : 'left',sortable : true,valign : 'middle',switchable:false,visible:false},
 			{title : '已发放辅具名称',	field : 'assistiveDevicesName','width':150,align : 'left',sortable : true,valign : 'middle',switchable:true,visible:true},
-			{title : '评估外键',	field : 'baseUuid','width':150,align : 'left',sortable : true,valign : 'middle',switchable:true,visible:true},
+			{title : '评估外键',	field : 'baseUuid','width':150,align : 'left',sortable : true,valign : 'middle',switchable:false,visible:false},
 			{title : '发放时间',	field : 'grantTime','width':150,align : 'right',sortable : true,valign : 'middle',switchable:true,visible:true},
 			{title : '现使用状况',	field : 'useState','width':150,align : 'left',sortable : true,valign : 'middle',switchable:true,visible:true},
-			{title : '项目描述',	field : 'discription',align : 'left',sortable : true,	valign : 'middle',switchable:true,visible:false},
-			{title : '创建时间',	field : 'createTime',align : 'left',sortable : true,valign : 'middle',switchable:true,visible:false},
-			{title : '创建者',	field : 'createUser',align : 'left',sortable : true,valign : 'middle',switchable:true,visible:false},
+			{title : '项目描述',	field : 'discription',align : 'left',sortable : true,	valign : 'middle',switchable:false,visible:false},
+			{title : '创建时间',	field : 'createTime',align : 'left',sortable : true,valign : 'middle',switchable:false,visible:false},
+			{title : '创建者',	field : 'createUser',align : 'left',sortable : true,valign : 'middle',switchable:false,visible:false},
 			{title : '更新时间',	field : 'updateTime',align : 'left',sortable : true,valign : 'middle',switchable:true,visible:false},
 			{title : '更新者',	field : 'updateUser',align : 'left',sortable : true,valign : 'middle',switchable:true,visible:false},
-			{title : '标记',		field : 'deleteFlag',align : 'left',sortable : true,valign : 'middle',switchable:true,visible:false},
-			{title : '操作',align : 'left','width':180,sortable : true,valign : 'middle',switchable:true,visible:true,events: operateEvents,formatter : function(value, row, index) {
+			{title : '标记',		field : 'deleteFlag',align : 'left',sortable : true,valign : 'middle',switchable:false,visible:false},
+			{title : '操作',align : 'left','width':180,sortable : true,valign : 'middle',switchable:true,visible:true,events: operateSysUseAssessInfoEvents,formatter : function(value, row, index) {
 				var A = "<i  type='button' id='clickA'  class=' btn btn-default fa fa-edit' title='编辑' >详细内容</i>  ";
 				var B = "<i  type='button' id='clickB'  class=' btn btn-default fa fa-download' title='下载' >下载</i>  ";
 				var C = "<i  type='button' id='clickC'  class=' btn btn-default fa fa-arrow-circle-o-right' title='导出' >导出</i>  ";
 				var D = "<i  type='button' id='clickD'  class=' btn btn-danger fa fa-circle-thin fa-remove' title='删除' >删除</i>  ";
-				return A+D;
+				return D;
 			}}
 		],
 		responseHandler: function(result){  // 成功时执行
@@ -202,9 +203,5 @@ function refreshSysUseAssessInfo(){
 	$('#healthy_report_sysUseAssessInfo_datagrid').bootstrapTable('refresh');
 }
 
-// 窗口大小改变时 重设表头
-$(window).resize(function() {
-	$('#healthy_report_sysUseAssessInfo_datagrid').bootstrapTable('resetView');
-});
 
 

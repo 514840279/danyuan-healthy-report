@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="/plugins/bootstrap/tab/css/bootstrap-tab.css" /> 
+<script type="text/javascript" src="/plugins/bootstrap/tab/js/bootstrap-tab.js"></script>
+</head>
+<body>
+	<!-- 头部设计 -->
+<!-- 	<section class="content-header"> -->
+<!-- 		<h1> -->
+<!-- 			信息编辑 <small>辅具适配</small> -->
+<!-- 		</h1> -->
+<!-- 		<ol class="breadcrumb"> -->
+<!-- 			<li><a href="index.html"><i class="fa fa-dashboard"></i>首页</a></li> -->
+<!-- 			<li><a href="#">辅具适配 </a></li> -->
+<!-- 			<li class="active">信息编辑</li> -->
+<!-- 		</ol> -->
+<!-- 	</section> -->
+
+	<!-- Main content -->
+	<section class="content">
+		<div class="box box-warning" id="section_healthy_report_sysHealthyBaseInfo">
+			<div class="box-header with-border">
+				<h3 class="box-title">体检报告辅具评估信息</h3>
+				<div class="box-tools pull-right">
+					<button type="button" class="btn btn-box-tool" data-widget="collapse">
+						<i class="fa fa-minus"></i>
+					</button>
+					<button type="button" class="btn btn-box-tool" data-widget="remove">
+						<i class="fa fa-times"></i>
+					</button>
+				</div>
+			</div>
+			<div class="box-body">
+				<div id="fu-content">
+						
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<script th:inline="javascript">
+		var sysHealthyBaseInfoUuid = [[${sysHealthyBaseInfoUuid}]];
+		$("#fu-content").tabs({
+		   	 data: [{
+		            id: 'pinggushipei',
+		            text: '评估适配',
+		            url: "pages/healthy/report/index.html"
+		        },{
+		            id: 'result_ruler_model',
+		            text: '体检报告',
+		            url: "pages/healthy/assess/index.html"
+		        }],
+		        showIndex: 0,
+		        loadAll: true
+		   });
+	</script>
+</body>
+</html>
