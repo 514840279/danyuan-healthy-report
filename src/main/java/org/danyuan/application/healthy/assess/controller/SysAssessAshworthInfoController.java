@@ -22,17 +22,17 @@ import org.springframework.web.servlet.ModelAndView;
 @RestController
 @RequestMapping("/sysAssessAshworthInfo")
 public class SysAssessAshworthInfoController extends BaseControllerImpl<SysAssessAshworthInfo> implements BaseController<SysAssessAshworthInfo> {
-
+	
 	@Autowired
 	SysAssessAshworthInfoService sysAssessAshworthInfoService;
-
-		@GetMapping("/detail/{uuid}")
-		public ModelAndView name(@PathVariable("uuid") String uuid) {
-			ModelAndView modelAndView = new ModelAndView("healthy/assess/sysassessashworthinfodetail");
-			SysAssessAshworthInfo info = new SysAssessAshworthInfo();
-			info.setUuid(uuid);
-			modelAndView.addObject("sysAssessAshworthInfo", sysAssessAshworthInfoService.findOne(info));
-			return modelAndView;
-		}
-
+	
+	@GetMapping("/detail/{uuid}")
+	public ModelAndView name(@PathVariable("uuid") String uuid) {
+		ModelAndView modelAndView = new ModelAndView("healthy/assess/sysassessashworthinfodetail");
+		SysAssessAshworthInfo info = new SysAssessAshworthInfo();
+		info.setAssessUuid(uuid);
+		modelAndView.addObject("sysAssessAshworthInfo", sysAssessAshworthInfoService.findAll(info));
+		return modelAndView;
+	}
+	
 }

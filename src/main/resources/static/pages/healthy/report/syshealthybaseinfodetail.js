@@ -35,8 +35,10 @@ function init(){
 		ajaxPost(url, info, reloadSysHealthyBaseInfoDetail);
 	})
 	
+	
+	
 	$("#healthy_report_sysHealthyBaseInfo_exit_button").bind("click",function(){
-		loadPage("/pages/healthy/report/syshealthybaseinfo.html")
+		loadPage("/pages/healthy/report/syshealthybaseinfo.html");
 	})
 
 }

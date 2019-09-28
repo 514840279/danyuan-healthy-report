@@ -5,7 +5,7 @@
 <title></title>
 </head>
 <body>
-	<section class="content">
+<!-- 	<section class="content"> -->
 		<div class="box box-warning" id="section_healthy_assess_sysAssessAdlInfo">
 			<div class="box-header with-border">
 				<h3 class="box-title">企业信息</h3>
@@ -19,31 +19,31 @@
 				</div>
 			</div>
 			<div class="box-body">
-				<input type="text" style="display:none;" id="healthy_assess_sysAssessAdlInfo_uuid" name="uuid" th:value="${sysAssessAdlInfo.uuid}"/>
-				<input type="text" style="display:none;" id="healthy_assess_sysAssessAdlInfo_deleteFlag" name="deleteFlag"  th:value="${sysAssessAdlInfo.deleteFlag}"/>
-				<input type="text" style="display:none;" id="healthy_assess_sysAssessAdlInfo_discription" name="discription" th:value="${sysAssessAdlInfo.discription}"/>
+				<input type="text" style="display:none;" id="healthy_assess_sysAssessAdlInfo_uuid" name="uuid"  />
+				<input type="text" style="display:none;" id="healthy_assess_sysAssessAdlInfo_deleteFlag" name="deleteFlag"   />
+				<input type="text" style="display:none;" id="healthy_assess_sysAssessAdlInfo_discription" name="discription"  />
 					<div class=" row form-group">
 						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">评分:</label>
 						<div class="col-sm-9">
-							<input type="text" class="form-control" id="healthy_assess_sysAssessAdlInfo_score" name="score" th:value="${sysAssessAdlInfo['score']}" placeholder="评分" disabled="disabled"/>
+							<input type="text" class="form-control" id="healthy_assess_sysAssessAdlInfo_score" name="score"   placeholder="评分" disabled="disabled"/>
 						</div>
 					</div>
 					<div class=" row form-group">
 						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">一般外键:</label>
 						<div class="col-sm-9">
-							<input type="text" class="form-control" id="healthy_assess_sysAssessAdlInfo_assessUuid" name="assessUuid" th:value="${sysAssessAdlInfo['assessUuid']}" placeholder="一般外键" disabled="disabled"/>
+							<input type="text" class="form-control" id="healthy_assess_sysAssessAdlInfo_assessUuid" name="assessUuid"  placeholder="一般外键" disabled="disabled"/>
 						</div>
 					</div>
 					<div class=" row form-group">
 						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">字段名:</label>
 						<div class="col-sm-9">
-							<input type="text" class="form-control" id="healthy_assess_sysAssessAdlInfo_name" name="name" th:value="${sysAssessAdlInfo['name']}" placeholder="字段名" disabled="disabled"/>
+							<input type="text" class="form-control" id="healthy_assess_sysAssessAdlInfo_name" name="name"   placeholder="字段名" disabled="disabled"/>
 						</div>
 					</div>
 					<div class=" row form-group">
 						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">排序:</label>
 						<div class="col-sm-9">
-							<input type="text" class="form-control" id="healthy_assess_sysAssessAdlInfo_orderNum" name="orderNum" th:value="${sysAssessAdlInfo['orderNum']}" placeholder="排序" disabled="disabled"/>
+							<input type="text" class="form-control" id="healthy_assess_sysAssessAdlInfo_orderNum" name="orderNum"  placeholder="排序" disabled="disabled"/>
 						</div>
 					</div>
 				<div class="row text-center">
@@ -53,7 +53,7 @@
 				</div>
 			</div>
 		</div>
-	</section>
+<!-- 	</section> -->
 	
 	
 	<script th:inline="javascript">

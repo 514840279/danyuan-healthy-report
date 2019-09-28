@@ -22,17 +22,17 @@ import org.springframework.web.servlet.ModelAndView;
 @RestController
 @RequestMapping("/sysAssessAdlInfo")
 public class SysAssessAdlInfoController extends BaseControllerImpl<SysAssessAdlInfo> implements BaseController<SysAssessAdlInfo> {
-
+	
 	@Autowired
 	SysAssessAdlInfoService sysAssessAdlInfoService;
-
-		@GetMapping("/detail/{uuid}")
-		public ModelAndView name(@PathVariable("uuid") String uuid) {
-			ModelAndView modelAndView = new ModelAndView("healthy/assess/sysassessadlinfodetail");
-			SysAssessAdlInfo info = new SysAssessAdlInfo();
-			info.setUuid(uuid);
-			modelAndView.addObject("sysAssessAdlInfo", sysAssessAdlInfoService.findOne(info));
-			return modelAndView;
-		}
-
+	
+	@GetMapping("/detail/{uuid}")
+	public ModelAndView name(@PathVariable("uuid") String uuid) {
+		ModelAndView modelAndView = new ModelAndView("healthy/assess/sysassessadlinfodetail");
+		SysAssessAdlInfo info = new SysAssessAdlInfo();
+		info.setAssessUuid(uuid);
+		modelAndView.addObject("sysAssessAdlInfo", sysAssessAdlInfoService.findAll(info));
+		return modelAndView;
+	}
+	
 }

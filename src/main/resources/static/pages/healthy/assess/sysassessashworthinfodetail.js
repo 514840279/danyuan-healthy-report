@@ -23,7 +23,7 @@ function init(){
 	})
 	
 	$("#healthy_assess_sysAssessAshworthInfo_exit_button").bind("click",function(){
-		loadPage("/pages/healthy/assess/sysassessashworthinfo.html")
+		modals.closeWin("healthy_assess_sysAssessInfo_ashworth_modal");
 	})
 
 }

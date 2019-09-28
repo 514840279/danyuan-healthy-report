@@ -34,7 +34,63 @@ function init(){
 	})
 	
 	$("#healthy_assess_sysAssessInfo_exit_button").bind("click",function(){
-		loadPage("/pages/healthy/assess/sysassessinfo.html")
+		loadPage("/pages/healthy/report/syshealthybaseinfo.html");
+	})
+	
+	
+	// adl 绑定点击事件
+	$("#healthy_assess_sysAssessInfo_adl").bind("click",function(){
+		var assess_uuid=$("#healthy_assess_sysAssessInfo_uuid").val();
+		modals.openWin({
+	    	winId:"healthy_assess_sysAssessInfo_adl_modal",
+	    	title:'ADL评分',
+	    	width:'80%',
+	    	url:"/sysAssessAdlInfo/detail/"+assess_uuid
+	    });
+	})
+	
+	// Ashworth评级
+	$("#healthy_assess_sysAssessInfo_ashworth").bind("click",function(){
+		var assess_uuid=$("#healthy_assess_sysAssessInfo_uuid").val();
+		modals.openWin({
+	    	winId:"healthy_assess_sysAssessInfo_ashworth_modal",
+	    	title:'Ashworth量表评定',
+	    	width:'80%',
+	    	url:"/sysAssessAshworthInfo/detail/"+assess_uuid
+	    });
+	})
+	
+	// FIM评分  绑定点击事件
+	$("#healthy_assess_sysAssessInfo_fim").bind("click",function(){
+		var assess_uuid=$("#healthy_assess_sysAssessInfo_uuid").val();
+		modals.openWin({
+	    	winId:"healthy_assess_sysAssessInfo_fim_modal",
+	    	title:'功能独立性评定（FIM）量表',
+	    	width:'80%',
+	    	url:"/sysAssessFimInfo/detail/"+assess_uuid
+	    });
+	})
+	
+	// Burnnstrom分级 绑定点击事件
+	$("#healthy_assess_sysAssessInfo_burnnstrom").bind("click",function(){
+		var assess_uuid=$("#healthy_assess_sysAssessInfo_uuid").val();
+		modals.openWin({
+	    	winId:"healthy_assess_sysAssessInfo_burnnstrom_modal",
+	    	title:'Brunnstrom量表评定',
+	    	width:'80%',
+	    	url:"/sysAssessBrunnstrom/detail/"+assess_uuid
+	    });
+	})
+	
+	// ASIA分级 绑定点击事件
+	$("#healthy_assess_sysAssessInfo_asia").bind("click",function(){
+		var assess_uuid=$("#healthy_assess_sysAssessInfo_uuid").val();
+		modals.openWin({
+	    	winId:"healthy_assess_sysAssessInfo_asia_modal",
+	    	title:'ASIA损伤程度分级',
+	    	width:'80%',
+	    	url:"/sysAssessAsiaInfo/detail/"+assess_uuid
+	    });
 	})
 
 }

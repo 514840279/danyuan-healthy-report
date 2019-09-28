@@ -22,17 +22,17 @@ import org.springframework.web.servlet.ModelAndView;
 @RestController
 @RequestMapping("/sysAssessFimInfo")
 public class SysAssessFimInfoController extends BaseControllerImpl<SysAssessFimInfo> implements BaseController<SysAssessFimInfo> {
-
+	
 	@Autowired
 	SysAssessFimInfoService sysAssessFimInfoService;
-
-		@GetMapping("/detail/{uuid}")
-		public ModelAndView name(@PathVariable("uuid") String uuid) {
-			ModelAndView modelAndView = new ModelAndView("healthy/assess/sysassessfiminfodetail");
-			SysAssessFimInfo info = new SysAssessFimInfo();
-			info.setUuid(uuid);
-			modelAndView.addObject("sysAssessFimInfo", sysAssessFimInfoService.findOne(info));
-			return modelAndView;
-		}
-
+	
+	@GetMapping("/detail/{uuid}")
+	public ModelAndView name(@PathVariable("uuid") String uuid) {
+		ModelAndView modelAndView = new ModelAndView("healthy/assess/sysassessfiminfodetail");
+		SysAssessFimInfo info = new SysAssessFimInfo();
+		info.setAssessUuid(uuid);
+		modelAndView.addObject("sysAssessFimInfo", sysAssessFimInfoService.findAll(info));
+		return modelAndView;
+	}
+	
 }

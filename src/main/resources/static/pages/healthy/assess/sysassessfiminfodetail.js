@@ -25,7 +25,7 @@ function init(){
 	})
 	
 	$("#healthy_assess_sysAssessFimInfo_exit_button").bind("click",function(){
-		loadPage("/pages/healthy/assess/sysassessfiminfo.html")
+		modals.closeWin("healthy_assess_sysAssessInfo_fim_modal");
 	})
 
 }

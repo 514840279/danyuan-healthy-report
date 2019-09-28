@@ -25,7 +25,7 @@ function init(){
 	})
 	
 	$("#healthy_assess_sysAssessAdlInfo_exit_button").bind("click",function(){
-		loadPage("/pages/healthy/assess/sysassessadlinfo.html")
+		modals.closeWin("healthy_assess_sysAssessInfo_adl_modal");
 	})
 
 }

@@ -25,7 +25,7 @@ function init(){
 	})
 	
 	$("#healthy_assess_sysAssessBrunnstrom_exit_button").bind("click",function(){
-		loadPage("/pages/healthy/assess/sysassessbrunnstrom.html")
+		modals.closeWin("healthy_assess_sysAssessInfo_burnnstrom_modal");
 	})
 
 }

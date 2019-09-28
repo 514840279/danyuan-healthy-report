@@ -5,7 +5,7 @@
 <title></title>
 </head>
 <body>
-	<section class="content">
+<!-- 	<section class="content"> -->
 		<div class="box box-warning" id="section_healthy_assess_sysAssessAsiaInfo">
 			<div class="box-header with-border">
 				<h3 class="box-title">企业信息</h3>
@@ -19,25 +19,25 @@
 				</div>
 			</div>
 			<div class="box-body">
-				<input type="text" style="display:none;" id="healthy_assess_sysAssessAsiaInfo_uuid" name="uuid" th:value="${sysAssessAsiaInfo.uuid}"/>
-				<input type="text" style="display:none;" id="healthy_assess_sysAssessAsiaInfo_deleteFlag" name="deleteFlag"  th:value="${sysAssessAsiaInfo.deleteFlag}"/>
-				<input type="text" style="display:none;" id="healthy_assess_sysAssessAsiaInfo_discription" name="discription" th:value="${sysAssessAsiaInfo.discription}"/>
+				<input type="text" style="display:none;" id="healthy_assess_sysAssessAsiaInfo_uuid" name="uuid"  />
+				<input type="text" style="display:none;" id="healthy_assess_sysAssessAsiaInfo_deleteFlag" name="deleteFlag"  />
+				<input type="text" style="display:none;" id="healthy_assess_sysAssessAsiaInfo_discription" name="discription" />
 					<div class=" row form-group">
 						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">级别:</label>
 						<div class="col-sm-9">
-							<input type="text" class="form-control" id="healthy_assess_sysAssessAsiaInfo_jibie" name="jibie" th:value="${sysAssessAsiaInfo['jibie']}" placeholder="级别" disabled="disabled"/>
+							<input type="text" class="form-control" id="healthy_assess_sysAssessAsiaInfo_jibie" name="jibie"   placeholder="级别" disabled="disabled"/>
 						</div>
 					</div>
 					<div class=" row form-group">
 						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">一般外键:</label>
 						<div class="col-sm-9">
-							<input type="text" class="form-control" id="healthy_assess_sysAssessAsiaInfo_assessUuid" name="assessUuid" th:value="${sysAssessAsiaInfo['assessUuid']}" placeholder="一般外键" disabled="disabled"/>
+							<input type="text" class="form-control" id="healthy_assess_sysAssessAsiaInfo_assessUuid" name="assessUuid"   placeholder="一般外键" disabled="disabled"/>
 						</div>
 					</div>
 					<div class=" row form-group">
 						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">临床表现:</label>
 						<div class="col-sm-9">
-							<input type="text" class="form-control" id="healthy_assess_sysAssessAsiaInfo_biaoxian" name="biaoxian" th:value="${sysAssessAsiaInfo['biaoxian']}" placeholder="临床表现" disabled="disabled"/>
+							<input type="text" class="form-control" id="healthy_assess_sysAssessAsiaInfo_biaoxian" name="biaoxian"  placeholder="临床表现" disabled="disabled"/>
 						</div>
 					</div>
 				<div class="row text-center">
@@ -47,7 +47,7 @@
 				</div>
 			</div>
 		</div>
-	</section>
+<!-- 	</section> -->
 	
 	
 	<script th:inline="javascript">

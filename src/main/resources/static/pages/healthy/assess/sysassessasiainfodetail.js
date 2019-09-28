@@ -24,7 +24,7 @@ function init(){
 	})
 	
 	$("#healthy_assess_sysAssessAsiaInfo_exit_button").bind("click",function(){
-		loadPage("/pages/healthy/assess/sysassessasiainfo.html")
+		modals.closeWin("healthy_assess_sysAssessInfo_asia_modal");
 	})
 
 }

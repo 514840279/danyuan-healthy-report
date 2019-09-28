@@ -30,7 +30,7 @@ function init(){
 	})
 	
 	$("#healthy_assess_sysAssessRiskInfo_exit_button").bind("click",function(){
-		loadPage("/pages/healthy/assess/sysassessriskinfo.html")
+		loadPage("/pages/healthy/report/syshealthybaseinfo.html");
 	})
 
 }

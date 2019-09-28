@@ -5,7 +5,7 @@
 <title></title>
 </head>
 <body>
-	<section class="content">
+<!-- 	<section class="content"> -->
 		<div class="box box-warning" id="section_healthy_assess_sysAssessFimInfo">
 			<div class="box-header with-border">
 				<h3 class="box-title">企业信息</h3>
@@ -19,31 +19,31 @@
 				</div>
 			</div>
 			<div class="box-body">
-				<input type="text" style="display:none;" id="healthy_assess_sysAssessFimInfo_uuid" name="uuid" th:value="${sysAssessFimInfo.uuid}"/>
-				<input type="text" style="display:none;" id="healthy_assess_sysAssessFimInfo_deleteFlag" name="deleteFlag"  th:value="${sysAssessFimInfo.deleteFlag}"/>
-				<input type="text" style="display:none;" id="healthy_assess_sysAssessFimInfo_discription" name="discription" th:value="${sysAssessFimInfo.discription}"/>
+				<input type="text" style="display:none;" id="healthy_assess_sysAssessFimInfo_uuid" name="uuid" />
+				<input type="text" style="display:none;" id="healthy_assess_sysAssessFimInfo_deleteFlag" name="deleteFlag"  />
+				<input type="text" style="display:none;" id="healthy_assess_sysAssessFimInfo_discription" name="discription" />
 					<div class=" row form-group">
 						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">一般外键:</label>
 						<div class="col-sm-9">
-							<input type="text" class="form-control" id="healthy_assess_sysAssessFimInfo_assessUuid" name="assessUuid" th:value="${sysAssessFimInfo['assessUuid']}" placeholder="一般外键" disabled="disabled"/>
+							<input type="text" class="form-control" id="healthy_assess_sysAssessFimInfo_assessUuid" name="assessUuid"  placeholder="一般外键" disabled="disabled"/>
 						</div>
 					</div>
 					<div class=" row form-group">
 						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">评分:</label>
 						<div class="col-sm-9">
-							<input type="text" class="form-control" id="healthy_assess_sysAssessFimInfo_score" name="score" th:value="${sysAssessFimInfo['score']}" placeholder="评分" disabled="disabled"/>
+							<input type="text" class="form-control" id="healthy_assess_sysAssessFimInfo_score" name="score"  placeholder="评分" disabled="disabled"/>
 						</div>
 					</div>
 					<div class=" row form-group">
 						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">列名:</label>
 						<div class="col-sm-9">
-							<input type="text" class="form-control" id="healthy_assess_sysAssessFimInfo_name" name="name" th:value="${sysAssessFimInfo['name']}" placeholder="列名" disabled="disabled"/>
+							<input type="text" class="form-control" id="healthy_assess_sysAssessFimInfo_name" name="name"   placeholder="列名" disabled="disabled"/>
 						</div>
 					</div>
 					<div class=" row form-group">
 						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">字段排序:</label>
 						<div class="col-sm-9">
-							<input type="text" class="form-control" id="healthy_assess_sysAssessFimInfo_orderNum" name="orderNum" th:value="${sysAssessFimInfo['orderNum']}" placeholder="字段排序" disabled="disabled"/>
+							<input type="text" class="form-control" id="healthy_assess_sysAssessFimInfo_orderNum" name="orderNum"   placeholder="字段排序" disabled="disabled"/>
 						</div>
 					</div>
 				<div class="row text-center">
@@ -53,7 +53,7 @@
 				</div>
 			</div>
 		</div>
-	</section>
+<!-- 	</section> -->
 	
 	
 	<script th:inline="javascript">

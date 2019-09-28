@@ -22,17 +22,17 @@ import org.springframework.web.servlet.ModelAndView;
 @RestController
 @RequestMapping("/sysAssessBrunnstrom")
 public class SysAssessBrunnstromController extends BaseControllerImpl<SysAssessBrunnstrom> implements BaseController<SysAssessBrunnstrom> {
-
+	
 	@Autowired
 	SysAssessBrunnstromService sysAssessBrunnstromService;
-
-		@GetMapping("/detail/{uuid}")
-		public ModelAndView name(@PathVariable("uuid") String uuid) {
-			ModelAndView modelAndView = new ModelAndView("healthy/assess/sysassessbrunnstromdetail");
-			SysAssessBrunnstrom info = new SysAssessBrunnstrom();
-			info.setUuid(uuid);
-			modelAndView.addObject("sysAssessBrunnstrom", sysAssessBrunnstromService.findOne(info));
-			return modelAndView;
-		}
-
+	
+	@GetMapping("/detail/{uuid}")
+	public ModelAndView name(@PathVariable("uuid") String uuid) {
+		ModelAndView modelAndView = new ModelAndView("healthy/assess/sysassessbrunnstromdetail");
+		SysAssessBrunnstrom info = new SysAssessBrunnstrom();
+		info.setAssessUuid(uuid);
+		modelAndView.addObject("sysAssessBrunnstrom", sysAssessBrunnstromService.findAll(info));
+		return modelAndView;
+	}
+	
 }
