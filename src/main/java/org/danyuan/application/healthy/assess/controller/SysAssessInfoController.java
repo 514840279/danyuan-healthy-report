@@ -24,10 +24,10 @@ import org.springframework.web.servlet.ModelAndView;
 @RestController
 @RequestMapping("/sysAssessInfo")
 public class SysAssessInfoController extends BaseControllerImpl<SysAssessInfo> implements BaseController<SysAssessInfo> {
-	
+
 	@Autowired
 	SysAssessInfoService sysAssessInfoService;
-	
+
 	@GetMapping("/detail/{uuid}")
 	public ModelAndView name(@PathVariable("uuid") String uuid) {
 		ModelAndView modelAndView = new ModelAndView("healthy/assess/sysassessinfodetail");
@@ -38,10 +38,13 @@ public class SysAssessInfoController extends BaseControllerImpl<SysAssessInfo> i
 			info = new SysAssessInfo();
 			info.setUuid(UUID.randomUUID().toString());
 			info.setBaseUuid(uuid);
+			info.setDeleteFlag(0);
+			info.setCreateUser("system");
+			info.setUpdateUser("system");
 			sysAssessInfoService.save(info);
 		}
 		modelAndView.addObject("sysAssessInfo", info);
 		return modelAndView;
 	}
-	
+
 }

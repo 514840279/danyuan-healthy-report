@@ -23,78 +23,76 @@ import org.danyuan.application.common.base.BaseEntity;
 public class SysAssessInfo extends BaseEntity implements Serializable {
 	private static final long	serialVersionUID	= 1L;
 
-
 	// 意识状态
 	@Column(name = "yisizhuangtai")
-	private  String 	yisizhuangtai;
+	private String				yisizhuangtai;
 
 	// FIM评分
 	@Column(name = "fim")
-	private  Integer 	fim;
+	private Integer				fim;
 
 	// 过敏药物或食物
 	@Column(name = "guomin")
-	private  String 	guomin;
+	private String				guomin;
 
 	// 评估外键
 	@Column(name = "base_uuid")
-	private  String 	baseUuid;
+	private String				baseUuid;
 
 	// 大小便
 	@Column(name = "daxiaobian")
-	private  String 	daxiaobian;
+	private String				daxiaobian;
 
 	// 生命体征平稳
 	@Column(name = "tizheng")
-	private  String 	tizheng;
+	private String				tizheng;
 
 	// 手术外伤史
 	@Column(name = "waishang")
-	private  String 	waishang;
+	private String				waishang;
 
 	// ASIA分级
 	@Column(name = "asia")
-	private  Integer 	asia;
+	private String				asia;
 
 	// 家族遗传病及传染病史
 	@Column(name = "yichuan")
-	private  String 	yichuan;
+	private String				yichuan;
 
 	// ADL评分
 	@Column(name = "adl")
-	private  Integer 	adl;
+	private Integer				adl;
 
 	// 自主能力
 	@Column(name = "zizhunengli")
-	private  String 	zizhunengli;
+	private String				zizhunengli;
 
 	// Burnnstrom分级
 	@Column(name = "burnnstrom")
-	private  Integer 	burnnstrom;
+	private String				burnnstrom;
 
 	// Ashworth评级
 	@Column(name = "ashworth")
-	private  Integer 	ashworth;
+	private String				ashworth;
 
-	/**  
-	*  构造方法： 
-	*  描    述： 默认构造函数  
-	*  参    数： 
-	*  作    者 ： test  
-	*  @throws  
-	*/
+	/**
+	 * 构造方法：
+	 * 描 述： 默认构造函数
+	 * 参 数：
+	 * 作 者 ： test
+	 * @throws
+	 */
 	public SysAssessInfo() {
 		super();
 	}
-
 
 	/**
 	 * 方法名 ： getYisizhuangtai
 	 * 功 能 ： 返回变量 yisizhuangtai 意识状态 的值
 	 *
-	 * @return: String 
+	 * @return: String
 	 */
-	public  String  getYisizhuangtai() {
+	public String getYisizhuangtai() {
 		return yisizhuangtai;
 	}
 
@@ -102,7 +100,7 @@ public class SysAssessInfo extends BaseEntity implements Serializable {
 	 * 方法名 ： setYisizhuangtai
 	 * 功 能 ： 设置变量 yisizhuangtai 意识状态 的值
 	 */
-	public void setYisizhuangtai( String  yisizhuangtai) {
+	public void setYisizhuangtai(String yisizhuangtai) {
 		this.yisizhuangtai = yisizhuangtai;
 	}
 
@@ -110,9 +108,9 @@ public class SysAssessInfo extends BaseEntity implements Serializable {
 	 * 方法名 ： getFim
 	 * 功 能 ： 返回变量 fim FIM评分 的值
 	 *
-	 * @return: String 
+	 * @return: String
 	 */
-	public  Integer  getFim() {
+	public Integer getFim() {
 		return fim;
 	}
 
@@ -120,7 +118,7 @@ public class SysAssessInfo extends BaseEntity implements Serializable {
 	 * 方法名 ： setFim
 	 * 功 能 ： 设置变量 fim FIM评分 的值
 	 */
-	public void setFim( Integer  fim) {
+	public void setFim(Integer fim) {
 		this.fim = fim;
 	}
 
@@ -128,9 +126,9 @@ public class SysAssessInfo extends BaseEntity implements Serializable {
 	 * 方法名 ： getGuomin
 	 * 功 能 ： 返回变量 guomin 过敏药物或食物 的值
 	 *
-	 * @return: String 
+	 * @return: String
 	 */
-	public  String  getGuomin() {
+	public String getGuomin() {
 		return guomin;
 	}
 
@@ -138,7 +136,7 @@ public class SysAssessInfo extends BaseEntity implements Serializable {
 	 * 方法名 ： setGuomin
 	 * 功 能 ： 设置变量 guomin 过敏药物或食物 的值
 	 */
-	public void setGuomin( String  guomin) {
+	public void setGuomin(String guomin) {
 		this.guomin = guomin;
 	}
 
@@ -146,9 +144,9 @@ public class SysAssessInfo extends BaseEntity implements Serializable {
 	 * 方法名 ： getBaseUuid
 	 * 功 能 ： 返回变量 baseUuid 评估外键 的值
 	 *
-	 * @return: String 
+	 * @return: String
 	 */
-	public  String  getBaseUuid() {
+	public String getBaseUuid() {
 		return baseUuid;
 	}
 
@@ -156,7 +154,7 @@ public class SysAssessInfo extends BaseEntity implements Serializable {
 	 * 方法名 ： setBaseUuid
 	 * 功 能 ： 设置变量 baseUuid 评估外键 的值
 	 */
-	public void setBaseUuid( String  baseUuid) {
+	public void setBaseUuid(String baseUuid) {
 		this.baseUuid = baseUuid;
 	}
 
@@ -164,9 +162,9 @@ public class SysAssessInfo extends BaseEntity implements Serializable {
 	 * 方法名 ： getDaxiaobian
 	 * 功 能 ： 返回变量 daxiaobian 大小便 的值
 	 *
-	 * @return: String 
+	 * @return: String
 	 */
-	public  String  getDaxiaobian() {
+	public String getDaxiaobian() {
 		return daxiaobian;
 	}
 
@@ -174,7 +172,7 @@ public class SysAssessInfo extends BaseEntity implements Serializable {
 	 * 方法名 ： setDaxiaobian
 	 * 功 能 ： 设置变量 daxiaobian 大小便 的值
 	 */
-	public void setDaxiaobian( String  daxiaobian) {
+	public void setDaxiaobian(String daxiaobian) {
 		this.daxiaobian = daxiaobian;
 	}
 
@@ -182,9 +180,9 @@ public class SysAssessInfo extends BaseEntity implements Serializable {
 	 * 方法名 ： getTizheng
 	 * 功 能 ： 返回变量 tizheng 生命体征平稳 的值
 	 *
-	 * @return: String 
+	 * @return: String
 	 */
-	public  String  getTizheng() {
+	public String getTizheng() {
 		return tizheng;
 	}
 
@@ -192,7 +190,7 @@ public class SysAssessInfo extends BaseEntity implements Serializable {
 	 * 方法名 ： setTizheng
 	 * 功 能 ： 设置变量 tizheng 生命体征平稳 的值
 	 */
-	public void setTizheng( String  tizheng) {
+	public void setTizheng(String tizheng) {
 		this.tizheng = tizheng;
 	}
 
@@ -200,9 +198,9 @@ public class SysAssessInfo extends BaseEntity implements Serializable {
 	 * 方法名 ： getWaishang
 	 * 功 能 ： 返回变量 waishang 手术外伤史 的值
 	 *
-	 * @return: String 
+	 * @return: String
 	 */
-	public  String  getWaishang() {
+	public String getWaishang() {
 		return waishang;
 	}
 
@@ -210,7 +208,7 @@ public class SysAssessInfo extends BaseEntity implements Serializable {
 	 * 方法名 ： setWaishang
 	 * 功 能 ： 设置变量 waishang 手术外伤史 的值
 	 */
-	public void setWaishang( String  waishang) {
+	public void setWaishang(String waishang) {
 		this.waishang = waishang;
 	}
 
@@ -218,9 +216,9 @@ public class SysAssessInfo extends BaseEntity implements Serializable {
 	 * 方法名 ： getAsia
 	 * 功 能 ： 返回变量 asia ASIA分级 的值
 	 *
-	 * @return: String 
+	 * @return: String
 	 */
-	public  Integer  getAsia() {
+	public String getAsia() {
 		return asia;
 	}
 
@@ -228,7 +226,7 @@ public class SysAssessInfo extends BaseEntity implements Serializable {
 	 * 方法名 ： setAsia
 	 * 功 能 ： 设置变量 asia ASIA分级 的值
 	 */
-	public void setAsia( Integer  asia) {
+	public void setAsia(String asia) {
 		this.asia = asia;
 	}
 
@@ -236,9 +234,9 @@ public class SysAssessInfo extends BaseEntity implements Serializable {
 	 * 方法名 ： getYichuan
 	 * 功 能 ： 返回变量 yichuan 家族遗传病及传染病史 的值
 	 *
-	 * @return: String 
+	 * @return: String
 	 */
-	public  String  getYichuan() {
+	public String getYichuan() {
 		return yichuan;
 	}
 
@@ -246,7 +244,7 @@ public class SysAssessInfo extends BaseEntity implements Serializable {
 	 * 方法名 ： setYichuan
 	 * 功 能 ： 设置变量 yichuan 家族遗传病及传染病史 的值
 	 */
-	public void setYichuan( String  yichuan) {
+	public void setYichuan(String yichuan) {
 		this.yichuan = yichuan;
 	}
 
@@ -254,9 +252,9 @@ public class SysAssessInfo extends BaseEntity implements Serializable {
 	 * 方法名 ： getAdl
 	 * 功 能 ： 返回变量 adl ADL评分 的值
 	 *
-	 * @return: String 
+	 * @return: String
 	 */
-	public  Integer  getAdl() {
+	public Integer getAdl() {
 		return adl;
 	}
 
@@ -264,7 +262,7 @@ public class SysAssessInfo extends BaseEntity implements Serializable {
 	 * 方法名 ： setAdl
 	 * 功 能 ： 设置变量 adl ADL评分 的值
 	 */
-	public void setAdl( Integer  adl) {
+	public void setAdl(Integer adl) {
 		this.adl = adl;
 	}
 
@@ -272,9 +270,9 @@ public class SysAssessInfo extends BaseEntity implements Serializable {
 	 * 方法名 ： getZizhunengli
 	 * 功 能 ： 返回变量 zizhunengli 自主能力 的值
 	 *
-	 * @return: String 
+	 * @return: String
 	 */
-	public  String  getZizhunengli() {
+	public String getZizhunengli() {
 		return zizhunengli;
 	}
 
@@ -282,7 +280,7 @@ public class SysAssessInfo extends BaseEntity implements Serializable {
 	 * 方法名 ： setZizhunengli
 	 * 功 能 ： 设置变量 zizhunengli 自主能力 的值
 	 */
-	public void setZizhunengli( String  zizhunengli) {
+	public void setZizhunengli(String zizhunengli) {
 		this.zizhunengli = zizhunengli;
 	}
 
@@ -290,9 +288,9 @@ public class SysAssessInfo extends BaseEntity implements Serializable {
 	 * 方法名 ： getBurnnstrom
 	 * 功 能 ： 返回变量 burnnstrom Burnnstrom分级 的值
 	 *
-	 * @return: String 
+	 * @return: String
 	 */
-	public  Integer  getBurnnstrom() {
+	public String getBurnnstrom() {
 		return burnnstrom;
 	}
 
@@ -300,7 +298,7 @@ public class SysAssessInfo extends BaseEntity implements Serializable {
 	 * 方法名 ： setBurnnstrom
 	 * 功 能 ： 设置变量 burnnstrom Burnnstrom分级 的值
 	 */
-	public void setBurnnstrom( Integer  burnnstrom) {
+	public void setBurnnstrom(String burnnstrom) {
 		this.burnnstrom = burnnstrom;
 	}
 
@@ -308,9 +306,9 @@ public class SysAssessInfo extends BaseEntity implements Serializable {
 	 * 方法名 ： getAshworth
 	 * 功 能 ： 返回变量 ashworth Ashworth评级 的值
 	 *
-	 * @return: String 
+	 * @return: String
 	 */
-	public  Integer  getAshworth() {
+	public String getAshworth() {
 		return ashworth;
 	}
 
@@ -318,9 +316,8 @@ public class SysAssessInfo extends BaseEntity implements Serializable {
 	 * 方法名 ： setAshworth
 	 * 功 能 ： 设置变量 ashworth Ashworth评级 的值
 	 */
-	public void setAshworth( Integer  ashworth) {
+	public void setAshworth(String ashworth) {
 		this.ashworth = ashworth;
 	}
-
 
 }

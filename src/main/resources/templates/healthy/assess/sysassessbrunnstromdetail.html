@@ -3,61 +3,164 @@
 <head>
 <meta charset="UTF-8" />
 <title></title>
+<style type="text/css">
+table {
+	border: 1px solid;
+	text-align: center;
+	font: bold;
+	width: 100%;
+}
+
+table tr, table th, table td {
+	border: 1px solid;
+	text-align: center;
+}
+</style>
 </head>
 <body>
-<!-- 	<section class="content"> -->
-		<div class="box box-warning" id="section_healthy_assess_sysAssessBrunnstrom">
-			<div class="box-header with-border">
-				<h3 class="box-title">企业信息</h3>
-				<div class="box-tools pull-right">
-					<button type="button" class="btn btn-box-tool" data-widget="collapse">
-						<i class="fa fa-minus"></i>
-					</button>
-					<button type="button" class="btn btn-box-tool" data-widget="remove">
-						<i class="fa fa-times"></i>
-					</button>
-				</div>
-			</div>
-			<div class="box-body">
-				<input type="text" style="display:none;" id="healthy_assess_sysAssessBrunnstrom_uuid" name="uuid"  />
-				<input type="text" style="display:none;" id="healthy_assess_sysAssessBrunnstrom_deleteFlag" name="deleteFlag"   />
-				<input type="text" style="display:none;" id="healthy_assess_sysAssessBrunnstrom_discription" name="discription" />
-					<div class=" row form-group">
-						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">排序:</label>
-						<div class="col-sm-9">
-							<input type="text" class="form-control" id="healthy_assess_sysAssessBrunnstrom_orderNum" name="orderNum"  placeholder="排序" disabled="disabled"/>
-						</div>
-					</div>
-					<div class=" row form-group">
-						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">评分:</label>
-						<div class="col-sm-9">
-							<input type="text" class="form-control" id="healthy_assess_sysAssessBrunnstrom_score" name="score" placeholder="评分" disabled="disabled"/>
-						</div>
-					</div>
-					<div class=" row form-group">
-						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">一般外键:</label>
-						<div class="col-sm-9">
-							<input type="text" class="form-control" id="healthy_assess_sysAssessBrunnstrom_assessUuid" name="assessUuid"  placeholder="一般外键" disabled="disabled"/>
-						</div>
-					</div>
-					<div class=" row form-group">
-						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">列名:</label>
-						<div class="col-sm-9">
-							<input type="text" class="form-control" id="healthy_assess_sysAssessBrunnstrom_name" name="name"  placeholder="列名" disabled="disabled"/>
-						</div>
-					</div>
-				<div class="row text-center">
-					<button type="button" class="btn btn-primary" id="healthy_assess_sysAssessBrunnstrom_edit_button">编辑</button>
-					<button type="button" class="btn btn-primary" id="healthy_assess_sysAssessBrunnstrom_save_button" style="display: none;">提交</button>
-					<button type="button" class="btn btn-danger" id="healthy_assess_sysAssessBrunnstrom_exit_button">关闭</button>
-				</div>
+	<!-- 	<section class="content"> -->
+	<div class="box box-warning" id="section_healthy_assess_sysAssessBrunnstrom">
+		<div class="box-header with-border">
+			<h3 class="box-title">Brunnstrom量表评定</h3>
+			<div class="box-tools pull-right">
+				<button type="button" class="btn btn-box-tool" data-widget="collapse">
+					<i class="fa fa-minus"></i>
+				</button>
+				<button type="button" class="btn btn-box-tool" data-widget="remove">
+					<i class="fa fa-times"></i>
+				</button>
 			</div>
 		</div>
-<!-- 	</section> -->
-	
-	
+		<div class="box-body">
+			<input type="text" style="display: none;" id="healthy_assess_sysAssessBrunnstrom_uuid" name="uuid" /> <input type="text" style="display: none;" id="healthy_assess_sysAssessBrunnstrom_deleteFlag" name="deleteFlag" /> <input type="text" style="display: none;" id="healthy_assess_sysAssessBrunnstrom_discription" name="discription" />
+			<div>
+				<table>
+					<thead>
+						<tr>
+							<th>阶段</th>
+							<th>上肢</th>
+							<th>手</th>
+							<th>下肢</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>I</td>
+							<td><div class="radio">
+									<label> <input type="radio" name="上肢" value="1"  disabled="disabled"/>无任何运动
+									</label>
+								</div></td>
+							<td><div class="radio">
+									<label> <input type="radio" name="手" value="1"  disabled="disabled"/>无任何运动
+									</label>
+								</div></td>
+							<td><div class="radio">
+									<label> <input type="radio" name="下肢" value="1"  disabled="disabled"/>无任何运动
+									</label>
+								</div></td>
+						</tr>
+						<tr>
+							<td>II</td>
+							<td><div class="radio">
+									<label><input type="radio" name="上肢" value="2"  disabled="disabled"/>仅出现联合反应的模式 </label>
+								</div></td>
+							<td><div class="radio">
+									<label> <input type="radio" name="手" value="2"  disabled="disabled"/>仅有极细微的屈曲
+									</label>
+								</div></td>
+							<td><div class="radio">
+									<label> <input type="radio" name="下肢" value="2"  disabled="disabled"/>仅有极少的随意运动
+									</label>
+								</div></td>
+						</tr>
+						<tr>
+							<td>III</td>
+							<td><div class="radio">
+									<label> <input type="radio" name="上肢" value="3"  disabled="disabled"/>可随意发起协同运动
+									</label>
+								</div></td>
+							<td><div class="radio">
+									<label> <input type="radio" name="手" value="3"  disabled="disabled"/>可作钩状抓握，但不能伸指
+									</label>
+								</div></td>
+							<td><div class="radio">
+									<label> <input type="radio" name="下肢" value="3"  disabled="disabled"/>在坐和站位上，有髋、膝、踝的协同性屈曲
+									</label>
+								</div></td>
+						</tr>
+						<tr>
+							<td>IV</td>
+							<td><div class="radio">
+									<label> <input type="radio" name="上肢" value="4"  disabled="disabled"/>出现脱离协同运动的活动：
+										<p>1、肩0°,肘屈曲90°，前臂可旋前旋后。</p>
+										<p>2、在肘伸直的情况下肩可前屈90°。</p>
+										<p>3、手背可触及腰骶部。</p>
+									</label>
+								</div></td>
+							<td><div class="radio">
+									<label> <input type="radio" name="手" value="4"  disabled="disabled"/>能侧捏及伸开拇指，手指有半随意的小范围的伸展
+									</label>
+								</div></td>
+							<td><div class="radio">
+									<label><input type="radio" name="下肢" value="4"  disabled="disabled"/>在坐位上，可屈膝90°以上，可使足后滑到椅子下方。在足跟不离地的情况下能背屈踝 </label>
+								</div></td>
+						</tr>
+						<tr>
+							<td>V</td>
+							<td><div class="radio">
+									<label> <input type="radio" name="上肢" value="5"  disabled="disabled"/>出现相对独立于协同运动的活动:
+										<p>1、肘伸直的肩可外展90°。</p>
+										<p>2、在肘伸直、肩屈曲30°~90°的情况下，前臂可旋前旋后。</p>
+										<p>3、肘伸直、前臂中立位，臂可上举过头</p>
+									</label>
+								</div></td>
+							<td><div class="radio">
+									<label> <input type="radio" name="手" value="5"  disabled="disabled"/>可作球状和圆柱状抓握，手指可集团伸展，但不能单独伸展
+									</label>
+								</div></td>
+							<td><div class="radio">
+									<label> <input type="radio" name="下肢" value="5"  disabled="disabled"/>健腿站，患腿可先屈膝后伸髋;在伸直膝的情况下，可背屈踝，可将踵放在向前迈一小步的位置上
+									</label>
+								</div></td>
+						</tr>
+						<tr>
+							<td>V</td>
+							<td><div class="radio">
+									<label> <input type="radio" name="上肢" value="6"  disabled="disabled"/>运动协调近于正常，手指指鼻无明显辨距不良，但速度比健侧慢(≦5s)
+									</label>
+								</div></td>
+							<td><div class="radio">
+									<label><input type="radio" name="手" value="6"  disabled="disabled"/>所有抓握均能完成，但速度和准确性比健侧差 </label>
+								</div></td>
+							<td><div class="radio">
+									<label> <input type="radio" name="下肢" value="6" disabled="disabled"/>在站立位可使髋外展到超出抬起该侧骨盆所能达到的范围;在坐位上，在伸直膝的情况下可内外旋下肢，合并足的内外翻
+									</label>
+								</div></td>
+						</tr>
+						<tr id="sysAssessBrunnstrom_score">
+							<td>评分</td>
+							<td id="上肢"> /6</td>
+							<td id="手"> /6</td>
+							<td id="下肢"> /6</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+		</div>
+		<div class="box-footer">
+			<div class="row text-center">
+				<button type="button" class="btn btn-primary" id="healthy_assess_sysAssessBrunnstrom_edit_button">编辑</button>
+				<button type="button" class="btn btn-primary" id="healthy_assess_sysAssessBrunnstrom_save_button" style="display: none;">提交</button>
+				<button type="button" class="btn btn-danger" id="healthy_assess_sysAssessBrunnstrom_exit_button">关闭</button>
+			</div>
+		</div>
+	</div>
+	<!-- 	</section> -->
+
+
 	<script th:inline="javascript">
-		var sysAssessBrunnstrom = [[${sysAssessBrunnstrom}]];
+		var sysAssessBrunnstromList = [[${sysAssessBrunnstrom}]];
 	</script>
 	<script type="text/javascript" src="/pages/healthy/assess/sysassessbrunnstromdetail.js"></script>
 </body>

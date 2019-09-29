@@ -32,12 +32,15 @@ public class SysAssessRiskInfoController extends BaseControllerImpl<SysAssessRis
 	public ModelAndView name(@PathVariable("uuid") String uuid) {
 		ModelAndView modelAndView = new ModelAndView("healthy/assess/sysassessriskinfodetail");
 		SysAssessRiskInfo info = new SysAssessRiskInfo();
-		info.setUuid(uuid);
+		info.setBaseUuid(uuid);
 		info = sysAssessRiskInfoService.findOne(info);
 		if (info == null) {
 			info = new SysAssessRiskInfo();
 			info.setUuid(UUID.randomUUID().toString());
 			info.setBaseUuid(uuid);
+			info.setDeleteFlag(0);
+			info.setCreateUser("system");
+			info.setUpdateUser("system");
 			sysAssessRiskInfoService.save(info);
 		}
 		modelAndView.addObject("sysAssessRiskInfo", info);

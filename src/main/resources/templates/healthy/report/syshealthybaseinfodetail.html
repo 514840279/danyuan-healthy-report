@@ -36,8 +36,13 @@
 					</div>
 					<div class="col-lg-4 row form-group">
 						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">性别:</label>
-						<div class="col-sm-9">
-							<input type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_gender" name="gender" th:value="${sysHealthyBaseInfo['gender']}" placeholder="性别" disabled="disabled"/>
+						<div class="col-sm-9"   id="healthy_report_sysHealthyBaseInfo_gender">
+							<div class="radio">
+								<label> <input type="radio"  name="gender" value="男" placeholder="性别" disabled="disabled"/> 男
+								</label>
+								<label> <input type="radio"    name="gender" value="女" placeholder="性别" disabled="disabled"/> 女
+								</label>
+							</div>
 						</div>
 					</div>
 					<div class="col-lg-4 row form-group">
@@ -64,16 +69,32 @@
 							<input type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_contactTelphone" name="contactTelphone" th:value="${sysHealthyBaseInfo['contactTelphone']}" placeholder="联系电话" disabled="disabled"/>
 						</div>
 					</div>
-					<div class="col-lg-4 row form-group">
-						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">残疾类别:</label>
-						<div class="col-sm-9">
-							<input type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_disableType" name="disableType" th:value="${sysHealthyBaseInfo['disableType']}" placeholder="残疾类别" disabled="disabled"/>
-						</div>
-					</div>
-					<div class="col-lg-4 row form-group">
-						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">肢体残疾:</label>
-						<div class="col-sm-9">
-							<input type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_disableTypeName" name="disableTypeName" th:value="${sysHealthyBaseInfo['disableTypeName']}" placeholder="肢体残疾" disabled="disabled"/>
+					<div class="col-lg-12 row form-group">
+						<label class="col-lg-1 col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">残疾类别:</label>
+						<div class="col-lg-11 col-sm-9"  id="healthy_report_sysHealthyBaseInfo_disableType">
+							<div class="radio">
+								<label> <input type="radio"  name="disableType" value="偏瘫" placeholder=残疾类别 disabled="disabled"/> 偏瘫
+								</label>
+								<label> <input type="radio"    name="disableType" value="截瘫" placeholder="残疾类别" disabled="disabled"/> 截瘫
+								</label>
+								<label> <input type="radio"    name="disableType" value="脑瘫" placeholder="残疾类别" disabled="disabled"/> 脑瘫
+								</label>
+								<label> <input type="radio"    name="disableType" value="截缺肢" placeholder="残疾类别" disabled="disabled"/>截缺肢
+								</label>
+								<label> <input type="radio"    name="disableType" value="截缺肢" placeholder="残疾类别" disabled="disabled"/>截缺肢
+								</label>
+								<label> <input type="radio"    name="disableType" value="儿麻后遗症" placeholder="残疾类别" disabled="disabled"/>儿麻后遗症　
+								</label>
+								<label> <input type="radio"    name="disableType" value="关节疾病" placeholder="残疾类别" disabled="disabled"/>关节疾病　
+								</label>
+								<label> <input type="radio"    name="disableType" value="畸形" placeholder="残疾类别" disabled="disabled"/>畸形
+								</label>
+								<label> <input type="radio"    name="disableType" value="侏儒" placeholder="残疾类别" disabled="disabled"/>侏儒
+								</label>
+								<label> <input type="radio"    name="disableType" value="其它" placeholder="残疾类别" disabled="disabled"/>其它
+								</label>
+								<label > <input type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_disableTypeName" name="disableTypeName" th:value="${sysHealthyBaseInfo['disableTypeName']}" placeholder="其它" disabled="disabled"/></label>
+							</div>
 						</div>
 					</div>
 					

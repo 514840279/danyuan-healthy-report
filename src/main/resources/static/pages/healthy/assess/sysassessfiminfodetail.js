@@ -5,7 +5,7 @@ $(function(){
 function init(){
 	
 	$("#healthy_assess_sysAssessFimInfo_edit_button").bind("click",function(){
-		$("#section_healthy_assess_sysAssessFimInfo").find(".box-body").find('.row input').removeAttr("disabled");
+		$("#section_healthy_assess_sysAssessFimInfo").find(".box-body").find('input').removeAttr("disabled");
 		$("#healthy_assess_sysAssessFimInfo_save_button").css({"display":""});
 		$(this).css({"display":"none"});
 	})
@@ -14,6 +14,8 @@ function init(){
 		var url = "/sysAssessFimInfo/save";
 		var	info={
 			uuid:$("#healthy_assess_sysAssessFimInfo_uuid").val(),
+			discription:$("#healthy_assess_sysAssessFimInfo_discription").val(),
+			deleteFlag:$("#healthy_assess_sysAssessFimInfo_deleteFlag").val(),
 			assessUuid:$("#healthy_assess_sysAssessFimInfo_assessUuid").val(),
 			score:$("#healthy_assess_sysAssessFimInfo_score").val(),
 			name:$("#healthy_assess_sysAssessFimInfo_name").val(),
@@ -33,7 +35,7 @@ function init(){
 // 状态修改，
 function reloadSysAssessFimInfoDetail(result){
 	if(result.code=="200"){
-		$("#section_healthy_assess_sysAssessFimInfo").find(".box-body").find('.row input').attr("disabled","disabled");
+		$("#section_healthy_assess_sysAssessFimInfo").find(".box-body").find('input').attr("disabled","disabled");
 		$("#healthy_assess_sysAssessFimInfo_edit_button").css({"display":""});
 		$("#healthy_assess_sysAssessFimInfo_save_button").css({"display":"none"});
 	}else{

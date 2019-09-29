@@ -3,6 +3,14 @@ $(function(){
 })
 
 function init(){
+	$("#healthy_assess_sysAssessRiskInfo_shenjing").find("input[value='"+sysAssessRiskInfo.shenjing+"']").attr('checked','checked');
+	$("#healthy_assess_sysAssessRiskInfo_yongguokangneng").find("input[value='"+sysAssessRiskInfo.yongguokangneng+"']").attr('checked','checked');
+	$("#healthy_assess_sysAssessRiskInfo_zuzhiji").find("input[value='"+sysAssessRiskInfo.zuzhiji+"']").attr('checked','checked');
+	$("#healthy_assess_sysAssessRiskInfo_xueguanbingshi").find("input[value='"+sysAssessRiskInfo.xueguanbingshi+"']").attr('checked','checked');
+	$("#healthy_assess_sysAssessRiskInfo_xueshuan").find("input[value='"+sysAssessRiskInfo.xueshuan+"']").attr('checked','checked');
+	$("#healthy_assess_sysAssessRiskInfo_huxi").find("input[value='"+sysAssessRiskInfo.huxi+"']").attr('checked','checked');
+	$("#healthy_assess_sysAssessRiskInfo_xiaohua").find("input[value='"+sysAssessRiskInfo.xiaohua+"']").attr('checked','checked');
+	$("#healthy_assess_sysAssessRiskInfo_qita").find("input[value='"+sysAssessRiskInfo.qita+"']").attr('checked','checked');
 	
 	$("#healthy_assess_sysAssessRiskInfo_edit_button").bind("click",function(){
 		$("#section_healthy_assess_sysAssessRiskInfo").find(".box-body").find('.row input').removeAttr("disabled");
@@ -14,15 +22,17 @@ function init(){
 		var url = "/sysAssessRiskInfo/save";
 		var	info={
 			uuid:$("#healthy_assess_sysAssessRiskInfo_uuid").val(),
-			shenjing:$("#healthy_assess_sysAssessRiskInfo_shenjing").val(),
-			yongguokangneng:$("#healthy_assess_sysAssessRiskInfo_yongguokangneng").val(),
-			zuzhiji:$("#healthy_assess_sysAssessRiskInfo_zuzhiji").val(),
-			xueguanbingshi:$("#healthy_assess_sysAssessRiskInfo_xueguanbingshi").val(),
-			xueshuan:$("#healthy_assess_sysAssessRiskInfo_xueshuan").val(),
-			huxi:$("#healthy_assess_sysAssessRiskInfo_huxi").val(),
-			xiaohua:$("#healthy_assess_sysAssessRiskInfo_xiaohua").val(),
 			baseUuid:$("#healthy_assess_sysAssessRiskInfo_baseUuid").val(),
-			qita:$("#healthy_assess_sysAssessRiskInfo_qita").val(),
+			discription:$("#healthy_assess_sysAssessRiskInfo_discription").val(),
+			deleteFlag:$("#healthy_assess_sysAssessRiskInfo_deleteFlag").val(),
+			shenjing:$("#healthy_assess_sysAssessRiskInfo_shenjing").find("input:checked").val(),
+			yongguokangneng:$("#healthy_assess_sysAssessRiskInfo_yongguokangneng").find("input:checked").val(),
+			zuzhiji:$("#healthy_assess_sysAssessRiskInfo_zuzhiji").find("input:checked").val(),
+			xueguanbingshi:$("#healthy_assess_sysAssessRiskInfo_xueguanbingshi").find("input:checked").val(),
+			xueshuan:$("#healthy_assess_sysAssessRiskInfo_xueshuan").find("input:checked").val(),
+			huxi:$("#healthy_assess_sysAssessRiskInfo_huxi").find("input:checked").val(),
+			xiaohua:$("#healthy_assess_sysAssessRiskInfo_xiaohua").find("input:checked").val(),
+			qita:$("#healthy_assess_sysAssessRiskInfo_qita").find("input:checked").val(),
 			createUser:username,
 			updateUser:username,
 		};

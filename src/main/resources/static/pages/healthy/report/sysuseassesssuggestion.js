@@ -46,7 +46,7 @@ function init() {
 	// 弹出编辑窗口
 	$('#addnew_healthy_report_sysUseAssessSuggestion').click(function() {
 		$("#healthy_report_sysUseAssessSuggestion_uuid").val("");
-		$("#healthy_report_sysUseAssessSuggestion_deleteFlag").val("");
+		$("#healthy_report_sysUseAssessSuggestion_deleteFlag").val(0);
 		$("#healthy_report_sysUseAssessSuggestion_discription").val("");
 		$("#healthy_report_sysUseAssessSuggestion_comments").val("");
 		$("#healthy_report_sysUseAssessSuggestion_baseUuid").val(sysHealthyBaseInfoUuid);

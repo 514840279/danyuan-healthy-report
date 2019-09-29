@@ -1,5 +1,7 @@
 package org.danyuan.application.healthy.assess.controller;
 
+import java.util.UUID;
+
 import org.danyuan.application.common.base.BaseController;
 import org.danyuan.application.common.base.BaseControllerImpl;
 import org.danyuan.application.healthy.assess.po.SysAssessAshworthInfo;
@@ -22,17 +24,28 @@ import org.springframework.web.servlet.ModelAndView;
 @RestController
 @RequestMapping("/sysAssessAshworthInfo")
 public class SysAssessAshworthInfoController extends BaseControllerImpl<SysAssessAshworthInfo> implements BaseController<SysAssessAshworthInfo> {
-	
+
 	@Autowired
 	SysAssessAshworthInfoService sysAssessAshworthInfoService;
-	
+
 	@GetMapping("/detail/{uuid}")
 	public ModelAndView name(@PathVariable("uuid") String uuid) {
 		ModelAndView modelAndView = new ModelAndView("healthy/assess/sysassessashworthinfodetail");
 		SysAssessAshworthInfo info = new SysAssessAshworthInfo();
 		info.setAssessUuid(uuid);
-		modelAndView.addObject("sysAssessAshworthInfo", sysAssessAshworthInfoService.findAll(info));
+		info = sysAssessAshworthInfoService.findOne(info);
+		if (info == null) {
+			info = new SysAssessAshworthInfo();
+			info.setUuid(UUID.randomUUID().toString());
+			info.setAssessUuid(uuid);
+			info.setDeleteFlag(0);
+			info.setCreateUser("system");
+			info.setUpdateUser("system");
+			sysAssessAshworthInfoService.save(info);
+		}
+
+		modelAndView.addObject("sysAssessAshworthInfo", info);
 		return modelAndView;
 	}
-	
+
 }

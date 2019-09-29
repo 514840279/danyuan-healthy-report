@@ -8,7 +8,7 @@
 <!-- 	<section class="content"> -->
 		<div class="box box-warning" id="section_healthy_assess_sysAssessAshworthInfo">
 			<div class="box-header with-border">
-				<h3 class="box-title">企业信息</h3>
+				<h3 class="box-title">Ashworth量表评定</h3>
 				<div class="box-tools pull-right">
 					<button type="button" class="btn btn-box-tool" data-widget="collapse">
 						<i class="fa fa-minus"></i>
@@ -19,21 +19,42 @@
 				</div>
 			</div>
 			<div class="box-body">
-				<input type="text" style="display:none;" id="healthy_assess_sysAssessAshworthInfo_uuid" name="uuid"  />
-				<input type="text" style="display:none;" id="healthy_assess_sysAssessAshworthInfo_deleteFlag" name="deleteFlag"  />
-				<input type="text" style="display:none;" id="healthy_assess_sysAssessAshworthInfo_discription" name="discription" />
-					<div class=" row form-group">
-						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">级别:</label>
-						<div class="col-sm-9">
-							<input type="text" class="form-control" id="healthy_assess_sysAssessAshworthInfo_jibie" name="jibie" placeholder="级别" disabled="disabled"/>
-						</div>
+				<input type="text" style="display:none;" id="healthy_assess_sysAssessAshworthInfo_uuid" name="uuid" th:value="${sysAssessAshworthInfo.uuid}" />
+				<input type="text" style="display:none;" id="healthy_assess_sysAssessAshworthInfo_deleteFlag" name="deleteFlag"   th:value="${sysAssessAshworthInfo.deleteFlag}"/>
+				<input type="text" style="display:none;" id="healthy_assess_sysAssessAshworthInfo_discription" name="discription"  th:value="${sysAssessAshworthInfo.discription}"/>
+				<input type="text" style="display:none;" id="healthy_assess_sysAssessAshworthInfo_assessUuid" name="assessUuid"  th:value="${sysAssessAshworthInfo.assessUuid}"/>
+				<div class="col-sm-12 row" id='healthy_assess_sysAssessAshworthInfo_jibie'>
+					<div class="radio">
+						<label> <input type="radio" name="ashworth" id="ashworth0" value="0级 "  disabled="disabled"/> 0级  无肌张力的增加，被动活动患侧肢体在整个范围内都无阻力。
+						</label>
 					</div>
-					<div class=" row form-group">
-						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">一般外键:</label>
-						<div class="col-sm-9">
-							<input type="text" class="form-control" id="healthy_assess_sysAssessAshworthInfo_assessUuid" name="assessUuid"   placeholder="一般外键" disabled="disabled"/>
-						</div>
+					<div class="radio">
+						<label> <input type="radio" name="ashworth" id="ashworth1" value="1级"  disabled="disabled"/> 1级   肌张力稍增加，表现为受累部分被动屈伸到ROM之末出现很小的阻力，或出现突然的卡住和释放。
+						</label>
 					</div>
+					<div class="radio">
+						<label> <input type="radio" name="ashworth" id="ashworth1+" value="1＋级"  disabled="disabled"/> 1＋级  肌张力稍增加，表现为被动屈伸患肢在前50%ROM出现轻微的卡住感觉，后ROM的50%范围内，始终呈现极轻度的阻力。
+						</label>
+					</div>
+					<div class="radio">
+						<label> <input type="radio" name="ashworth" id="ashworth2" value="2级"  disabled="disabled"/> 2级   肌张力轻度增加，被动活动患肢在ROM的大部分均有阻力，但受累部分仍可以活动。
+						</label>
+					</div>
+					<div class="radio">
+						<label> <input type="radio" name="ashworth" id="ashworth3" value="3级"  disabled="disabled"/> 3级   肌张力中度增加，被动活动患肢在整个ROM内均有阻力，活动比较困难。
+						</label>
+					</div>
+					<div class="radio">
+						<label> <input type="radio" name="ashworth" id="ashworth4" value="4级"  disabled="disabled"/> 4级   肌张力高度增加，患侧肢体僵硬，阻力很大， 被动活动十分困难。
+						</label>
+					</div>
+				</div>
+				<div class="col-sm-12">
+					<span >评级: </span>
+					<span id="ashworth_sore"> /4</span>
+				</div>
+			</div>
+			<div class="box-footer">
 				<div class="row text-center">
 					<button type="button" class="btn btn-primary" id="healthy_assess_sysAssessAshworthInfo_edit_button">编辑</button>
 					<button type="button" class="btn btn-primary" id="healthy_assess_sysAssessAshworthInfo_save_button" style="display: none;">提交</button>

@@ -17,7 +17,7 @@ create table sys_use_assess_info(
  update sys_use_assess_info set uuid = UUID();
  alter table sys_use_assess_info add primary key(uuid); 
  alter table sys_use_assess_info  MODIFY `create_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL;
- alter table sys_use_assess_info  MODIFY `update_time` TIMESTAMP ON UPDATE CURRENT_TIMESTAMP   NOT NULL;
+ alter table sys_use_assess_info  MODIFY `update_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP   NOT NULL;
  alter table sys_use_assess_info  MODIFY `create_user` varchar(50)  NOT NULL;
  alter table sys_use_assess_info  MODIFY `update_user` varchar(50)  NOT NULL;
  alter table sys_use_assess_info  MODIFY `delete_flag` int  NOT NULL;

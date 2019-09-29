@@ -2,6 +2,8 @@ package org.danyuan.application.healthy.assess.service;
 
 import org.danyuan.application.common.base.BaseService;
 import org.danyuan.application.common.base.BaseServiceImpl;
+import org.danyuan.application.healthy.assess.dao.SysAssessAshworthInfoDao;
+import org.danyuan.application.healthy.assess.dao.SysAssessInfoDao;
 import org.danyuan.application.healthy.assess.po.SysAssessAshworthInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,6 +18,18 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class SysAssessAshworthInfoService extends BaseServiceImpl<SysAssessAshworthInfo> implements BaseService<SysAssessAshworthInfo> {
+	
+	@Autowired
+	SysAssessAshworthInfoDao	sysAssessAshworthInfoDao;
+
+	@Autowired
+	SysAssessInfoDao			sysAssessInfoDao;
+
+	@Override
+	public SysAssessAshworthInfo save(SysAssessAshworthInfo info) {
+		sysAssessAshworthInfoDao.save(info);
+		sysAssessInfoDao.updateAshworth(info.getJibie(), info.getAssessUuid());
+		return info;
+	}
 
 }
-

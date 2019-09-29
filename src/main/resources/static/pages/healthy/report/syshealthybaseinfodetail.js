@@ -3,6 +3,14 @@ $(function(){
 })
 
 function init(){
+	$("#healthy_report_sysHealthyBaseInfo_gender").find("input[value='"+sysHealthyBaseInfo.gender+"']").attr('checked','checked');
+	$("#healthy_report_sysHealthyBaseInfo_disableType").find("input[value='"+sysHealthyBaseInfo.disableType+"']").attr('checked','checked');
+	if(sysHealthyBaseInfo.disableType == '其它'){
+		$("#healthy_report_sysHealthyBaseInfo_disableTypeName").show();
+	}else{
+		$("#healthy_report_sysHealthyBaseInfo_disableTypeName").hide();
+	}
+	
 	
 	$("#healthy_report_sysHealthyBaseInfo_edit_button").bind("click",function(){
 		$("#section_healthy_report_sysHealthyBaseInfo").find(".box-body").find('.row input,.row textarea').removeAttr("disabled");
@@ -14,14 +22,16 @@ function init(){
 		var url = "/sysHealthyBaseInfo/save";
 		var	info={
 			uuid:$("#healthy_report_sysHealthyBaseInfo_uuid").val(),
+			discription:$("#healthy_report_sysHealthyBaseInfo_discription").val(),
+			deleteFlag:$("#healthy_report_sysHealthyBaseInfo_deleteFlag").val(),
 			contactName:$("#healthy_report_sysHealthyBaseInfo_contactName").val(),
 			disableCard:$("#healthy_report_sysHealthyBaseInfo_disableCard").val(),
-			disableTypeName:$("#healthy_report_sysHealthyBaseInfo_disableTypeName").val(),
 			pathAssess:$("#healthy_report_sysHealthyBaseInfo_pathAssess").val(),
 			bodyAssess:$("#healthy_report_sysHealthyBaseInfo_bodyAssess").val(),
 			mainAssessPerson:$("#healthy_report_sysHealthyBaseInfo_mainAssessPerson").val(),
-			gender:$("#healthy_report_sysHealthyBaseInfo_gender").val(),
-			disableType:$("#healthy_report_sysHealthyBaseInfo_disableType").val(),
+			gender:$("#healthy_report_sysHealthyBaseInfo_gender").find("input:checked").val(),
+			disableType:$("#healthy_report_sysHealthyBaseInfo_disableType").find("input:checked").val(),
+			disableTypeName:$("#healthy_report_sysHealthyBaseInfo_disableTypeName").val(),
 			homeAddress:$("#healthy_report_sysHealthyBaseInfo_homeAddress").val(),
 			contactTelphone:$("#healthy_report_sysHealthyBaseInfo_contactTelphone").val(),
 			name:$("#healthy_report_sysHealthyBaseInfo_name").val(),
@@ -35,7 +45,14 @@ function init(){
 		ajaxPost(url, info, reloadSysHealthyBaseInfoDetail);
 	})
 	
-	
+	$("#healthy_report_sysHealthyBaseInfo_disableType").find("input[type='radio']").bind("click",function(){
+		console.log($(this).val());
+		if($(this).val() == '其它'){
+			$("#healthy_report_sysHealthyBaseInfo_disableTypeName").show();
+		}else{
+			$("#healthy_report_sysHealthyBaseInfo_disableTypeName").hide();
+		}
+	})
 	
 	$("#healthy_report_sysHealthyBaseInfo_exit_button").bind("click",function(){
 		loadPage("/pages/healthy/report/syshealthybaseinfo.html");

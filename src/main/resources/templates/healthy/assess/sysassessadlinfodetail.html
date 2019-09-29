@@ -5,59 +5,315 @@
 <title></title>
 </head>
 <body>
-<!-- 	<section class="content"> -->
-		<div class="box box-warning" id="section_healthy_assess_sysAssessAdlInfo">
-			<div class="box-header with-border">
-				<h3 class="box-title">企业信息</h3>
-				<div class="box-tools pull-right">
-					<button type="button" class="btn btn-box-tool" data-widget="collapse">
-						<i class="fa fa-minus"></i>
-					</button>
-					<button type="button" class="btn btn-box-tool" data-widget="remove">
-						<i class="fa fa-times"></i>
-					</button>
+	<!-- 	<section class="content"> -->
+	<div class="box box-warning" id="section_healthy_assess_sysAssessAdlInfo">
+		<div class="box-header with-border">
+			<h3 class="box-title">ADL 评分(改良Barthel 指数)</h3>
+			<div class="box-tools pull-right">
+				<button type="button" class="btn btn-box-tool" data-widget="collapse">
+					<i class="fa fa-minus"></i>
+				</button>
+				<button type="button" class="btn btn-box-tool" data-widget="remove">
+					<i class="fa fa-times"></i>
+				</button>
+			</div>
+		</div>
+		<div class="box-body" id="adl-group-body">
+			<div class=" row form-group">
+				<label class="col-sm-2 control-label text-right font16" style="height: 34px; padding-top: 5px;">进食:</label>
+				<div class="col-sm-10">
+					<div class="radio">
+						<label> <input type="radio" name="进食" id="jinshi10" value="10"  disabled="disabled"/> 10——独立，包括配戴辅助工具及进行相关预备活动
+						</label>
+					</div>
+					<div class="radio">
+						<label> <input type="radio" name="进食" id="jinshi8" value="8" disabled="disabled"/> 8——能独立，但在以下情况需要协助，入切肉，打开盒装牛奶，脱盛
+						</label>
+					</div>
+					<div class="radio">
+						<label> <input type="radio" name="进食" id="jinshi5" value="5" disabled="disabled"/> 5——在监督下进食，要协助入糖、盐、抹黄油和其他预备活动
+						</label>
+					</div>
+					<div class="radio">
+						<label> <input type="radio" name="进食" id="jinshi2" value="2" disabled="disabled"/> 2——能操作食具，如汤勺，但要他人在进食过程中主动协助
+						</label>
+					</div>
+					<div class="radio">
+						<label> <input type="radio" name="进食" id="jinshi0" value="0" disabled="disabled"/> 0——依赖
+						</label>
+					</div>
 				</div>
 			</div>
-			<div class="box-body">
-				<input type="text" style="display:none;" id="healthy_assess_sysAssessAdlInfo_uuid" name="uuid"  />
-				<input type="text" style="display:none;" id="healthy_assess_sysAssessAdlInfo_deleteFlag" name="deleteFlag"   />
-				<input type="text" style="display:none;" id="healthy_assess_sysAssessAdlInfo_discription" name="discription"  />
-					<div class=" row form-group">
-						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">评分:</label>
-						<div class="col-sm-9">
-							<input type="text" class="form-control" id="healthy_assess_sysAssessAdlInfo_score" name="score"   placeholder="评分" disabled="disabled"/>
-						</div>
+			<div class=" row form-group">
+				<label class="col-sm-2 control-label text-right font16" style="height: 34px; padding-top: 5px;">洗澡:</label>
+				<div class="col-sm-10" >
+					<div class="radio">
+						<label> <input type="radio" name="洗澡" id="xizhao5" value="5" disabled="disabled"/> 5——在没有他人在旁能自行洗澡， 包括浴池、盆池或淋浴
+						</label>
 					</div>
-					<div class=" row form-group">
-						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">一般外键:</label>
-						<div class="col-sm-9">
-							<input type="text" class="form-control" id="healthy_assess_sysAssessAdlInfo_assessUuid" name="assessUuid"  placeholder="一般外键" disabled="disabled"/>
-						</div>
+					<div class="radio">
+						<label> <input type="radio" name="洗澡" id="xizhao4" value="4" disabled="disabled"/> 4——在调节水温或转移时需要监督
+						</label>
 					</div>
-					<div class=" row form-group">
-						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">字段名:</label>
-						<div class="col-sm-9">
-							<input type="text" class="form-control" id="healthy_assess_sysAssessAdlInfo_name" name="name"   placeholder="字段名" disabled="disabled"/>
-						</div>
+					<div class="radio">
+						<label> <input type="radio" name="洗澡" id="xizhao3" value="3" disabled="disabled"/>3——在转移到淋浴处或浴缸、清洗需要协助
+						</label>
 					</div>
-					<div class=" row form-group">
-						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">排序:</label>
-						<div class="col-sm-9">
-							<input type="text" class="form-control" id="healthy_assess_sysAssessAdlInfo_orderNum" name="orderNum"  placeholder="排序" disabled="disabled"/>
-						</div>
+					<div class="radio">
+						<label> <input type="radio" name="洗澡" id="xizhao1" value="2" disabled="disabled"/> 1——每一个步骤也需协助
+						</label>
 					</div>
-				<div class="row text-center">
-					<button type="button" class="btn btn-primary" id="healthy_assess_sysAssessAdlInfo_edit_button">编辑</button>
-					<button type="button" class="btn btn-primary" id="healthy_assess_sysAssessAdlInfo_save_button" style="display: none;">提交</button>
-					<button type="button" class="btn btn-danger" id="healthy_assess_sysAssessAdlInfo_exit_button">关闭</button>
+					<div class="radio">
+						<label> <input type="radio" name="洗澡" id="xizhao0" value="0" disabled="disabled"/> 0——依赖
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class=" row form-group">
+				<label class="col-sm-2 control-label text-right font16" style="height: 34px; padding-top: 5px;">修饰:</label>
+				<div class="col-sm-10">
+					<div class="radio">
+						<label> <input type="radio" name="修饰" id="xiushi5" value="5" disabled="disabled"/> 5——患者能自行清洗脸、双手、梳头、刷牙，男性能使用任何剃须刀包括插入刀片，使用电插头，女性能涂上化妆品
+						</label>
+					</div>
+					<div class="radio">
+						<label> <input type="radio" name="修饰" id="xiushi4" value="4" disabled="disabled"/> 4——完成所有个人卫生项目，但在完成操作之前或之后需要协助
+						</label>
+					</div>
+					<div class="radio">
+						<label> <input type="radio" name="修饰" id="xiushi3" value="3" disabled="disabled"/> 3——在每个或以上步骤需要协助
+						</label>
+					</div>
+					<div class="radio">
+						<label> <input type="radio" name="修饰" id="xiushi1" value="1"disabled="disabled"/> 1——每一个步骤都需协助
+						</label>
+					</div>
+					<div class="radio">
+						<label> <input type="radio" name="修饰" id="xiushi0" value="0" disabled="disabled"/> 0——依赖
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class=" row form-group">
+				<label class="col-sm-2 control-label text-right font16" style="height: 34px; padding-top: 5px;">穿衣: </label>
+				<div class="col-sm-10">
+					<div class="radio">
+						<label> <input type="radio" name="穿衣" id="chuanyi10" value="10" disabled="disabled"/> 10——独立，包括穿、脱腰封或支具
+						</label>
+					</div>
+					<div class="radio">
+						<label> <input type="radio" name="穿衣" id="chuanyi8" value="8" disabled="disabled"/> 8——需要轻度协助，如系并纽扣、拉链、鞋带
+						</label>
+					</div>
+					<div class="radio">
+						<label> <input type="radio" name="穿衣" id="chuanyi5" value="5" disabled="disabled"/> 5——协助穿上或脱掉衣服
+						</label>
+					</div>
+					<div class="radio">
+						<label> <input type="radio" name="穿衣" id="chuanyi2" value="2"disabled="disabled"/> 2——患者有小量参与，但整体需要协助
+						</label>
+					</div>
+					<div class="radio">
+						<label> <input type="radio" name="穿衣" id="chuanyi0" value="0" disabled="disabled"/> 0——依赖
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class=" row form-group">
+				<label class="col-sm-2 control-label text-right font16" style="height: 34px; padding-top: 5px;">入厕:  </label>
+				<div class="col-sm-10">
+					<div class="radio">
+						<label> <input type="radio" name="入厕" id="ruche10" value="10" disabled="disabled"/> 10——独立，包括转移、整理衣服及用便纸。如在晚间借助便具，并能自行清理
+						</label>
+					</div>
+					<div class="radio">
+						<label> <input type="radio" name="入厕" id="ruche8" value="8" disabled="disabled"/> 8——需监督。在夜间使用便椅或尿壶，需协助清理
+						</label>
+					</div>
+					<div class="radio">
+						<label> <input type="radio" name="入厕" id="ruche5" value="5" disabled="disabled"/> 5——整理衣服、转移或洗手时需协助
+						</label>
+					</div>
+					<div class="radio">
+						<label> <input type="radio" name="入厕" id="ruche2" value="2" disabled="disabled"/> 2——整个过程需协助
+						</label>
+					</div>
+					<div class="radio">
+						<label> <input type="radio" name="入厕" id="ruche0" value="0" disabled="disabled"/> 0——依赖
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class=" row form-group">
+				<label class="col-sm-2 control-label text-right font16" style="height: 34px; padding-top: 5px;">大便控制:  </label>
+				<div class="col-sm-10">
+					<div class="radio">
+						<label> <input type="radio" name="大便控制" id="dabian10" value="10" disabled="disabled"/> 10——完全控制排便，有需要时能自行使用栓剂或灌肠
+						</label>
+					</div>
+					<div class="radio">
+						<label> <input type="radio" name="大便控制" id="dabian8" value="8" disabled="disabled"/> 8——能在监督下使用栓剂、灌肠。偶尔失禁
+						</label>
+					</div>
+					<div class="radio">
+						<label> <input type="radio" name="大便控制" id="dabian5" value="5" disabled="disabled"/> 5——患者能配合合适位置，需协助进行通便或清洁。偶有失控现象
+						</label>
+					</div>
+					<div class="radio">
+						<label> <input type="radio" name="大便控制" id="dabian2" value="2" disabled="disabled"/> 2——需协助摆放合适位置排便及进行通便之方法
+						</label>
+					</div>
+					<div class="radio">
+						<label> <input type="radio" name="大便控制" id="dabian0" value="0" disabled="disabled"/> 0——失禁
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class=" row form-group">
+				<label class="col-sm-2 control-label text-right font16" style="height: 34px; padding-top: 5px;">小便控制: </label>
+				<div class="col-sm-10">
+					<div class="radio">
+						<label> <input type="radio" name="小便控制" id="xiaobian10" value="10" disabled="disabled"/> 10——能控制。如需要借助外置或内置便具，能自理
+						</label>
+					</div>
+					<div class="radio">
+						<label> <input type="radio" name="小便控制" id="xiaobian8" value="8" disabled="disabled"/>  8——大致能保持全日干爽，偶尔失禁或需轻度协助使用内置或外置便具
+						</label>
+					</div>
+					<div class="radio">
+						<label> <input type="radio" name="小便控制" id="xiaobian5" value="5" disabled="disabled"/> 5——保持干爽除夜间外，需协助使用便具
+						</label>
+					</div>
+					<div class="radio">
+						<label> <input type="radio" name="小便控制" id="xiaobian2" value="2" disabled="disabled"/> 2——失禁，但能协助运用外置或内置便具
+						</label>
+					</div>
+					<div class="radio">
+						<label> <input type="radio" name="小便控制" id="xiaobian0" value="0" disabled="disabled"/> 0——失禁，或依赖他人导尿
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class=" row form-group">
+				<label class="col-sm-2 control-label text-right font16" style="height: 34px; padding-top: 5px;">床椅转移:  </label>
+				<div class="col-sm-10">
+					<div class="radio">
+						<label> <input type="radio" name="床椅转移" id="zuoyi15" value="15" disabled="disabled"/> 15——独立，包括锁轮椅、移脚踏
+						</label>
+					</div>
+					<div class="radio">
+						<label> <input type="radio" name="床椅转移" id="zuoyi12" value="12" disabled="disabled"/>  12——在监督下转移
+						</label>
+					</div>
+					<div class="radio">
+						<label> <input type="radio" name="床椅转移" id="zuoyi8" value="8" disabled="disabled"/> 8——在任何方面需他人协助
+						</label>
+					</div>
+					<div class="radio">
+						<label> <input type="radio" name="床椅转移" id="zuoyi5" value="5" disabled="disabled"/> 5——能参与，但需大量协助
+						</label>
+					</div>
+					<div class="radio">
+						<label> <input type="radio" name="床椅转移" id="zuoyi0" value="0" disabled="disabled"/>  0——不能参与，需两人或机器协助转移  
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class=" row form-group">
+				<label class="col-sm-2 control-label text-right font16" style="height: 34px; padding-top: 5px;">平地步行: </label>
+				<div class="col-sm-10">
+					<div class="radio">
+						<label> <input type="radio" name="平地步行" id="buxing15" value="15" disabled="disabled"/> 15——独立步行 50米，可使用助行器
+						</label>
+					</div>
+					<div class="radio">
+						<label> <input type="radio" name="平地步行" id="buxing12" value="12" disabled="disabled"/>  12——在帮助或监督下步行50米
+						</label>
+					</div>
+					<div class="radio">
+						<label> <input type="radio" name="平地步行" id="buxing8" value="8" disabled="disabled"/> 8——需协助抓住并操作助行器
+						</label>
+					</div>
+					<div class="radio">
+						<label> <input type="radio" name="平地步行" id="buxing5" value="5" disabled="disabled"/> 5——能在一人不断协助下步行
+						</label>
+					</div>
+					<div class="radio">
+						<label> <input type="radio" name="平地步行" id="buxing0" value="0" disabled="disabled"/>  0——依赖
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class=" row form-group">
+				<label class="col-sm-2 control-label text-right font16" style="height: 34px; padding-top: 5px;">使用轮椅 :<p>(步行0-5分者)</p> </label>
+				<div class="col-sm-10">
+					<div class="radio">
+						<label> <input type="radio" name="使用轮椅" id="lunyi15" value="5" disabled="disabled"/> 5——能以轮椅行走50米，独立停在桌、床、马桶等地方
+						</label>
+					</div>
+					<div class="radio">
+						<label> <input type="radio" name="使用轮椅" id="lunyi4" value="4" disabled="disabled"/>  4——能用轮椅在合理时间内行走在常使用之地域，在转狭窄角落时需协助
+						</label>
+					</div>
+					<div class="radio">
+						<label> <input type="radio" name="使用轮椅" id="lunyi3" value="3" disabled="disabled"/> 3——将轮椅停在桌前、床边时需他人不断协助
+						</label>
+					</div>
+					<div class="radio">
+						<label> <input type="radio" name="使用轮椅" id="lunyi1" value="1" disabled="disabled"/> 1——能在短程推动轮椅
+						</label>
+					</div>
+					<div class="radio">
+						<label> <input type="radio" name="使用轮椅" id="lunyi0" value="0" disabled="disabled"/>  0——依赖
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class=" row form-group">
+				<label class="col-sm-2 control-label text-right font16" style="height: 34px; padding-top: 5px;">上下楼梯：</label>
+				<div class="col-sm-10">
+					<div class="radio">
+						<label> <input type="radio" name="上下楼梯" id="louti10" value="10" disabled="disabled"/> 10——独立上下一段楼梯，可使用扶手或助行器
+						</label>
+					</div>
+					<div class="radio">
+						<label> <input type="radio" name="上下楼梯" id="louti8" value="8" disabled="disabled"/> 8——整体不需协助， 但因安全理由上需监督
+						</label>
+					</div>
+					<div class="radio">
+						<label> <input type="radio" name="上下楼梯" id="louti5" value="5" disabled="disabled"/> 5——患者上下楼梯时需监督及协助，拿助行器
+						</label>
+					</div>
+					<div class="radio">
+						<label> <input type="radio" name="上下楼梯" id="louti2" value="2" disabled="disabled"/> 2——整个过程需协助
+						</label>
+					</div>
+					<div class="radio">
+						<label> <input type="radio" name="上下楼梯" id="louti0" value="0" disabled="disabled"/>  0——不能上下楼梯
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class=" row form-group">
+				<label class="col-sm-2 control-label text-right font16" style="height: 34px; padding-top: 5px;">总分: </label>
+				<div class="col-sm-10">
+					<span id="adl_sore">/105</span>
 				</div>
 			</div>
 		</div>
-<!-- 	</section> -->
-	
-	
+		<div class="box-footer">
+			<div class="row text-center">
+				<button type="button" class="btn btn-primary" id="healthy_assess_sysAssessAdlInfo_edit_button">编辑</button>
+				<button type="button" class="btn btn-primary" id="healthy_assess_sysAssessAdlInfo_save_button" style="display: none;">提交</button>
+				<button type="button" class="btn btn-danger" id="healthy_assess_sysAssessAdlInfo_exit_button">关闭</button>
+			</div>
+		</div>
+	</div>
+	<!-- 	</section> -->
+
+
 	<script th:inline="javascript">
-		var sysAssessAdlInfo = [[${sysAssessAdlInfo}]];
+		var sysAssessAdlInfoList = [[${sysAssessAdlInfo}]];
 	</script>
 	<script type="text/javascript" src="/pages/healthy/assess/sysassessadlinfodetail.js"></script>
 </body>

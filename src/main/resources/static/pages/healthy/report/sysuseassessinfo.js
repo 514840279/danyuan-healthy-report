@@ -46,7 +46,7 @@ function init() {
 	// 弹出编辑窗口
 	$('#addnew_healthy_report_sysUseAssessInfo').click(function() {
 		$("#healthy_report_sysUseAssessInfo_uuid").val("");
-		$("#healthy_report_sysUseAssessInfo_deleteFlag").val("");
+		$("#healthy_report_sysUseAssessInfo_deleteFlag").val(0);
 		$("#healthy_report_sysUseAssessInfo_discription").val("");
 		$("#healthy_report_sysUseAssessInfo_assistiveDevicesName").val("");
 		$("#healthy_report_sysUseAssessInfo_baseUuid").val(sysHealthyBaseInfoUuid);
