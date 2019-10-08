@@ -19,7 +19,7 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface SysAssessInfoDao extends BaseDao<SysAssessInfo> {
-
+	
 	/**
 	 * @方法名 updateAdl
 	 * @功能 TODO(这里用一句话描述这个方法的作用)
@@ -33,12 +33,12 @@ public interface SysAssessInfoDao extends BaseDao<SysAssessInfo> {
 	@Modifying
 	@Query("update SysAssessInfo t set t.adl=:totle where uuid=:uuid")
 	void updateAdl(@Param("totle") int totle, @Param("uuid") String uuid);
-
+	
 	@Transactional
 	@Modifying
 	@Query("update SysAssessInfo t set t.ashworth=:totle where uuid=:uuid")
 	void updateAshworth(@Param("totle") String totle, @Param("uuid") String uuid);
-
+	
 	/**
 	 * @方法名 updateAsia
 	 * @功能 TODO(这里用一句话描述这个方法的作用)
@@ -52,7 +52,7 @@ public interface SysAssessInfoDao extends BaseDao<SysAssessInfo> {
 	@Modifying
 	@Query("update SysAssessInfo t set t.asia=:totle where uuid=:uuid")
 	void updateAsia(@Param("totle") String jibie, @Param("uuid") String assessUuid);
-
+	
 	/**
 	 * @方法名 updateBrunnstrom
 	 * @功能 TODO(这里用一句话描述这个方法的作用)
@@ -67,4 +67,13 @@ public interface SysAssessInfoDao extends BaseDao<SysAssessInfo> {
 	@Query("update SysAssessInfo t set t.burnnstrom=:totle where uuid=:uuid")
 	void updateBrunnstrom(@Param("totle") String totle, @Param("uuid") String assessUuid);
 	
+	/**
+	 * @param totle
+	 * @param assessUuid
+	 */
+	@Transactional
+	@Modifying
+	@Query("update SysAssessInfo t set t.fim=:totle where uuid=:uuid")
+	void updateFim(@Param("totle") int totle, @Param("uuid") String assessUuid);
+
 }
