@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta charset="UTF-8">
+<style type="text/css">
+</style>
+</head>
+<body>
+
+	<!-- Main content -->
+	<section class="content">
+		<div>
+			<div class="form-group has-feedback">
+				<input id="file" type="file" class="file" name="file" />
+			</div>
+		</div>
+	</section>
+	<script type="text/javascript">
+	
+		ajaxPost("/upload/findAll",{baseUuid : sysHealthyBaseInfoUuid},loadImg);
+		function loadImg(result){
+			 console.log(0,result.data);
+		}
+	
+		var code = "";
+		$("#file").fileinput({
+			uploadUrl : '/upload/uploadImg', //上传的地址
+			language : 'zh', //设置语言
+			slugCallback : function(filename) {
+				return filename.replace('(', '_').replace(']', '_');
+			},
+			allowedFileExtensions : [ 'jpg', 'webp', 'bmp', 'pcx', 'tif', 'gif', 'jpeg', 'tag', 'exif' , 'fpx', 'svg', 'psd', 'cdr', 'pcd', 'dxf', 'ufo', 'eps' , 'ai' , 'png', 'hdri', 'raw', 'wmf', 'flic', 'emf', 'ico' ],//接收的文件后缀
+			showCaption: true,//是否显示标题
+			showUpload : true, //是否显示上传按钮,跟随文本框的那个
+	        showRemove : true, //显示移除按钮,跟随文本框的那个
+	        showPreview : false, //是否显示预览,不写默认为true
+	        uploadProgress : false,
+	        dropZoneEnabled : false,//是否显示拖拽区域，默认不写为true，但是会占用很大区域
+			textEncoding:'utf-8',
+			browseClass : "btn btn-primary", //按钮样式     
+			//		dropZoneEnabled : false,
+			// 			mainClass : "input-group-lg",
+			enctype: 'multipart/form-data',
+		 	maxFileCount: 10,
+	 	 	msgFilesTooMany: "选择上传的文件数量({n}) 超过允许的最大数值{m}！",
+			enctype : 'multipart/form-data',
+			validateInitialCount : true,
+			overwriteInitial: true,
+			previewFileIcon : "<i class='glyphicon glyphicon-king'></i>",
+			uploadExtraData : function() {
+				return {
+					username : username,
+					baseUuid : sysHealthyBaseInfoUuid
+				}
+			},
+			uploadAsync : false,
+		}).on("filebatchuploadsuccess",function(event, data, previewId, index) {
+            console.log(1,data.response.data);
+        }).on('filebatchuploaderror', function(event, data, msg) {
+			console.log(2,data);
+	    }).on("fileuploaded", function(event, data, previewId, index) {
+			console.log(3,data);
+			//导入文件上传完成之后的事件
+
+		}).on('fileerror', function(event, data, msg) { //一个文件上传失败
+			console.log(4,data);
+			console.log('文件上传失败！' + msg);
+
+		});
+	</script>
+</body>
+</html>

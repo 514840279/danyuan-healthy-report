@@ -9,10 +9,7 @@ spring:
     - classpath:/resources/
     - classpath:/static/
     - classpath:/public/
-    - file:./outputfile/
-    - file:./uploadfile/
-    - file:./headimg/
-    - file:./file/
+    - file:./fileupload/
   aop:
     proxy-target-class: true
   datasource:
