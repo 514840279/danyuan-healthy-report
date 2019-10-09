@@ -3,8 +3,8 @@
 <head>
 <title></title>
 <meta charset="UTF-8">
-<style type="text/css">
-</style>
+<link rel="stylesheet" href="/plugins/imgplugins/css/styles.css">
+<script type="text/javascript" src="/plugins/imgplugins/js/intense.js"></script>
 </head>
 <body>
 
@@ -15,12 +15,31 @@
 				<input id="file" type="file" class="file" name="file" />
 			</div>
 		</div>
+		<div id="imgcontent">
+			<div class="demo-image first" data-caption="" style="display:none;"></div>
+		</div>
 	</section>
+	
+	
 	<script type="text/javascript">
 	
 		ajaxPost("/upload/findAll",{baseUuid : sysHealthyBaseInfoUuid},loadImg);
 		function loadImg(result){
 			 console.log(0,result.data);
+			 var content = $("#imgcontent");
+			 $.each(content.find("div"),function(index,el){
+				 if(index>0){
+					 $(el).remove();
+				 }
+			 });
+			 $.each(result.data,function(index,data){
+				var div =  content.find(".demo-image:eq(0)").clone(false);
+				div.css({"display":"","background-image":"url("+data.fileLocalPath+")"});
+				div.data("image",data.fileLocalPath);
+				div.data("title",data.fileName);
+				
+				content.append(div);
+			 });
 		}
 	
 		var code = "";
@@ -57,6 +76,7 @@
 			uploadAsync : false,
 		}).on("filebatchuploadsuccess",function(event, data, previewId, index) {
             console.log(1,data.response.data);
+            loadImg(data.response)
         }).on('filebatchuploaderror', function(event, data, msg) {
 			console.log(2,data);
 	    }).on("fileuploaded", function(event, data, previewId, index) {
