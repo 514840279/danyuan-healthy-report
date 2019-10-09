@@ -15,8 +15,8 @@
 				<input id="file" type="file" class="file" name="file" />
 			</div>
 		</div>
-		<div id="imgcontent">
-			<div class="demo-image first" data-caption="" style="display:none;"></div>
+		<div id="imgcontent" class="demos">
+			
 		</div>
 	</section>
 	
@@ -25,23 +25,24 @@
 	
 		ajaxPost("/upload/findAll",{baseUuid : sysHealthyBaseInfoUuid},loadImg);
 		function loadImg(result){
-			 console.log(0,result.data);
-			 var content = $("#imgcontent");
-			 $.each(content.find("div"),function(index,el){
-				 if(index>0){
-					 $(el).remove();
-				 }
-			 });
-			 $.each(result.data,function(index,data){
-				var div =  content.find(".demo-image:eq(0)").clone(false);
-				div.css({"display":"","background-image":"url("+data.fileLocalPath+")"});
-				div.data("image",data.fileLocalPath);
-				div.data("title",data.fileName);
+			console.log(0,result.data);
+			var content = $("#imgcontent");
+			content.empty();
+// 			$.each(content.find("div"),function(index,el){
+// 				if(index>0){
+// 					$(el).remove();
+// 				}
+// 			});
+			$.each(result.data,function(index,data){
+				var img = "<img src=\""+data.fileLocalPath+"\" class=\"demo-image\"  data-title=\""+data.fileName+"\" data-caption=\"\"/>";
+// 				$(img).css({"background-image":"url("+data.fileLocalPath+")"});
 				
-				content.append(div);
-			 });
+				content.append(img);
+			});
+			
+			var elements = document.querySelectorAll('.demo-image' );
+			Intense(elements);
 		}
-	
 		var code = "";
 		$("#file").fileinput({
 			uploadUrl : '/upload/uploadImg', //上传的地址
@@ -88,6 +89,8 @@
 			console.log('文件上传失败！' + msg);
 
 		});
+				
+		
 	</script>
 </body>
 </html>
