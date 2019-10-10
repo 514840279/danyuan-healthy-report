@@ -323,9 +323,9 @@ var Intense = (function() {
 
           var position = parseFloat(currentPosition / containerDimensions.w );
           position = Math.ceil(overflowArea.x * position);
-          target.style[ 'webkitTransform' ] = 'translate3d(' + position + 'px, 0px, 0px)';
-          target.style[ 'MozTransform' ] = 'translate3d(' + position + 'px, 0px, 0px)';
-          target.style[ 'msTransform' ] = 'translate3d(' + position + 'px, 0px, 0px)';
+          target.style[ 'webkitTransform' ] = 'translate3d(' + position<0?0:position + 'px, 0px, 0px)';
+          target.style[ 'MozTransform' ] = 'translate3d(' + position<0?0:position + 'px, 0px, 0px)';
+          target.style[ 'msTransform' ] = 'translate3d(' + position<0?0:position + 'px, 0px, 0px)';
           lastPosition = mouse.x;
 
         }
@@ -336,9 +336,9 @@ var Intense = (function() {
         if( mouse.y !== lastPosition  ) {
           var position = parseFloat(currentPosition / containerDimensions.h );
           position = Math.ceil(overflowArea.y * position);
-          target.style[ 'webkitTransform' ] = 'translate3d( 0px, ' + position + 'px, 0px)';
-          target.style[ 'MozTransform' ] = 'translate3d( 0px, ' + position + 'px, 0px)';
-          target.style[ 'msTransform' ] = 'translate3d( 0px, ' + position + 'px, 0px)';
+          target.style[ 'webkitTransform' ] = 'translate3d( 0px, ' + position<0?0:position + 'px, 0px)';
+          target.style[ 'MozTransform' ] = 'translate3d( 0px, ' + position<0?0:position + 'px, 0px)';
+          target.style[ 'msTransform' ] = 'translate3d( 0px, ' + position<0?0:position + 'px, 0px)';
           lastPosition = mouse.y;
         }
       }

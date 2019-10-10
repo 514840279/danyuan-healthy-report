@@ -25,6 +25,9 @@ public class SysFileImgInfo extends BaseEntity {
 	// 文件名
 	@Column(name = "file_name")
 	private String	fileName;
+	// 文件名
+	@Column(name = "file_name_small")
+	private String	fileNameSmall;
 
 	// 文件本地路径
 	@Column(name = "file_local_path")
@@ -93,5 +96,22 @@ public class SysFileImgInfo extends BaseEntity {
 	public void setFileSize(String fileSize) {
 		this.fileSize = fileSize;
 	}
-	
+
+	/**
+	 * @方法名 getFileNameSmall
+	 * @功能 返回变量 fileNameSmall 的值
+	 * @return String
+	 */
+	public String getFileNameSmall() {
+		return fileNameSmall;
+	}
+
+	/**
+	 * @方法名 setFileNameSmall
+	 * @功能 设置变量 fileNameSmall 的值
+	 */
+	public void setFileNameSmall(String fileNameSmall) {
+		this.fileNameSmall = fileNameSmall;
+	}
+
 }
