@@ -16,7 +16,9 @@ function init(){
 		$("#section_healthy_assess_sysAssessRiskInfo").find(".box-body").find('.row input').removeAttr("disabled");
 		$("#healthy_assess_sysAssessRiskInfo_save_button").css({"display":""});
 		$(this).css({"display":"none"});
-	})
+	});
+	$("#healthy_assess_sysAssessRiskInfo_edit_button").click();
+	
 	
 	$("#healthy_assess_sysAssessRiskInfo_save_button").bind("click",function(){
 		var url = "/sysAssessRiskInfo/save";

@@ -18,6 +18,8 @@ function init(){
 		$(this).css({"display":"none"});
 	})
 	
+	$("#healthy_report_sysHealthyBaseInfo_edit_button").click();
+	
 	$("#healthy_report_sysHealthyBaseInfo_save_button").bind("click",function(){
 		var url = "/sysHealthyBaseInfo/save";
 		var	info={

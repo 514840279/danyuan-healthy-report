@@ -19,7 +19,8 @@ function init(){
 		$("#section_healthy_assess_sysAssessAdlInfo").find(".box-body").find('.row input').removeAttr("disabled");
 		$("#healthy_assess_sysAssessAdlInfo_save_button").css({"display":""});
 		$(this).css({"display":"none"});
-	})
+	});
+	$("#healthy_assess_sysAssessAdlInfo_edit_button").click();
 	
 	$("#healthy_assess_sysAssessAdlInfo_save_button").bind("click",function(){
 		var url = "/sysAssessAdlInfo/saveAll";
@@ -53,6 +54,20 @@ function init(){
 		})
 		$("#adl_sore").text(totalsore);
 	})
+	
+	$("#healthy_assess_sysAssessAdlInfo_save_and_next_button").bind("click",function(){
+		$("#healthy_assess_sysAssessAdlInfo_save_button").click();
+		var assess_uuid=$("#healthy_assess_sysAssessInfo_uuid").val();
+		modals.openWin({
+	    	winId:"healthy_assess_sysAssessInfo_ashworth_modal",
+	    	title:'Ashworth量表评定',
+	    	width:'95%',
+	    	url:"/sysAssessAshworthInfo/detail/"+assess_uuid
+	    });
+		sittime.time()
+	});
+	// 关闭其他modal
+	modals.closeWin("healthy_assess_sysAssessInfo_ashworth_modal");
 
 }
 

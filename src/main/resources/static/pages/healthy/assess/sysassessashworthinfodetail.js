@@ -11,6 +11,7 @@ function init(){
 		$("#healthy_assess_sysAssessAshworthInfo_save_button").css({"display":""});
 		$(this).css({"display":"none"});
 	});
+	$("#healthy_assess_sysAssessAshworthInfo_edit_button").click();
 	
 	$("#healthy_assess_sysAssessAshworthInfo_save_button").bind("click",function(){
 		var url = "/sysAssessAshworthInfo/save";
@@ -32,7 +33,8 @@ function init(){
 	$("#healthy_assess_sysAssessAshworthInfo_jibie").find("input").bind("click",function(){
 		$("#ashworth_sore").text($(this).val());
 	})
-
+	// 关闭其他modal
+	modals.closeWin("healthy_assess_sysAssessInfo_adl_modal");
 }
 
 // 状态修改，

@@ -20,7 +20,8 @@ function init(){
 		$("#section_healthy_assess_sysAssessBrunnstrom").find(".box-body").find('input').removeAttr("disabled");
 		$("#healthy_assess_sysAssessBrunnstrom_save_button").css({"display":""});
 		$(this).css({"display":"none"});
-	})
+	});
+	$("#healthy_assess_sysAssessBrunnstrom_edit_button").click();
 	
 	$("#healthy_assess_sysAssessBrunnstrom_save_button").bind("click",function(){
 		
@@ -53,6 +54,10 @@ function init(){
 		var name = $(this).attr("name");
 		$("#"+name).text( $(this).val());
 	})
+	
+	// 关闭其他modal
+	modals.closeWin("healthy_assess_sysAssessInfo_adl_modal");
+	modals.closeWin("healthy_assess_sysAssessInfo_ashworth_modal");
 
 }
 

@@ -11,7 +11,8 @@ function init(){
 		$("#section_healthy_assess_sysAssessAsiaInfo").find(".box-body").find('input').removeAttr("disabled");
 		$("#healthy_assess_sysAssessAsiaInfo_save_button").css({"display":""});
 		$(this).css({"display":"none"});
-	})
+	});
+	$("#healthy_assess_sysAssessAsiaInfo_edit_button").click();
 	
 	$("#healthy_assess_sysAssessAsiaInfo_save_button").bind("click",function(){
 		var url = "/sysAssessAsiaInfo/save";
@@ -35,6 +36,10 @@ function init(){
 	$("#healthy_assess_sysAssessAsiaInfo_jibie").find("input").bind("click",function(){
 		$("#asia_jibie").text($("#healthy_assess_sysAssessAsiaInfo_jibie").find('input:checked').val());
 	})
+	
+	// 关闭其他modal
+	modals.closeWin("healthy_assess_sysAssessInfo_adl_modal");
+	modals.closeWin("healthy_assess_sysAssessInfo_ashworth_modal");
 }
 
 // 状态修改，
