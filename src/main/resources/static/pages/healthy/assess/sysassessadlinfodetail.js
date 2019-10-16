@@ -10,7 +10,7 @@ function init(){
 		adl.attr('checked','checked');
 		adl.parents("div").parents("div").parents("div").data("uuid",sysAssessAdlInfo.uuid);
 		totalsore +=sysAssessAdlInfo.score;
-		console.log(totalsore,sysAssessAdlInfo.score,sysAssessAdlInfo.name,sysAssessAdlInfo.uuid);
+//		console.log(totalsore,sysAssessAdlInfo.score,sysAssessAdlInfo.name,sysAssessAdlInfo.uuid);
 	});
 	$("#adl_sore").text(totalsore);
 	
@@ -55,20 +55,22 @@ function init(){
 		$("#adl_sore").text(totalsore);
 	})
 	
+	// 下一项
 	$("#healthy_assess_sysAssessAdlInfo_save_and_next_button").bind("click",function(){
 		$("#healthy_assess_sysAssessAdlInfo_save_button").click();
-		var assess_uuid=$("#healthy_assess_sysAssessInfo_uuid").val();
-		modals.openWin({
-	    	winId:"healthy_assess_sysAssessInfo_ashworth_modal",
-	    	title:'Ashworth量表评定',
-	    	width:'95%',
-	    	url:"/sysAssessAshworthInfo/detail/"+assess_uuid
-	    });
-		sittime.time()
+		$("#healthy_assess_sysAssessInfo_ashworth").click();
+		
 	});
-	// 关闭其他modal
-	modals.closeWin("healthy_assess_sysAssessInfo_ashworth_modal");
-
+	
+	setTimeout(() => {
+		// 关闭其他modal
+		modals.closeWin("healthy_assess_sysAssessInfo_ashworth_modal");
+		modals.closeWin("healthy_assess_sysAssessInfo_asia_modal");
+		modals.closeWin("healthy_assess_sysAssessInfo_burnnstrom_modal");
+		modals.closeWin("healthy_assess_sysAssessInfo_fim_modal");
+	}, 300);
+	
+	
 }
 
 // 状态修改，

@@ -76,10 +76,18 @@ function init(){
 		$("#totle-score").text(sportScore+yishiScore);
 		
 	})
-	
-	// 关闭其他modal
-	modals.closeWin("healthy_assess_sysAssessInfo_adl_modal");
-	modals.closeWin("healthy_assess_sysAssessInfo_ashworth_modal");
+		// 下一项
+	$("#healthy_assess_sysAssessFimInfo_save_and_next_button").bind("click",function(){
+		$("#healthy_assess_sysAssessFimInfo_save_button").click();
+		$("#healthy_assess_sysAssessInfo_burnnstrom").click();
+	});
+	setTimeout(() => {
+		// 关闭其他modal
+		modals.closeWin("healthy_assess_sysAssessInfo_adl_modal");
+		modals.closeWin("healthy_assess_sysAssessInfo_ashworth_modal");
+		modals.closeWin("healthy_assess_sysAssessInfo_asia_modal");
+		modals.closeWin("healthy_assess_sysAssessInfo_burnnstrom_modal");
+	}, 500);
 }
 
 // 状态修改，

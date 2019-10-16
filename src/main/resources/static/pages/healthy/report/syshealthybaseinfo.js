@@ -98,8 +98,8 @@ function findAllBaseInfoSucess(result){
 			row.find(".item_a_a span").click(function(){
 				var url ="/sysHealthyBaseInfo/demo/"+value.uuid;
 //				var url ="/sysHealthyBaseInfo/detail/"+value.uuid;
-//				window.open(url);
-				loadPage(url);
+				window.open(url);
+//				loadPage(url);
 			})
 			// 录入时间
 			if(value.createTime){

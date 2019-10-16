@@ -1,61 +1,178 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title></title>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="/plugins/bootstrap/tab/css/bootstrap-tab.css" /> 
-<script type="text/javascript" src="/plugins/bootstrap/tab/js/bootstrap-tab.js"></script>
-</head>
-<body>
-	<!-- 头部设计 -->
-<!-- 	<section class="content-header"> -->
-<!-- 		<h1> -->
-<!-- 			信息编辑 <small>辅具适配</small> -->
-<!-- 		</h1> -->
-<!-- 		<ol class="breadcrumb"> -->
-<!-- 			<li><a href="index.html"><i class="fa fa-dashboard"></i>首页</a></li> -->
-<!-- 			<li><a href="#">辅具适配 </a></li> -->
-<!-- 			<li class="active">信息编辑</li> -->
-<!-- 		</ol> -->
-<!-- 	</section> -->
+<html style="height: auto; min-height: 100%;">
+<head>
+<meta charset="utf-8" />
+<title>辅具评估适配系统</title>
+<meta name="Robots" content="index" />
+<meta name="author" content="wang" />
+<meta http-equiv="Window-target" content="_top" />
+<meta http-equiv="content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-cn" />
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
 
-	<!-- Main content -->
-	<section class="content">
-		<div class="box box-warning">
-			<div class="box-header with-border">
-				<h3 class="box-title">辅具评估信息</h3>
-				<div class="box-tools pull-right">
-					<button type="button" class="btn btn-box-tool" data-widget="collapse">
-						<i class="fa fa-minus"></i>
-					</button>
-					<button type="button" class="btn btn-box-tool" data-widget="remove">
-						<i class="fa fa-times"></i>
-					</button>
+<link rel="stylesheet" href="https://cdn.bootcss.com/twitter-bootstrap/3.3.6/css/bootstrap.css" />
+<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+<link rel="stylesheet" href="https://cdn.bootcss.com/ionicons/4.5.6/css/ionicons.min.css" />
+<link rel="stylesheet" href="https://cdn.bootcss.com/admin-lte/2.3.11/css/AdminLTE.min.css">
+<link rel="stylesheet" href="https://cdn.bootcss.com/admin-lte/2.3.11/css/skins/_all-skins.min.css" />
+<link rel="stylesheet" href="/dist/css/style.css" />
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap-table/1.14.2/bootstrap-table.min.css" />
+<link rel="stylesheet" href="https://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" href="https://cdn.bootcss.com/select2/4.0.7-rc.0/css/select2.min.css" />
+<link rel="stylesheet" href="https://cdn.bootcss.com/zTree.v3/3.5.25/css/metroStyle/metroStyle.min.css" />
+<link rel="stylesheet" href="https://cdn.bootcss.com/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.min.css" />
+<!-- <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap-switch/3.3.4/css/bootstrap3/bootstrap-switch.min.css" /> -->
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap-fileinput/5.0.3/css/fileinput.min.css" />
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<link rel="stylesheet" href="/plugins/bootstrap/tab/css/bootstrap-tab.css" />
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="hold-transition skin-blue sidebar-mini" style="height: auto; min-height: 100%;">
+	<div class="wrapper">
+		<!-- 头部设计 -->
+		<!-- 	<section class="content-header"> -->
+		<!-- 		<h1> -->
+		<!-- 			信息编辑 <small>辅具适配</small> -->
+		<!-- 		</h1> -->
+		<!-- 		<ol class="breadcrumb"> -->
+		<!-- 			<li><a href="index.html"><i class="fa fa-dashboard"></i>首页</a></li> -->
+		<!-- 			<li><a href="#">辅具适配 </a></li> -->
+		<!-- 			<li class="active">信息编辑</li> -->
+		<!-- 		</ol> -->
+		<!-- 	</section> -->
+		<header class="main-header">
+
+			<a href="index.html" class="logo"> <span class="logo-mini"><b>适配</b></span> <span class="logo-lg"><b>辅具评估适配系统</b></span>
+			</a>
+
+			<nav class="navbar navbar-static-top">
+<!-- 				<a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button"> <span class="sr-only">Toggle navigation</span> -->
+<!-- 				</a> -->
+				<div class="navbar-custom-menu">
+					<ul class="nav navbar-nav">
+						<li class="dropdown user user-menu"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="/dist/img/user2-160x160.jpg" class="user-image" alt="User Image" /> <span class="hidden-xs" th:text="${session.SPRING_SECURITY_CONTEXT.Authentication.Principal.Username}"></span>
+						</a>
+							<ul class="dropdown-menu">
+								<li class="user-header"><img src="/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
+
+									<p th:text="${session.SPRING_SECURITY_CONTEXT.Authentication.Principal.Username}">
+										Alexander Pierce - Web Developer <small>Member since Nov. 2012</small>
+									</p></li>
+								<!-- 								<li class="user-body"> -->
+								<!-- 									<div class="row"> -->
+								<!-- 										<div class="col-xs-4 text-center"> -->
+								<!-- 											<a href="#">Followers</a> -->
+								<!-- 										</div> -->
+								<!-- 										<div class="col-xs-4 text-center"> -->
+								<!-- 											<a href="#">Sales</a> -->
+								<!-- 										</div> -->
+								<!-- 										<div class="col-xs-4 text-center"> -->
+								<!-- 											<a href="#">Friends</a> -->
+								<!-- 										</div> -->
+								<!-- 									</div> -->
+								<!-- 								</li> -->
+								<!-- Menu Footer-->
+								<li class="user-footer">
+									<div class="pull-left">
+										<!-- 										<a href="#" class="btn btn-default btn-flat" id="show_profile">个人中心</a> -->
+									</div>
+									<div class="pull-right">
+										<form action="/logout" method="post">
+											<input type="submit" value="退出" class="btn btn-default btn-flat" />
+										</form>
+									</div>
+								</li>
+							</ul></li>
+						<!-- 						<li><a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a></li> -->
+					</ul>
 				</div>
+
+			</nav>
+		</header>
+
+		<div class="content-wrapper" style="margin-left: 0px;">
+			<div class="tabContainer" id="mainDiv" >
+				<!-- Main content -->
+				<section class="content">
+					<div class="box box-warning">
+						<div class="box-header with-border">
+							<h3 class="box-title">辅具评估信息</h3>
+							<div class="box-tools pull-right">
+								<button type="button" class="btn btn-box-tool" data-widget="collapse">
+									<i class="fa fa-minus"></i>
+								</button>
+								<button type="button" class="btn btn-box-tool" data-widget="remove">
+									<i class="fa fa-times"></i>
+								</button>
+							</div>
+						</div>
+						<div class="box-body">
+							<div id="fu-content"></div>
+						</div>
+					</div>
+				</section>
 			</div>
-			<div class="box-body">
-				<div id="fu-content">
-						
-				</div>
-			</div>
+
 		</div>
-	</section>
-	
+
+	</div>
+	<!-- jQuery 2.2.3 -->
+	<script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.2.3/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://cdn.bootcss.com/admin-lte/2.3.11/js/app.min.js"></script>
+	<script type="text/javascript" src="/plugins/jQuery/base-modal.js"></script>
+	<script type="text/javascript" src="https://cdn.bootcss.com/admin-lte/2.3.11/js/demo.js"></script>
+	<script type="text/javascript" src="https://cdn.bootcss.com/jquery-sparklines/2.1.2/jquery.sparkline.min.js"></script>
+	<script type="text/javascript" src="https://cdn.bootcss.com/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js"></script>
+	<script type="text/javascript" src="/plugins/jQuery/ajax.js"></script>
+	<script type="text/javascript" src="/plugins/jQuery/alert.js"></script>
+	<script type="text/javascript" src="https://cdn.bootcss.com/bootbox.js/4.4.0/bootbox.min.js"></script>
+
+	<script type="text/javascript" src="https://cdn.bootcss.com/bootstrap-table/1.14.2/bootstrap-table.min.js"></script>
+	<script type="text/javascript" src="https://cdn.bootcss.com/bootstrap-table/1.14.2/extensions/export/bootstrap-table-export.min.js"></script>
+	<script type="text/javascript" src="https://cdn.bootcss.com/bootstrap-table/1.14.2/extensions/editable/bootstrap-table-editable.min.js"></script>
+	<script type="text/javascript" src="https://cdn.bootcss.com/bootstrap-table/1.14.2/locale/bootstrap-table-zh-CN.min.js"></script>
+	<script type="text/javascript" src="https://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+	<script type="text/javascript" src="https://cdn.bootcss.com/select2/4.0.7-rc.0/js/select2.min.js"></script>
+	<script type="text/javascript" src="https://cdn.bootcss.com/zTree.v3/3.5.25/js/jquery.ztree.all.min.js"></script>
+	<script type="text/javascript" src="https://cdn.bootcss.com/bootstrap-validator/0.5.3/js/bootstrapValidator.min.js"></script>
+	<!-- 	<script type="text/javascript" src="https://cdn.bootcss.com/bootstrap-switch/3.3.4/css/bootstrap3/bootstrap-switch.min.css"></script> -->
+	<script type="text/javascript" src="https://cdn.bootcss.com/echarts/4.2.1-rc1/echarts.min.js"></script>
+	<script type="text/javascript" src="/plugins/echarts/map/china.js"></script>
+	<script type="text/javascript" src="/plugins/echarts/theme/macarons.js"></script>
+	<script type="text/javascript" src="/plugins/jQuery/jquery.ba-resize.min.js"></script>
+	<script type="text/javascript" src="https://cdn.bootcss.com/bootstrap-fileinput/5.0.3/js/fileinput.min.js"></script>
+	<script type="text/javascript" src="https://cdn.bootcss.com/bootstrap-fileinput/5.0.3/themes/fa/theme.min.js"></script>
+	<script type="text/javascript" src="https://cdn.bootcss.com/bootstrap-fileinput/5.0.3/js/locales/zh.min.js"></script>
+	<script type="text/javascript" src="/plugins/bootstrap/tab/js/bootstrap-tab.js"></script>
+
 	<script th:inline="javascript">
+		var username = [[${session.SPRING_SECURITY_CONTEXT.Authentication.Principal.Username}]];
 		var sysHealthyBaseInfoUuid = [[${sysHealthyBaseInfoUuid}]];
 		$("#fu-content").tabs({
 		   	 data: [{
 		            id: 'pinggushipei',
 		            text: '评估适配',
-		            url: "pages/healthy/report/index.html"
+		            url: "/pages/healthy/report/index.html"
 		        },{
 		            id: 'result_ruler_model',
 		            text: '体检报告',
-		            url: "pages/healthy/assess/index.html"
+		            url: "/pages/healthy/assess/index.html"
 		        },{
 		            id: 'img_file_upload',
 		            text: '图片',
-		            url: "pages/healthy/upload/index.html"
+		            url: "/pages/healthy/upload/index.html"
 		        }],
 		        showIndex: 0,
 		        loadAll: true

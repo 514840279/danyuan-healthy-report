@@ -5,12 +5,14 @@ $(function(){
 function init(){
 	
 	$("#healthy_assess_sysAssessAshworthInfo_jibie").find("input[name='ashworth'][value='"+sysAssessAshworthInfo.jibie+"']").attr("checked","checked");
+	$("#ashworth_sore").text(sysAssessAshworthInfo.jibie);
 	
 	$("#healthy_assess_sysAssessAshworthInfo_edit_button").bind("click",function(){
 		$("#section_healthy_assess_sysAssessAshworthInfo").find(".box-body").find('.row input').removeAttr("disabled");
 		$("#healthy_assess_sysAssessAshworthInfo_save_button").css({"display":""});
 		$(this).css({"display":"none"});
 	});
+	
 	$("#healthy_assess_sysAssessAshworthInfo_edit_button").click();
 	
 	$("#healthy_assess_sysAssessAshworthInfo_save_button").bind("click",function(){
@@ -33,8 +35,23 @@ function init(){
 	$("#healthy_assess_sysAssessAshworthInfo_jibie").find("input").bind("click",function(){
 		$("#ashworth_sore").text($(this).val());
 	})
-	// 关闭其他modal
-	modals.closeWin("healthy_assess_sysAssessInfo_adl_modal");
+	
+	// 下一项
+	$("#healthy_assess_sysAssessAshworthInfo_save_and_next_button").bind("click",function(){
+		$("#healthy_assess_sysAssessAdlInfo_save_button").click();
+		$("#healthy_assess_sysAssessInfo_fim").click();
+		
+	});
+	
+	
+	setTimeout(() => {
+		// 关闭其他modal
+		modals.closeWin("healthy_assess_sysAssessInfo_adl_modal");
+		modals.closeWin("healthy_assess_sysAssessInfo_asia_modal");
+		modals.closeWin("healthy_assess_sysAssessInfo_burnnstrom_modal");
+		modals.closeWin("healthy_assess_sysAssessInfo_fim_modal");
+	}, 300);
+	
 }
 
 // 状态修改，

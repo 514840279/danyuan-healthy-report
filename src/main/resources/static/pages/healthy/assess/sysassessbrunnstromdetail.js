@@ -53,11 +53,23 @@ function init(){
 	$("#section_healthy_assess_sysAssessBrunnstrom").find("input").bind("click",function(){
 		var name = $(this).attr("name");
 		$("#"+name).text( $(this).val());
-	})
+	});
 	
-	// 关闭其他modal
-	modals.closeWin("healthy_assess_sysAssessInfo_adl_modal");
-	modals.closeWin("healthy_assess_sysAssessInfo_ashworth_modal");
+	// 下一项
+	$("#healthy_assess_sysAssessBrunnstrom_save_and_next_button").bind("click",function(){
+		$("#healthy_assess_sysAssessBrunnstrom_save_button").click();
+		$("#healthy_assess_sysAssessInfo_asia").click();
+		
+	});
+	
+	setTimeout(() => {
+		// 关闭其他modal
+		modals.closeWin("healthy_assess_sysAssessInfo_adl_modal");
+		modals.closeWin("healthy_assess_sysAssessInfo_ashworth_modal");
+		modals.closeWin("healthy_assess_sysAssessInfo_asia_modal");
+		modals.closeWin("healthy_assess_sysAssessInfo_fim_modal");
+	}, 500);
+	
 
 }
 

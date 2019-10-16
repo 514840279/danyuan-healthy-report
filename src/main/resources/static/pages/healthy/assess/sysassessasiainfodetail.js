@@ -37,9 +37,23 @@ function init(){
 		$("#asia_jibie").text($("#healthy_assess_sysAssessAsiaInfo_jibie").find('input:checked').val());
 	})
 	
-	// 关闭其他modal
-	modals.closeWin("healthy_assess_sysAssessInfo_adl_modal");
-	modals.closeWin("healthy_assess_sysAssessInfo_ashworth_modal");
+	// 下一项
+	$("#healthy_assess_sysAssessAsiaInfo_save_and_next_button").bind("click",function(){
+		$("#healthy_assess_sysAssessAsiaInfo_save_button").click();
+		$("#assess-index").tabs().showTab("assess-risk");
+		setTimeout(() => {
+			modals.closeWin("healthy_assess_sysAssessInfo_asia_modal");
+		}, 100);
+	});
+	
+	setTimeout(() => {
+		// 关闭其他modal
+		modals.closeWin("healthy_assess_sysAssessInfo_adl_modal");
+		modals.closeWin("healthy_assess_sysAssessInfo_ashworth_modal");
+		modals.closeWin("healthy_assess_sysAssessInfo_burnnstrom_modal");
+		modals.closeWin("healthy_assess_sysAssessInfo_fim_modal");
+	}, 500);
+	
 }
 
 // 状态修改，
