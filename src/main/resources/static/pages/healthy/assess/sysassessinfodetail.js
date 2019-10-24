@@ -51,7 +51,7 @@ function init(){
 	
 	
 	// adl 绑定点击事件
-	$("#healthy_assess_sysAssessInfo_adl").bind("click focus",function(){
+	$("#healthy_assess_sysAssessInfo_adl_a").bind("click focus",function(){
 		var assess_uuid=$("#healthy_assess_sysAssessInfo_uuid").val();
 		modals.openWin({
 	    	winId:"healthy_assess_sysAssessInfo_adl_modal",
@@ -62,7 +62,7 @@ function init(){
 	})
 	
 	// Ashworth评级
-	$("#healthy_assess_sysAssessInfo_ashworth").bind("click focus",function(){
+	$("#healthy_assess_sysAssessInfo_ashworth_a").bind("click focus",function(){
 		var assess_uuid=$("#healthy_assess_sysAssessInfo_uuid").val();
 		modals.openWin({
 	    	winId:"healthy_assess_sysAssessInfo_ashworth_modal",
@@ -73,7 +73,7 @@ function init(){
 	})
 	
 	// FIM评分  绑定点击事件
-	$("#healthy_assess_sysAssessInfo_fim").bind("click focus",function(){
+	$("#healthy_assess_sysAssessInfo_fim_a").bind("click focus",function(){
 		var assess_uuid=$("#healthy_assess_sysAssessInfo_uuid").val();
 		modals.openWin({
 	    	winId:"healthy_assess_sysAssessInfo_fim_modal",
@@ -84,7 +84,7 @@ function init(){
 	})
 	
 	// Burnnstrom分级 绑定点击事件
-	$("#healthy_assess_sysAssessInfo_burnnstrom").bind("click focus",function(){
+	$("#healthy_assess_sysAssessInfo_burnnstrom_a").bind("click focus",function(){
 		var assess_uuid=$("#healthy_assess_sysAssessInfo_uuid").val();
 		modals.openWin({
 	    	winId:"healthy_assess_sysAssessInfo_burnnstrom_modal",
@@ -95,7 +95,7 @@ function init(){
 	})
 	
 	// ASIA分级 绑定点击事件
-	$("#healthy_assess_sysAssessInfo_asia").bind("click focus",function(){
+	$("#healthy_assess_sysAssessInfo_asia_a").bind("click focus",function(){
 		var assess_uuid=$("#healthy_assess_sysAssessInfo_uuid").val();
 		modals.openWin({
 	    	winId:"healthy_assess_sysAssessInfo_asia_modal",

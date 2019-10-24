@@ -21,19 +21,19 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class SysAssessBrunnstromService extends BaseServiceImpl<SysAssessBrunnstrom> implements BaseService<SysAssessBrunnstrom> {
-	
-	@Autowired
-	SysAssessBrunnstromDao	sysAssessBrunnstromDao;
 
 	@Autowired
-	SysAssessInfoDao		sysAssessInfo;
+	SysAssessBrunnstromDao	sysAssessBrunnstromDao;
 	
+	@Autowired
+	SysAssessInfoDao		sysAssessInfo;
+
 	@Override
 	public void saveAll(List<SysAssessBrunnstrom> entities) {
 		SysAssessBrunnstrom tsysAssessBrunnstrom = new SysAssessBrunnstrom();
 		tsysAssessBrunnstrom.setAssessUuid(entities.get(0).getAssessUuid());
 		sysAssessBrunnstromDao.deleteAll(findAll(tsysAssessBrunnstrom));
-
+		
 		String totle = "";
 		for (SysAssessBrunnstrom sysAssessBrunnstrom : entities) {
 			if (sysAssessBrunnstrom.getUuid() == null || "".equals(sysAssessBrunnstrom.getUuid())) {
@@ -45,6 +45,6 @@ public class SysAssessBrunnstromService extends BaseServiceImpl<SysAssessBrunnst
 			totle += sysAssessBrunnstrom.getName() + ":" + sysAssessBrunnstrom.getScore() + ";";
 		}
 		sysAssessBrunnstromDao.saveAll(entities);
-		sysAssessInfo.updateBrunnstrom(totle, entities.get(0).getAssessUuid());
+//		sysAssessInfo.updateBrunnstrom(totle, entities.get(0).getAssessUuid());
 	}
 }

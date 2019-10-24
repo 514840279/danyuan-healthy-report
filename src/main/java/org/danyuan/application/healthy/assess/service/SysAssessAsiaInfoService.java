@@ -18,17 +18,17 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class SysAssessAsiaInfoService extends BaseServiceImpl<SysAssessAsiaInfo> implements BaseService<SysAssessAsiaInfo> {
-	
+
 	@Autowired
 	SysAssessAsiaInfoDao	sysAssessAsiaInfoDao;
-
+	
 	@Autowired
 	SysAssessInfoDao		sysAssessInfoDao;
-
+	
 	@Override
 	public SysAssessAsiaInfo save(SysAssessAsiaInfo info) {
 		sysAssessAsiaInfoDao.save(info);
-		sysAssessInfoDao.updateAsia(info.getJibie(), info.getAssessUuid());
+//		sysAssessInfoDao.updateAsia(info.getJibie(), info.getAssessUuid());
 		return info;
 	}
 }

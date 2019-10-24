@@ -5,7 +5,7 @@
 
 	<groupId>org.danyuan.application</groupId>
 	<artifactId>danyuan-healthy-report</artifactId>
-	<version>1.2.2</version>
+	<version>1.2.3</version>
 	<packaging>jar</packaging>
 
 	<name>辅具评估适配系统</name>

@@ -69,7 +69,9 @@ function searchButtonClick() {
 						"name" : $("#search_healthy_report_sysHealthyBaseInfo_name").val(),
 						"disableCard" : $("#search_healthy_report_sysHealthyBaseInfo_disableCard").val(),
 						"username":username
-					}
+					},
+					sortOrder:"desc",
+					sortName:"createTime",
 				}
 			var url = '/sysHealthyBaseInfo/page';
 			ajaxPost(url, param, findAllBaseInfoSucess);

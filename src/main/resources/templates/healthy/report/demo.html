@@ -61,10 +61,10 @@
 <!-- 				</a> -->
 				<div class="navbar-custom-menu">
 					<ul class="nav navbar-nav">
-						<li class="dropdown user user-menu"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="/dist/img/user2-160x160.jpg" class="user-image" alt="User Image" /> <span class="hidden-xs" th:text="${session.SPRING_SECURITY_CONTEXT.Authentication.Principal.Username}"></span>
+						<li class="dropdown user user-menu"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="/favicon_128x128.ico" class="user-image" alt="User Image" /> <span class="hidden-xs" th:text="${session.SPRING_SECURITY_CONTEXT.Authentication.Principal.Username}"></span>
 						</a>
 							<ul class="dropdown-menu">
-								<li class="user-header"><img src="/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
+								<li class="user-header"><img src="/favicon_128x128.ico" class="img-circle" alt="User Image" />
 
 									<p th:text="${session.SPRING_SECURITY_CONTEXT.Authentication.Principal.Username}">
 										Alexander Pierce - Web Developer <small>Member since Nov. 2012</small>
@@ -162,13 +162,13 @@
 		var sysHealthyBaseInfoUuid = [[${sysHealthyBaseInfoUuid}]];
 		$("#fu-content").tabs({
 		   	 data: [{
-		            id: 'pinggushipei',
-		            text: '评估适配',
-		            url: "/pages/healthy/report/index.html"
-		        },{
 		            id: 'result_ruler_model',
 		            text: '体检报告',
 		            url: "/pages/healthy/assess/index.html"
+		        },{
+		            id: 'pinggushipei',
+		            text: '评估适配',
+		            url: "/pages/healthy/report/index.html"
 		        },{
 		            id: 'img_file_upload',
 		            text: '图片',

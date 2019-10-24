@@ -23,10 +23,10 @@ import org.springframework.stereotype.Service;
 public class SysAssessFimInfoService extends BaseServiceImpl<SysAssessFimInfo> implements BaseService<SysAssessFimInfo> {
 	@Autowired
 	SysAssessFimInfoDao	sysAssessFimInfoDao;
-	
+
 	@Autowired
 	SysAssessInfoDao	sysAssessInfo;
-	
+
 	@Override
 	public void saveAll(List<SysAssessFimInfo> entities) {
 		SysAssessFimInfo tsysAssessFimInfo = new SysAssessFimInfo();
@@ -39,11 +39,11 @@ public class SysAssessFimInfoService extends BaseServiceImpl<SysAssessFimInfo> i
 				sysAssessAdlInfo.setDeleteFlag(0);
 				sysAssessAdlInfo.setCreateUser("system");
 				sysAssessAdlInfo.setUpdateUser("system");
-				
+
 			}
 			totle += sysAssessAdlInfo.getScore();
 		}
 		sysAssessFimInfoDao.saveAll(entities);
-		sysAssessInfo.updateFim(totle, entities.get(0).getAssessUuid());
+//		sysAssessInfo.updateFim(totle, entities.get(0).getAssessUuid());
 	}
 }

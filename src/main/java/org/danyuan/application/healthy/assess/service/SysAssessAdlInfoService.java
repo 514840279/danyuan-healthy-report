@@ -21,13 +21,13 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class SysAssessAdlInfoService extends BaseServiceImpl<SysAssessAdlInfo> implements BaseService<SysAssessAdlInfo> {
-	
-	@Autowired
-	SysAssessAdlInfoDao	sysAssessAdlInfoDao;
 
 	@Autowired
-	SysAssessInfoDao	sysAssessInfo;
+	SysAssessAdlInfoDao	sysAssessAdlInfoDao;
 	
+	@Autowired
+	SysAssessInfoDao	sysAssessInfo;
+
 	@Override
 	public void saveAll(List<SysAssessAdlInfo> entities) {
 		SysAssessAdlInfo tsysAssessAdlInfo = new SysAssessAdlInfo();
@@ -40,11 +40,11 @@ public class SysAssessAdlInfoService extends BaseServiceImpl<SysAssessAdlInfo> i
 				sysAssessAdlInfo.setDeleteFlag(0);
 				sysAssessAdlInfo.setCreateUser("system");
 				sysAssessAdlInfo.setUpdateUser("system");
-
+				
 			}
 			totle += sysAssessAdlInfo.getScore();
 		}
 		sysAssessAdlInfoDao.saveAll(entities);
-		sysAssessInfo.updateAdl(totle, entities.get(0).getAssessUuid());
+//		sysAssessInfo.updateAdl(totle, entities.get(0).getAssessUuid());
 	}
 }

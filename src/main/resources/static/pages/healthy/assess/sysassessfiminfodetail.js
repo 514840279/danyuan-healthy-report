@@ -79,7 +79,7 @@ function init(){
 		// 下一项
 	$("#healthy_assess_sysAssessFimInfo_save_and_next_button").bind("click",function(){
 		$("#healthy_assess_sysAssessFimInfo_save_button").click();
-		$("#healthy_assess_sysAssessInfo_burnnstrom").click();
+		$("#healthy_assess_sysAssessInfo_burnnstrom_a").click();
 	});
 	setTimeout(() => {
 		// 关闭其他modal
@@ -96,7 +96,7 @@ function reloadSysAssessFimInfoDetail(result){
 		$("#section_healthy_assess_sysAssessFimInfo").find(".box-body").find('input').attr("disabled","disabled");
 		$("#healthy_assess_sysAssessFimInfo_edit_button").css({"display":""});
 		$("#healthy_assess_sysAssessFimInfo_save_button").css({"display":"none"});
-		$("#healthy_assess_sysAssessInfo_fim").val($("#totle-score").text());
+//		$("#healthy_assess_sysAssessInfo_fim").val($("#totle-score").text());
 	}else{
 		toastr.error(result.message,"error");
 	}

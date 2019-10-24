@@ -259,6 +259,7 @@ toastr.options = {
 	"showMethod" : "fadeIn",// 显示时的动画方式
 	"hideMethod" : "fadeOut" // 消失时的动画方式
 };
+
 // Stirng对象的原型方法
 String.prototype.replaceAll = function(s1, s2) {
 	return this.replace(new RegExp(s1, "gm"), s2);

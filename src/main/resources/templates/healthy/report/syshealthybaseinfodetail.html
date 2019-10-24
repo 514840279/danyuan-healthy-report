@@ -5,148 +5,154 @@
 <title></title>
 </head>
 <body>
-<!-- 	<section class="content"> -->
-		<div  id="section_healthy_report_sysHealthyBaseInfo">
-<!-- 			<div class="box-header with-border"> -->
-<!-- 				<h3 class="box-title">辅具报告信息</h3> -->
-<!-- 				<div class="box-tools pull-right"> -->
-<!-- 					<button type="button" class="btn btn-box-tool" data-widget="collapse"> -->
-<!-- 						<i class="fa fa-minus"></i> -->
-<!-- 					</button> -->
-<!-- 					<button type="button" class="btn btn-box-tool" data-widget="remove"> -->
-<!-- 						<i class="fa fa-times"></i> -->
-<!-- 					</button> -->
-<!-- 				</div> -->
-<!-- 			</div> -->
-			<div class="box-body">
-				<input type="text" style="display:none;" id="healthy_report_sysHealthyBaseInfo_uuid" name="uuid" th:value="${sysHealthyBaseInfo.uuid}"/>
-				<input type="text" style="display:none;" id="healthy_report_sysHealthyBaseInfo_deleteFlag" name="deleteFlag"  th:value="${sysHealthyBaseInfo.deleteFlag}"/>
-				<input type="text" style="display:none;" id="healthy_report_sysHealthyBaseInfo_discription" name="discription" th:value="${sysHealthyBaseInfo.discription}"/>
-					<div class="col-lg-4 row form-group">
-						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">姓名:</label>
-						<div class="col-sm-9">
-							<input type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_name" name="name" th:value="${sysHealthyBaseInfo['name']}" placeholder="姓名" disabled="disabled"/>
-						</div>
-					</div>
-					<div class="col-lg-4 row form-group">
-						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">评估时间:</label>
-						<div class="col-sm-9">
-							<input type="date" class="form-control" id="healthy_report_sysHealthyBaseInfo_assessTime" name="assessTime" th:value="${sysHealthyBaseInfo['assessTime']}" placeholder="评估时间" disabled="disabled" pattern="yyyy-MM-dd"/>
-						</div>
-					</div>
-					<div class="col-lg-4 row form-group">
-						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">性别:</label>
-						<div class="col-sm-9"   id="healthy_report_sysHealthyBaseInfo_gender">
-							<div class="radio">
-								<label> <input type="radio"  name="gender" value="男" placeholder="性别" disabled="disabled"/> 男
-								</label>
-								<label> <input type="radio"    name="gender" value="女" placeholder="性别" disabled="disabled"/> 女
-								</label>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 row form-group">
-						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">身份证:</label>
-						<div class="col-sm-9">
-							<input type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_idcard" name="idcard" th:value="${sysHealthyBaseInfo['idcard']}" placeholder="身份证" disabled="disabled"/>
-						</div>
-					</div>
-					<div class="col-lg-4 row form-group">
-						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">残疾证号:</label>
-						<div class="col-sm-9">
-							<input type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_disableCard" name="disableCard" th:value="${sysHealthyBaseInfo['disableCard']}" placeholder="残疾证号" disabled="disabled"/>
-						</div>
-					</div>
-					<div class="col-lg-4 row form-group">
-						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">联系人:</label>
-						<div class="col-sm-9">
-							<input type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_contactName" name="contactName" th:value="${sysHealthyBaseInfo['contactName']}" placeholder="联系人" disabled="disabled"/>
-						</div>
-					</div>
-					<div class="col-lg-4 row form-group">
-						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">联系电话:</label>
-						<div class="col-sm-9">
-							<input type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_contactTelphone" name="contactTelphone" th:value="${sysHealthyBaseInfo['contactTelphone']}" placeholder="联系电话" disabled="disabled"/>
-						</div>
-					</div>
-					<div class="col-lg-12 row form-group">
-						<label class="col-lg-1 col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">残疾类别:</label>
-						<div class="col-lg-11 col-sm-9"  id="healthy_report_sysHealthyBaseInfo_disableType">
-							<div class="radio">
-								<label> <input type="radio"  name="disableType" value="偏瘫" placeholder=残疾类别 disabled="disabled"/> 偏瘫
-								</label>
-								<label> <input type="radio"    name="disableType" value="截瘫" placeholder="残疾类别" disabled="disabled"/> 截瘫
-								</label>
-								<label> <input type="radio"    name="disableType" value="脑瘫" placeholder="残疾类别" disabled="disabled"/> 脑瘫
-								</label>
-								<label> <input type="radio"    name="disableType" value="截缺肢" placeholder="残疾类别" disabled="disabled"/>截缺肢
-								</label>
-								<label> <input type="radio"    name="disableType" value="截缺肢" placeholder="残疾类别" disabled="disabled"/>截缺肢
-								</label>
-								<label> <input type="radio"    name="disableType" value="儿麻后遗症" placeholder="残疾类别" disabled="disabled"/>儿麻后遗症　
-								</label>
-								<label> <input type="radio"    name="disableType" value="关节疾病" placeholder="残疾类别" disabled="disabled"/>关节疾病　
-								</label>
-								<label> <input type="radio"    name="disableType" value="畸形" placeholder="残疾类别" disabled="disabled"/>畸形
-								</label>
-								<label> <input type="radio"    name="disableType" value="侏儒" placeholder="残疾类别" disabled="disabled"/>侏儒
-								</label>
-								<label> <input type="radio"    name="disableType" value="其它" placeholder="残疾类别" disabled="disabled"/>其它
-								</label>
-								<label > <input type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_disableTypeName" name="disableTypeName" th:value="${sysHealthyBaseInfo['disableTypeName']}" placeholder="其它" disabled="disabled"/></label>
-							</div>
-						</div>
-					</div>
-					
-					<div class="col-lg-12 row form-group">
-						<label class="col-lg-1 col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">家庭地址:</label>
-						<div class="col-lg-11 col-sm-9">
-							<input type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_homeAddress" name="homeAddress" th:value="${sysHealthyBaseInfo['homeAddress']}" placeholder="家庭地址" disabled="disabled"/>
-						</div>
-					</div>
-					<div class="col-lg-12 row form-group">
-						<label class="col-lg-1 col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">环境评估:</label>
-						<div class="col-lg-11 col-sm-9">
-							<textarea type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_pathAssess" name="pathAssess" th:text="${sysHealthyBaseInfo['pathAssess']}" placeholder="环境评估" disabled="disabled" rows="4"></textarea>
-						</div>
-					</div>
-					<div class="col-lg-12 row form-group">
-						<label class="col-lg-1 col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">身体功能:</label>
-						<div class="col-lg-11 col-sm-9">
-							<textarea type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_bodyAssess" name="bodyAssess" th:text="${sysHealthyBaseInfo['bodyAssess']}" placeholder="身体功能评估" disabled="disabled" rows="4"></textarea>
-						</div>
-					</div>
-					<div class="col-lg-4 row form-group">
-						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">主评人:</label>
-						<div class="col-sm-9">
-							<input type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_mainAssessPerson" name="mainAssessPerson" th:value="${sysHealthyBaseInfo['mainAssessPerson']}" placeholder="主评人签字" disabled="disabled"/>
-						</div>
-					</div>
-					<div class="col-lg-4 row form-group">
-						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">副评人:</label>
-						<div class="col-sm-9">
-							<input type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_secondAssessPerson" name="secondAssessPerson" th:value="${sysHealthyBaseInfo['secondAssessPerson']}" placeholder="副评人签字" disabled="disabled"/>
-						</div>
-					</div>
-					<div class="col-lg-4 row form-group">
-						<label class="col-sm-3 control-label text-right font16" style="height: 34px;padding-top: 5px;">专职委员:</label>
-						<div class="col-sm-9">
-							<input type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_fullTimeMember" name="fullTimeMember" th:value="${sysHealthyBaseInfo['fullTimeMember']}" placeholder="专职委员签字" disabled="disabled"/>
-						</div>
-					</div>
-					
-				<div class="col-lg-12 row text-center">
-					<button type="button" class="btn btn-primary" id="healthy_report_sysHealthyBaseInfo_edit_button">编辑</button>
-					<button type="button" class="btn btn-primary" id="healthy_report_sysHealthyBaseInfo_save_button" style="display: none;">提交</button>
-					<button type="button" class="btn btn-danger" id="healthy_report_sysHealthyBaseInfo_exit_button" style="display: none;">关闭</button>
+	<!-- 	<section class="content"> -->
+	<div id="section_healthy_report_sysHealthyBaseInfo">
+		<!-- 			<div class="box-header with-border"> -->
+		<!-- 				<h3 class="box-title">辅具报告信息</h3> -->
+		<!-- 				<div class="box-tools pull-right"> -->
+		<!-- 					<button type="button" class="btn btn-box-tool" data-widget="collapse"> -->
+		<!-- 						<i class="fa fa-minus"></i> -->
+		<!-- 					</button> -->
+		<!-- 					<button type="button" class="btn btn-box-tool" data-widget="remove"> -->
+		<!-- 						<i class="fa fa-times"></i> -->
+		<!-- 					</button> -->
+		<!-- 				</div> -->
+		<!-- 			</div> -->
+		<div class="box-body">
+			<input type="text" style="display: none;" id="healthy_report_sysHealthyBaseInfo_uuid" name="uuid" th:value="${sysHealthyBaseInfo.uuid}" /> <input type="text" style="display: none;" id="healthy_report_sysHealthyBaseInfo_deleteFlag" name="deleteFlag" th:value="${sysHealthyBaseInfo.deleteFlag}" /> <input type="text" style="display: none;" id="healthy_report_sysHealthyBaseInfo_discription" name="discription" th:value="${sysHealthyBaseInfo.discription}" />
+			<div class="col-lg-4 row form-group">
+				<label class="col-sm-3 control-label text-right font16" style="height: 34px; padding-top: 5px;">姓名:</label>
+				<div class="col-sm-9">
+					<input type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_name" name="name" th:value="${sysHealthyBaseInfo['name']}" placeholder="姓名" disabled="disabled" />
 				</div>
 			</div>
+			<div class="col-lg-4 row form-group">
+				<label class="col-sm-3 control-label text-right font16" style="height: 34px; padding-top: 5px;">评估时间:</label>
+				<div class="col-sm-9">
+					<input type="date" class="form-control" id="healthy_report_sysHealthyBaseInfo_assessTime" name="assessTime" th:value="${sysHealthyBaseInfo['assessTime']}" placeholder="评估时间" disabled="disabled" pattern="yyyy-MM-dd" />
+				</div>
+			</div>
+			<div class="col-lg-4 row form-group">
+				<label class="col-sm-3 control-label text-right font16" style="height: 34px; padding-top: 5px;">性别:</label>
+				<div class="col-sm-9" id="healthy_report_sysHealthyBaseInfo_gender">
+					<div class="radio">
+						<label> <input type="radio" name="gender" value="男" placeholder="性别" disabled="disabled" /> 男
+						</label> <label> <input type="radio" name="gender" value="女" placeholder="性别" disabled="disabled" /> 女
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 row form-group">
+				<label class="col-sm-3 control-label text-right font16" style="height: 34px; padding-top: 5px;">身份证:</label>
+				<div class="col-sm-9">
+					<input type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_idcard" name="idcard" th:value="${sysHealthyBaseInfo['idcard']}" placeholder="身份证" disabled="disabled" />
+				</div>
+			</div>
+			<div class="col-lg-4 row form-group">
+				<label class="col-sm-3 control-label text-right font16" style="height: 34px; padding-top: 5px;">残疾证号:</label>
+				<div class="col-sm-9">
+					<input type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_disableCard" name="disableCard" th:value="${sysHealthyBaseInfo['disableCard']}" placeholder="残疾证号" disabled="disabled" />
+				</div>
+			</div>
+			<div class="col-lg-4 row form-group">
+				<label class="col-sm-3 control-label text-right font16" style="height: 34px; padding-top: 5px;">联系人:</label>
+				<div class="col-sm-9">
+					<input type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_contactName" name="contactName" th:value="${sysHealthyBaseInfo['contactName']}" placeholder="联系人" disabled="disabled" />
+				</div>
+			</div>
+			<div class="col-lg-4 row form-group">
+				<label class="col-sm-3 control-label text-right font16" style="height: 34px; padding-top: 5px;">联系电话:</label>
+				<div class="col-sm-9">
+					<input type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_contactTelphone" name="contactTelphone" th:value="${sysHealthyBaseInfo['contactTelphone']}" placeholder="联系电话" disabled="disabled" />
+				</div>
+			</div>
+			<div class="col-lg-12 row form-group">
+				<label class="col-lg-1 col-sm-3 control-label text-right font16" style="height: 34px; padding-top: 5px;">家庭地址:</label>
+				<div class="col-lg-11 col-sm-9">
+					<input type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_homeAddress" name="homeAddress" th:value="${sysHealthyBaseInfo['homeAddress']}" placeholder="家庭地址" disabled="disabled" />
+				</div>
+			</div>
+			<div class="col-lg-12 row form-group">
+				<label class="col-lg-1 col-sm-3 control-label text-right font16" style="height: 34px; padding-top: 5px;">残疾类别:</label>
+				<div class="col-lg-11 col-sm-9" id="healthy_report_sysHealthyBaseInfo_disableType">
+					<div class="radio">
+						<label> <input type="radio" name="disableType" value="偏瘫" placeholder=残疾类别 disabled="disabled" /> 偏瘫
+						</label> <label> <input type="radio" name="disableType" value="截瘫" placeholder="残疾类别" disabled="disabled" /> 截瘫
+						</label> <label> <input type="radio" name="disableType" value="脑瘫" placeholder="残疾类别" disabled="disabled" /> 脑瘫
+						</label> <label> <input type="radio" name="disableType" value="截缺肢" placeholder="残疾类别" disabled="disabled" />截缺肢
+						</label> <label> <input type="radio" name="disableType" value="截缺肢" placeholder="残疾类别" disabled="disabled" />截缺肢
+						</label> <label> <input type="radio" name="disableType" value="儿麻后遗症" placeholder="残疾类别" disabled="disabled" />儿麻后遗症
+						</label> <label> <input type="radio" name="disableType" value="关节疾病" placeholder="残疾类别" disabled="disabled" />关节疾病
+						</label> <label> <input type="radio" name="disableType" value="畸形" placeholder="残疾类别" disabled="disabled" />畸形
+						</label> <label> <input type="radio" name="disableType" value="侏儒" placeholder="残疾类别" disabled="disabled" />侏儒
+						</label> <label> <input type="radio" name="disableType" value="其它" placeholder="残疾类别" disabled="disabled" />其它
+						</label> <label> <input type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_disableTypeName" name="disableTypeName" th:value="${sysHealthyBaseInfo['disableTypeName']}" placeholder="其它" disabled="disabled" /></label>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-12 row form-group">
+				<label class="col-lg-1 col-sm-3 control-label text-right font16" style="height: 34px; padding-top: 5px;">环境评估:</label>
+				<div class="col-lg-11 col-sm-9">
+					<textarea type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_pathAssess" name="pathAssess" th:text="${sysHealthyBaseInfo['pathAssess']}" placeholder="环境评估" disabled="disabled" rows="4"></textarea>
+				</div>
+			</div>
+			<div class="col-lg-12 row form-group">
+				<label class="col-lg-1 col-sm-3 control-label text-right font16" style="height: 34px; padding-top: 5px;">身体功能:</label>
+				<div class="col-lg-11 col-sm-9">
+					<textarea type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_bodyAssess" name="bodyAssess" th:text="${sysHealthyBaseInfo['bodyAssess']}" placeholder="身体功能评估" disabled="disabled" rows="4"></textarea>
+				</div>
+			</div>
+			<div class="col-lg-4 row form-group">
+				<label class="col-sm-3 control-label text-right font16" style="height: 34px; padding-top: 5px;">主评人:</label>
+				<div class="col-sm-9">
+					<input type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_mainAssessPerson" name="mainAssessPerson" th:value="${sysHealthyBaseInfo['mainAssessPerson']}" placeholder="主评人签字" disabled="disabled" />
+				</div>
+			</div>
+			<div class="col-lg-4 row form-group">
+				<label class="col-sm-3 control-label text-right font16" style="height: 34px; padding-top: 5px;">副评人:</label>
+				<div class="col-sm-9">
+					<input type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_secondAssessPerson" name="secondAssessPerson" th:value="${sysHealthyBaseInfo['secondAssessPerson']}" placeholder="副评人签字" disabled="disabled" />
+				</div>
+			</div>
+			<div class="col-lg-4 row form-group">
+				<label class="col-sm-3 control-label text-right font16" style="height: 34px; padding-top: 5px;">社区联络人:</label>
+				<div class="col-sm-9">
+					<input type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_fullTimeMember" name="fullTimeMember" th:value="${sysHealthyBaseInfo['fullTimeMember']}" placeholder="专职委员签字" disabled="disabled" />
+				</div>
+			</div>
+
+			<div class="col-lg-12 row text-center">
+				<button type="button" class="btn btn-primary" id="healthy_report_sysHealthyBaseInfo_edit_button">编辑</button>
+				<button type="button" class="btn btn-primary" id="healthy_report_sysHealthyBaseInfo_save_button" style="display: none;">提交</button>
+				<button type="button" class="btn btn-danger" id="healthy_report_sysHealthyBaseInfo_exit_button" style="display: none;">关闭</button>
+			</div>
 		</div>
-<!-- 	</section> -->
-	
-	
+	</div>
+	<!-- 	</section> -->
+
+
 	<script th:inline="javascript">
+	Date.prototype.Format = function (fmt) { //author: meizz 
+		var o = {
+			"M+": this.getMonth() + 1, //月份 
+			"d+": this.getDate(), //日 
+			"h+": this.getHours(), //小时 
+			"m+": this.getMinutes(), //分 
+			"s+": this.getSeconds(), //秒 
+			"q+": Math.floor((this.getMonth() + 3) / 3), //季度 
+			"S": this.getMilliseconds() //毫秒 
+		};
+		if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+		for (var k in o)
+			if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+		return fmt;
+	};
 		var sysHealthyBaseInfo = [[${sysHealthyBaseInfo}]];
+		if(sysHealthyBaseInfo['assessTime']==null||sysHealthyBaseInfo['assessTime']==''){
+			var d=new Date().Format("yyyy-MM-dd");
+			$("#healthy_report_sysHealthyBaseInfo_assessTime").val(d);
+		}
 	</script>
 	<script type="text/javascript" src="/pages/healthy/report/syshealthybaseinfodetail.js"></script>
 </body>

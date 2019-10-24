@@ -58,7 +58,7 @@ function init(){
 	// 下一项
 	$("#healthy_assess_sysAssessBrunnstrom_save_and_next_button").bind("click",function(){
 		$("#healthy_assess_sysAssessBrunnstrom_save_button").click();
-		$("#healthy_assess_sysAssessInfo_asia").click();
+		$("#healthy_assess_sysAssessInfo_asia_a").click();
 		
 	});
 	
@@ -79,13 +79,13 @@ function reloadSysAssessBrunnstromDetail(result){
 		$("#section_healthy_assess_sysAssessBrunnstrom").find(".box-body").find('input').attr("disabled","disabled");
 		$("#healthy_assess_sysAssessBrunnstrom_edit_button").css({"display":""});
 		$("#healthy_assess_sysAssessBrunnstrom_save_button").css({"display":"none"});
-		var brunnstromscore="";
-		$.each($("#sysAssessBrunnstrom_score").find("td"),function(index,value){
-			if($(value).attr("id") != undefined||$(value).attr("id") !=null){
-				brunnstromscore+=$(value).attr("id")+":"+$(value).text()+";";
-			}
-		})
-		$("#healthy_assess_sysAssessInfo_burnnstrom").val(brunnstromscore);
+//		var brunnstromscore="";
+//		$.each($("#sysAssessBrunnstrom_score").find("td"),function(index,value){
+//			if($(value).attr("id") != undefined||$(value).attr("id") !=null){
+//				brunnstromscore+=$(value).attr("id")+":"+$(value).text()+";";
+//			}
+//		})
+//		$("#healthy_assess_sysAssessInfo_burnnstrom").val(brunnstromscore);
 	}else{
 		toastr.error(result.message,"error");
 	}

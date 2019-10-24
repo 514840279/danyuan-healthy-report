@@ -2,6 +2,7 @@
 *{margin:0; padding:0}
 html{height:100%; -ms-overflow-style:scrollbar}
 body{height:100%; font-family:\5fae\8f6f\96c5\9ed1, Arial; -webkit-font-smoothing:antialiased; color:#777}
+
 a{cursor:pointer}
 a:active, a:visited, a:focus{outline:none}
 img{max-width:100%; max-height:100%}
@@ -340,15 +341,24 @@ table a, table a:hover{text-decoration:underline}
 
 .list_d .item{padding:12px 15px; border:solid 1px #ddd; border-radius:3px; margin-top:15px; -webkit-box-shadow:0 1px 1px rgba(0,0,0,0.05); box-shadow:0 1px 1px rgba(0,0,0,0.05)}
 .list_d .item_a_a{font-size:18px}
-.list_d .item_b{padding:8px 0; margin:8px 0; border-top:dashed 1px #ddd; border-bottom:dashed 1px #ddd}
+.list_d .item_b{display:none;padding:8px 0; margin:8px 0; border-top:dashed 1px #ddd; border-bottom:dashed 1px #ddd;}
 .list_d .item_b > div:not(:first-child){margin-left:15px}
 .list_d .item_b span{color:#000}
-.list_d .item_c{line-height:1.7em}
+.list_d .item_c{display:none;}
 .list_d .item_d{margin-top:3px; line-height:1.7em}
 .list_d .item_d span{color:#000}
+.list_d .item_d span.item_d_b{display:none;}
 .list_d .item_d a:after{content:","; display:inline}
 .list_d .item_d a:last-child:after{display:none}
 .list_d .item_d a:not(:last-child){margin-right:8px}
+
+@media (min-width:768px){
+.list_d .item_b{display:-webkit-box;padding:8px 0; margin:8px 0; border-top:dashed 1px #ddd; border-bottom:dashed 1px #ddd;}
+.list_d .item_b > div:not(:first-child){margin-left:15px}
+.list_d .item_b span{color:#000}
+.list_d .item_c{line-height:1.7em;display:-webkit-box;}
+.list_d .item_d span.item_d_b{display:-webkit-box;}
+}
 
 .list_e{padding:10px 0 5px}
 .list_e .item_info{float:left}
@@ -359,6 +369,7 @@ table a, table a:hover{text-decoration:underline}
 .list_e .list_icon{height:40px}
 .list_e .list_icon img{min-height:40px}
 .list_e .info_tit{color:#000}
+
 
 .list_f{line-height:1.8em; margin-top:5px}
 .list_f li{float:left; width:33.33%}

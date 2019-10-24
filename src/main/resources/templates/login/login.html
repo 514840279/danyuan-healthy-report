@@ -11,12 +11,12 @@
 <!-- Bootstrap 3.3.6 -->
 <!-- <link rel="stylesheet" href="/plugins/bootstrap/css/bootstrap.min.css" /> -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.0/css/all.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.0/css/all.min.css" />
 <!-- <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"/> -->
 <!-- Ionicons -->
-<link rel="stylesheet" href="/plugins/bootstrap/css/ionicons.min.css"/>
+<link rel="stylesheet" href="/plugins/bootstrap/css/ionicons.min.css" />
 <!-- Theme style -->
-<link rel="stylesheet" href="/dist/css/AdminLTE.min.css" />
+<link rel="stylesheet" href="/dist/css/AdminLTE.css" />
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -25,14 +25,18 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<body class="hold-transition login-page">
-	<div class="login-box" >
-		<div class="login-logo" >
-			    <a href="#"><b>辅具评估适配</b>系统</a>
+<body class="hold-transition login-page" style="	height: 100vh;
+	width: 100%;
+	background-image: url('/dist/img/bg.jpg');
+	background-repeat: no-repeat;
+	background-position: center;">
+	<div class="login-box" style="opacity: 0.9;">
+		<div class="login-logo">
+			<a href="#"><b>辅具评估适配</b>系统</a>
 		</div>
 		<!-- /.login-logo -->
-		<div class="login-box-body">
-			<p class="login-box-msg">登录用户</p>
+		<div class="login-box-body" style="background-color: #ad9fba;">
+			<p class="login-box-msg" style="color: black;">登录用户</p>
 			<form action="/login" method="post" enctype="application/x-www-form-urlencoded">
 				<div class="form-group has-feedback">
 					<input type="text" class="form-control" placeholder="Full name" name="username" value="healthy" /> <span class="glyphicon glyphicon-user form-control-feedback"></span>
@@ -41,7 +45,7 @@
 					<input type="password" class="form-control" placeholder="Password" name="password" value="healthy" /> <span class="glyphicon glyphicon-lock form-control-feedback"></span>
 				</div>
 				<div class="checkbox">
-					<label><input type="checkbox" id="rememberme" name="remember-me"  checked="checked" /> 记住 我</label>
+					<label><input type="checkbox" id="rememberme" name="remember-me" checked="checked" /> 记住 我</label>
 				</div>
 				<div class="row">
 					<div class="col-xs-12">
@@ -61,11 +65,11 @@
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<!-- 	<script type="text/javascript" src="plugins/bootstrap/js/bootstrap.min.js"></script> -->
 	<script>
-		$("#submit").bind("mousedown",function(e){
-			if(e.keyCode == 13){
-		        //模拟点击登陆按钮，触发上面的 Click 事件
-		      $(this).submit();
-		    }
+		$("#submit").bind("mousedown", function(e) {
+			if (e.keyCode == 13) {
+				//模拟点击登陆按钮，触发上面的 Click 事件
+				$(this).submit();
+			}
 		});
 	</script>
 </body>

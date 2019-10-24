@@ -18,18 +18,18 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class SysAssessAshworthInfoService extends BaseServiceImpl<SysAssessAshworthInfo> implements BaseService<SysAssessAshworthInfo> {
-	
+
 	@Autowired
 	SysAssessAshworthInfoDao	sysAssessAshworthInfoDao;
-
+	
 	@Autowired
 	SysAssessInfoDao			sysAssessInfoDao;
-
+	
 	@Override
 	public SysAssessAshworthInfo save(SysAssessAshworthInfo info) {
 		sysAssessAshworthInfoDao.save(info);
-		sysAssessInfoDao.updateAshworth(info.getJibie(), info.getAssessUuid());
+//		sysAssessInfoDao.updateAshworth(info.getJibie(), info.getAssessUuid());
 		return info;
 	}
-
+	
 }

@@ -39,7 +39,7 @@ function init(){
 	// 下一项
 	$("#healthy_assess_sysAssessAshworthInfo_save_and_next_button").bind("click",function(){
 		$("#healthy_assess_sysAssessAdlInfo_save_button").click();
-		$("#healthy_assess_sysAssessInfo_fim").click();
+		$("#healthy_assess_sysAssessInfo_fim_a").click();
 		
 	});
 	
@@ -60,7 +60,7 @@ function reloadSysAssessAshworthInfoDetail(result){
 		$("#section_healthy_assess_sysAssessAshworthInfo").find(".box-body").find('.row input').attr("disabled","disabled");
 		$("#healthy_assess_sysAssessAshworthInfo_edit_button").css({"display":""});
 		$("#healthy_assess_sysAssessAshworthInfo_save_button").css({"display":"none"});
-		$("#healthy_assess_sysAssessInfo_ashworth").val($("#ashworth_sore").text());
+//		$("#healthy_assess_sysAssessInfo_ashworth").val($("#ashworth_sore").text());
 	}else{
 		toastr.error(result.message,"error");
 	}

@@ -44,9 +44,11 @@
 						<div class=" col-md-4">
 							<input type="text" class="form-control" id="search_healthy_report_sysHealthyBaseInfo_disableCard" name="disableCard" placeholder="残疾证号" />
 						</div>
-						<div class=" col-md-2 text-right">
-							<button class="btn btn-primary" id="make_sure_search_healthy_report_sysHealthyBaseInfo_button_id">确定</button>
-							<button class="btn btn-primary" onclick="addNewbase()">新建</button>
+						<div class=" col-md-2 ">
+								<button class="btn btn-primary" id="make_sure_search_healthy_report_sysHealthyBaseInfo_button_id">查询</button>
+								<button class="btn btn-primary" onclick="addNewbase()">新建</button>
+								<button class="btn btn-primary pull-right" onclick="showdeletebutton()">删除</button>
+								<button class="btn btn-primary pull-right" onclick="makesuredelete()" style="display: none;">确定</button>
 						</div>
 					</div>
 			</div>
@@ -71,7 +73,7 @@
 					<div class="item_d row_a " >
 						<div class="row" style="width: 100%;">
 							<span class="col-lg-8 col-xs-12 "></span> 
-							<span class="col-lg-2 col-xs-12"></span>
+							<span class="col-lg-2 col-xs-12 item_d_b"></span>
 							<span class="col-lg-2 col-xs-12"></span>
 						</div>
 					</div>

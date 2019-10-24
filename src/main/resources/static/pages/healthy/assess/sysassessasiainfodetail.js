@@ -62,7 +62,8 @@ function reloadSysAssessAsiaInfoDetail(result){
 		$("#section_healthy_assess_sysAssessAsiaInfo").find(".box-body").find('input').attr("disabled","disabled");
 		$("#healthy_assess_sysAssessAsiaInfo_edit_button").css({"display":""});
 		$("#healthy_assess_sysAssessAsiaInfo_save_button").css({"display":"none"});
-		$("#healthy_assess_sysAssessInfo_asia").val($("#asia_jibie").text());
+//		$("#healthy_assess_sysAssessInfo_asia").val($("#asia_jibie").text());
+		modals.closeWin("healthy_assess_sysAssessInfo_asia_modal");
 	}else{
 		toastr.error(result.message,"error");
 	}
