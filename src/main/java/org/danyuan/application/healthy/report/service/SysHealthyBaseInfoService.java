@@ -60,9 +60,25 @@ public class SysHealthyBaseInfoService extends BaseServiceImpl<SysHealthyBaseInf
 				if (StringUtils.isNotBlank(vo.getInfo().getDisableCard())) {
 					predicates.add(criteriaBuilder.like(root.<String> get("disableCard"), "%" + vo.getInfo().getDisableCard() + "%"));
 				}
+				predicates.add(criteriaBuilder.notEqual(root.<String> get("deleteFlag"), "1"));
 				query.where(predicates.toArray(new Predicate[predicates.size()]));
 				return query.getRestriction();
 			}
 		}, request);
+	}
+	
+	/**
+	 * TODO(这里用一句话描述这个方法的作用)
+	 *
+	 * @方法名 delete
+	 * @参数 @param entity
+	 * @参考 @see org.danyuan.application.common.base.BaseServiceImpl#delete(java.lang.Object)
+	 * @author Administrator
+	 */
+	
+	@Override
+	public void delete(SysHealthyBaseInfo entity) {
+		entity.setDeleteFlag(1);
+		sysHealthyBaseInfoDao.save(entity);
 	}
 }

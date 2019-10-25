@@ -23,17 +23,15 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-import net.coobird.thumbnailator.Thumbnails;
-
 /**
  * @author wth
  */
 @Service
 public class SysFileImgInfoService extends BaseServiceImpl<SysFileImgInfo> implements BaseService<SysFileImgInfo> {
-	
+
 	@Autowired
 	SysFileImgInfoDao sysFileImgInfoDao;
-	
+
 	/**
 	 * @throws IOException
 	 * @方法名 extracted
@@ -52,21 +50,21 @@ public class SysFileImgInfoService extends BaseServiceImpl<SysFileImgInfo> imple
 		MultipartHttpServletRequest multipartHttpServletRequest = (MultipartHttpServletRequest) request;
 		List<MultipartFile> files = multipartHttpServletRequest.getFiles("file");
 		for (MultipartFile multipartFile : files) {
-			String filename = multipartFile.getOriginalFilename();
+			String filename = multipartFile.getOriginalFilename().replace("(", "").replace(" ", "").replace(")", "");
 			InputStream inputStream = null;
 			SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMdd");
-
+			
 			String path = System.getProperty("user.dir") + "/fileupload/" + simpleDateFormat.format(new Date());
-
+			
 			File file = new File(path);
 			inputStream = multipartFile.getInputStream();
-
+			
 			if (!file.exists()) {
 				file.mkdirs();
 			}
 			path = path + "/" + filename;
 			FileOutputStream fos = new FileOutputStream(path);
-			
+
 			byte[] b = new byte[1024];
 			while ((inputStream.read(b)) != -1) {
 				fos.write(b);
@@ -75,22 +73,24 @@ public class SysFileImgInfoService extends BaseServiceImpl<SysFileImgInfo> imple
 			inputStream.close();
 
 			// 图片压缩
-			Thumbnails.of(path).scale(1f).outputQuality(0.5f).toFile(path.replace(".png", ".small.jpg"));
+//			Thumbnails.of(path).scale(1f).outputQuality(0.5f).toFile(path.replace(".png", ".small.jpg"));
+
 			// 保存信息
-			
+
 			SysFileImgInfo sysFileImgInfo = new SysFileImgInfo();
 			sysFileImgInfo.setFileLocalPath("/" + simpleDateFormat.format(new Date()) + "/" + URLEncoder.encode(filename, "utf-8"));
 			if (findAll(sysFileImgInfo).isEmpty()) {
 				sysFileImgInfo.setBaseUuid(baseUuid);
 				sysFileImgInfo.setFileName(filename);
 				sysFileImgInfo.setCreateUser(username);
-				sysFileImgInfo.setFileNameSmall("/" + simpleDateFormat.format(new Date()) + "/" + URLEncoder.encode(filename, "utf-8").replace(".png", ".small.jpg"));
+				sysFileImgInfo.setFileNameSmall("/" + simpleDateFormat.format(new Date()) + "/" + URLEncoder.encode(filename, "utf-8"));
 				sysFileImgInfo.setDeleteFlag(0);
 				sysFileImgInfo.setFileSize(Long.toString(multipartFile.getSize()));
+				sysFileImgInfo.setFileExt(filename.substring(filename.lastIndexOf(".") + 1).toLowerCase());
 				save(sysFileImgInfo);
 			}
-
+			
 		}
 	}
-	
+
 }

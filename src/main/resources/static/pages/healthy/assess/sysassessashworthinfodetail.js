@@ -38,7 +38,7 @@ function init(){
 	
 	// 下一项
 	$("#healthy_assess_sysAssessAshworthInfo_save_and_next_button").bind("click",function(){
-		$("#healthy_assess_sysAssessAdlInfo_save_button").click();
+		$("#healthy_assess_sysAssessAshworthInfo_save_button").click();
 		$("#healthy_assess_sysAssessInfo_fim_a").click();
 		
 	});

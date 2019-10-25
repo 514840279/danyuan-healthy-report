@@ -45,12 +45,13 @@ function init() {
 	
 	// 弹出编辑窗口
 	$('#addnew_healthy_report_sysUseAssessInfo').click(function() {
+		var d=new Date().Format("yyyy-MM-dd");
 		$("#healthy_report_sysUseAssessInfo_uuid").val("");
 		$("#healthy_report_sysUseAssessInfo_deleteFlag").val(0);
 		$("#healthy_report_sysUseAssessInfo_discription").val("");
 		$("#healthy_report_sysUseAssessInfo_assistiveDevicesName").val("");
 		$("#healthy_report_sysUseAssessInfo_baseUuid").val(sysHealthyBaseInfoUuid);
-		$("#healthy_report_sysUseAssessInfo_grantTime").val("");
+		$("#healthy_report_sysUseAssessInfo_grantTime").val(d);
 		$("#healthy_report_sysUseAssessInfo_useState").val("");
 		$('#healthy_report_sysUseAssessInfo_modal').modal({
 			show:true,
@@ -67,7 +68,8 @@ function init() {
 			$("#healthy_report_sysUseAssessInfo_discription").val(data[0].discription);
 			$("#healthy_report_sysUseAssessInfo_assistiveDevicesName").val(data[0].assistiveDevicesName);
 			$("#healthy_report_sysUseAssessInfo_baseUuid").val(data[0].baseUuid);
-			$("#healthy_report_sysUseAssessInfo_grantTime").val(data[0].grantTime);
+			var d=new Date().Format("yyyy-MM-dd");
+			$("#healthy_report_sysUseAssessInfo_grantTime").val(data[0].grantTime==null?d:data[0].grantTime);
 			$("#healthy_report_sysUseAssessInfo_useState").val(data[0].useState);
 			
 			// 模态框

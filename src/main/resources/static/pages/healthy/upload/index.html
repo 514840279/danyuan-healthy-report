@@ -12,7 +12,7 @@
 	<section class="content">
 		<div>
 			<div class="form-group has-feedback">
-				<input id="file" type="file" class="file" name="file" />
+				<input id="file" type="file" class="file" name="file"  multiple/>
 			</div>
 		</div>
 		<div id="imgcontent" class="demos">
@@ -25,13 +25,22 @@
 	
 		ajaxPost("/upload/findAll",{baseUuid : sysHealthyBaseInfoUuid},loadImg);
 		function loadImg(result){
-			console.log(0,result.data);
 			var content = $("#imgcontent");
 			content.empty();
 			$.each(result.data,function(index,data){
-				var img = "<img src=\""+data.fileNameSmall+"\" class=\"demo-image index"+index+"\" data-image=\""+data.fileNameSmall+"\" data-title=\"\" data-caption=\"\"/>";
-				content.append(img);
-				Intense(document.querySelectorAll( '.index'+index ));
+				var imgtype = [ 'jpg', 'webp', 'bmp', 'pcx', 'tif', 'gif', 'jpeg', 'tag', 'exif' , 'fpx', 'svg', 'psd', 'cdr', 'pcd', 'dxf', 'ufo', 'eps' , 'ai' , 'png', 'hdri', 'raw', 'wmf', 'flic', 'emf', 'ico' ];
+				var videotype = [ 'mpeg','mpg', 'webp', 'avi', 'navi', 'asf', 'mov','swf', 'wmv', 'wma','wav', 'mmf','au','3gp', 'ram' ,'arm' ,'aac','flac' ,'rm' , 'rmvb', 'flv', 'f4v', 'mkv', 'mp3', 'mp4','divx','xvid'];
+				if($.inArray(data.fileExt, imgtype)>-1){
+					var img = "<div class=\"col-lg-3 col-xs-12\"><img src=\""+data.fileLocalPath+"\" class=\"demo-image index"+index+"\" data-image=\""+data.fileLocalPath+"\" data-title=\"\" data-caption=\"\"/></div>";
+					content.append(img);
+					Intense(document.querySelectorAll('.index'+index ));
+				}else if($.inArray(data.fileExt, videotype)>-1){
+					var img = "<div class=\"col-lg-3 col-xs-12\"><video src=\""+data.fileLocalPath+"\" type=\"video/mp4\" autoplay controls  preload=\"metadata\" class=\"demo-video index"+index+"\" data-image=\""+data.fileName+"\" data-title=\"\" data-caption=\"\"></video></div>";
+					content.append(img);
+				}else{
+					var img = "<div class=\"col-lg-3 col-xs-12 \"><a href=\""+data.fileLocalPath+"\" class=\"demo-file index"+index+"\" target='_blank' \"><i class=\"glyphicon glyphicon-save-file col-xs-12\" style=\"font-size:280.27px;\"></i>"+data.fileName+"</a></div>";
+					content.append(img);
+				}
 			});
 		}
 			
@@ -42,7 +51,7 @@
 			slugCallback : function(filename) {
 				return filename.replace('(', '_').replace(']', '_');
 			},
-			allowedFileExtensions : [ 'jpg', 'webp', 'bmp', 'pcx', 'tif', 'gif', 'jpeg', 'tag', 'exif' , 'fpx', 'svg', 'psd', 'cdr', 'pcd', 'dxf', 'ufo', 'eps' , 'ai' , 'png', 'hdri', 'raw', 'wmf', 'flic', 'emf', 'ico' ],//接收的文件后缀
+// 			allowedFileExtensions : [ 'jpg', 'webp', 'bmp', 'pcx', 'tif', 'gif', 'jpeg', 'tag', 'exif' , 'fpx', 'svg', 'psd', 'cdr', 'pcd', 'dxf', 'ufo', 'eps' , 'ai' , 'png', 'hdri', 'raw', 'wmf', 'flic', 'emf', 'ico' ],//接收的文件后缀
 			showCaption: true,//是否显示标题
 			showUpload : true, //是否显示上传按钮,跟随文本框的那个
 	        showRemove : true, //显示移除按钮,跟随文本框的那个
@@ -54,7 +63,7 @@
 			//		dropZoneEnabled : false,
 			// 			mainClass : "input-group-lg",
 			enctype: 'multipart/form-data',
-		 	maxFileCount: 10,
+		 	maxFileCount: 20,
 	 	 	msgFilesTooMany: "选择上传的文件数量({n}) 超过允许的最大数值{m}！",
 			enctype : 'multipart/form-data',
 			validateInitialCount : true,

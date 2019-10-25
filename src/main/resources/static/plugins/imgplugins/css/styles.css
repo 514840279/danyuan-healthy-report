@@ -23,3 +23,23 @@
   margin-left: 8px;
   margin-right: 8px;
   margin-bottom: 16px; }
+
+.demo-video {
+  display: inline-block;
+  width: 290px;
+  height: 290px;
+  background-size: cover;
+  background-position: 50% 50%;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-bottom: 16px; }
+  
+.demo-file {
+  display: inline-block;
+  width: 290px;
+  height: 290px;
+  background-size: cover;
+  background-position: 50% 50%;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-bottom: 16px; }

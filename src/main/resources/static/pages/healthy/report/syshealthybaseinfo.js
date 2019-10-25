@@ -79,6 +79,8 @@ function searchButtonClick() {
 	});
 }
 
+var currPage=1;
+var deleteFlag=false;
 // 数据show
 function findAllBaseInfoSucess(result){
 	$('#example').show();
@@ -155,16 +157,34 @@ function findAllBaseInfoSucess(result){
 			
 			// home_address
 			if(value.homeAddress != "" && value.homeAddress != null){
-				row.find(".item_d").find(".row span:eq(0)").text("家庭地址:"+value.homeAddress);
+				row.find(".item_d").find(".row span.item_d_a").text("家庭地址:"+value.homeAddress);
 			}
 			
 			// 联系人 
 			if(value.contactName != "" && value.contactName != null){
-				row.find(".item_d").find(".row span:eq(1)").text("联系人:"+value.contactName);
+				row.find(".item_d").find(".row span.item_d_b").text("联系人:"+value.contactName);
 			}
 			// 联系人 
 			if(value.contactTelphone != "" && value.contactTelphone != null){
-				row.find(".item_d").find(".row span:eq(2)").text("联系电话:"+value.contactTelphone);
+				row.find(".item_d").find(".row span.item_d_c span:first").text("联系电话:"+value.contactTelphone);
+			}
+			row.find(".item_d").find(".row span.item_d_c a").bind("click",function(){
+				bootbox.setLocale("zh_CN");
+				bootbox.confirm({
+					message : "确定要删除选定行",
+					title : "系统提示",
+					callback : function(result) {
+						if (result) {
+							// 删除
+							var url = "/sysHealthyBaseInfo/delete";	
+							value.updateUser=username;
+							ajaxPost(url, value, reloadAllBaseInfoSucess);	
+						}
+					}
+				});
+			});
+			if(!deleteFlag){
+				row.find(".item_d").find(".row span.item_d_c a").hide();
 			}
 			
 			context.append(row);
@@ -177,7 +197,17 @@ function findAllBaseInfoSucess(result){
 			currentPage: result.data.number+1,
 			totalPages: result.data.totalPages,
 			numberOfPages:result.data.numberOfElements,
+			itemTexts: function (type, page, current) {
+			     switch (type) {
+			      case "first": return "首页";
+			      case "prev": return "上一页";
+			      case "next": return "下一页";
+			      case "last": return "末页";
+			      case "page": return page;
+			     }
+			    },//改写分页按钮字样
 			onPageClicked:function(event, originalEvent, type,page){
+				currPage = page;
 				var searchText = $("#keyword").val();
 				var userDesc = $(".search_bar").find("li.active").text();
 				var param ={
@@ -201,19 +231,62 @@ function findAllBaseInfoSucess(result){
 	}
 }
 
+function reloadAllBaseInfoSucess(){
+	var searchText = $("#keyword").val();
+	var userDesc = $(".search_bar").find("li.active").text();
+	var param ={
+		"pageNumber": currPage,
+		"pageSize":5,
+		"info":{
+			"idcard" : $("#search_healthy_report_sysHealthyBaseInfo_idcard").val(),
+			"name" : $("#search_healthy_report_sysHealthyBaseInfo_name").val(),
+			"disableCard" : $("#search_healthy_report_sysHealthyBaseInfo_disableCard").val(),
+			"username":username
+		}
+	};
+	var url = '/sysHealthyBaseInfo/page';
+	ajaxPost(url, param, findAllBaseInfoSucess);
+}
+
 function addNewbase(){
 	var param = {
 		"idcard" : $("#search_healthy_report_sysHealthyBaseInfo_idcard").val(),
 		"name" : $("#search_healthy_report_sysHealthyBaseInfo_name").val(),
 		"disableCard" : $("#search_healthy_report_sysHealthyBaseInfo_disableCard").val(),
-		"username":username
+		"username":username,
+		"createUser":username
 	};
 	var url="/sysHealthyBaseInfo/save";
 	ajaxPost(url,param,successAddnewBase);
 	function successAddnewBase(result){
 		var url ="/sysHealthyBaseInfo/demo/"+result.data.uuid;
-		loadPage(url);
+//		loadPage(url);
+		window.open(url)
 	}
 	
+}
+
+function showdeletebutton(){
+	deleteFlag=true;
+	var context = $("#main_context");
+	$.each(context.find("div.item"),function(index,row){
+		if(index>0){
+			$(row).find(".item_d").find(".row span.item_d_c a").show();
+		}
+	})
+	$("#showdeletebutton_id").css({"display":"none"});
+	$("#makesuredelete_id").css({"display":""});
+}
+
+function makesuredelete(){
+	deleteFlag=false;
+	var context = $("#main_context");
+	$.each(context.find("div.item"),function(index,row){
+		if(index>0){
+			$(row).find(".item_d").find(".row span.item_d_c a").hide();
+		}
+	})
+	$("#makesuredelete_id").css({"display":"none"});
+	$("#showdeletebutton_id").css({"display":""});
 }
 

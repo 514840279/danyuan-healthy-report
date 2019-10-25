@@ -37,6 +37,10 @@ public class SysFileImgInfo extends BaseEntity {
 	@Column(name = "file_size")
 	private String	fileSize;
 	
+	// 文件扩展名
+	@Column(name = "file_ext")
+	private String	fileExt;
+	
 	/**
 	 * @return the baseUuid
 	 */
@@ -112,6 +116,23 @@ public class SysFileImgInfo extends BaseEntity {
 	 */
 	public void setFileNameSmall(String fileNameSmall) {
 		this.fileNameSmall = fileNameSmall;
+	}
+
+	/**
+	 * @方法名 getFileExt
+	 * @功能 返回变量 fileExt 的值
+	 * @return String
+	 */
+	public String getFileExt() {
+		return fileExt;
+	}
+
+	/**
+	 * @方法名 setFileExt
+	 * @功能 设置变量 fileExt 的值
+	 */
+	public void setFileExt(String fileExt) {
+		this.fileExt = fileExt;
 	}
 
 }
