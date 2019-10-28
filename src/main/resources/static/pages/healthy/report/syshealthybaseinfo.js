@@ -116,7 +116,7 @@ function searchButtonClick() {
 	$("#make_sure_search_healthy_report_sysHealthyBaseInfo_button_id").bind("click", function() {
 		var param ={
 				"pageNumber":1,
-				"pageSize":5,
+				"pageSize":10,
 				"info":{
 					"idcard" : $("#search_healthy_report_sysHealthyBaseInfo_idcard").val(),
 					"name" : $("#search_healthy_report_sysHealthyBaseInfo_name").val(),
@@ -140,7 +140,7 @@ function searchButtonClick() {
 	        //模拟点击登陆按钮，触发上面的 Click 事件
 			var param ={
 					"pageNumber":1,
-					"pageSize":5,
+					"pageSize":10,
 					"info":{
 						"idcard" : $("#search_healthy_report_sysHealthyBaseInfo_idcard").val(),
 						"name" : $("#search_healthy_report_sysHealthyBaseInfo_name").val(),
@@ -234,7 +234,10 @@ function findAllBaseInfoSucess(result){
 			// 环境评估
 			row.find(".item_c").append("环境评估:"+value.pathAssess+"<br />");
 			row.find(".item_c").append("辅具使用估:"+value.bodyAssess+"<br />");
-			
+			// home_address
+			if(value.homeAddress != "" && value.homeAddress != null){
+				row.find(".item_d").find(".row span.item_d_a0").text("性别:"+value.gender);
+			}
 			// home_address
 			if(value.homeAddress != "" && value.homeAddress != null){
 				row.find(".item_d").find(".row span.item_d_a").text("家庭地址:"+value.homeAddress);
@@ -244,7 +247,7 @@ function findAllBaseInfoSucess(result){
 			if(value.contactName != "" && value.contactName != null){
 				row.find(".item_d").find(".row span.item_d_b").text("联系人:"+value.contactName);
 			}
-			// 联系人 
+			// 联系电话
 			if(value.contactTelphone != "" && value.contactTelphone != null){
 				row.find(".item_d").find(".row span.item_d_c span:first").text("联系电话:"+value.contactTelphone);
 			}
@@ -292,7 +295,7 @@ function findAllBaseInfoSucess(result){
 				var userDesc = $(".search_bar").find("li.active").text();
 				var param ={
 					"pageNumber":page,
-					"pageSize":5,
+					"pageSize":10,
 					"info":{
 						"idcard" : $("#search_healthy_report_sysHealthyBaseInfo_idcard").val(),
 						"name" : $("#search_healthy_report_sysHealthyBaseInfo_name").val(),
@@ -319,7 +322,7 @@ function reloadAllBaseInfoSucess(){
 	var userDesc = $(".search_bar").find("li.active").text();
 	var param ={
 		"pageNumber": currPage,
-		"pageSize":5,
+		"pageSize":10,
 		"info":{
 			"idcard" : $("#search_healthy_report_sysHealthyBaseInfo_idcard").val(),
 			"name" : $("#search_healthy_report_sysHealthyBaseInfo_name").val(),

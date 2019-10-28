@@ -352,6 +352,7 @@ table a, table a:hover{text-decoration:underline}
 .list_d .item_d a:last-child:after{display:none}
 .list_d .item_d a:not(:last-child){margin-right:8px}
 
+/**
 @media (min-width:768px){
 .list_d .item_b{display:-webkit-box;padding:8px 0; margin:8px 0; border-top:dashed 1px #ddd; border-bottom:dashed 1px #ddd;}
 .list_d .item_b > div:not(:first-child){margin-left:15px}
@@ -359,7 +360,7 @@ table a, table a:hover{text-decoration:underline}
 .list_d .item_c{line-height:1.7em;display:-webkit-box;}
 .list_d .item_d span.item_d_b{display:-webkit-box;}
 }
-
+*/
 .list_e{padding:10px 0 5px}
 .list_e .item_info{float:left}
 .list_e .item_info:nth-child(1){margin-right:10px}

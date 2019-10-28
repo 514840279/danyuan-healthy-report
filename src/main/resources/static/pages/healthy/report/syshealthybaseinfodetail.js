@@ -80,6 +80,7 @@ function init(){
 		$('#healthy_report_sysHealthyBaseInfo_mainAssessPerson').select2({
 			placeholder: "请选择",
 			tags: true,
+			width:300,
 		    data:data
 		}).on('select2:select', function (evt) {
 			mainAssessPerson = evt.params.data.text;
@@ -104,6 +105,7 @@ function init(){
 		$('#healthy_report_sysHealthyBaseInfo_secondAssessPerson').select2({
 			placeholder: "请选择",
 			tags: true,
+			width:300,
 		    data:data
 		}).on('select2:select', function (evt) {
 			secondAssessPerson = evt.params.data.text;
@@ -128,6 +130,7 @@ function init(){
 		$('#healthy_report_sysHealthyBaseInfo_area').select2({
 			placeholder: "请选择",
 			tags: true,
+			width:300,
 		    data:data
 		}).on('select2:select', function (evt) {
 			area = evt.params.data.text;
@@ -152,6 +155,7 @@ function init(){
 		$('#healthy_report_sysHealthyBaseInfo_street').select2({
 			placeholder: "请选择",
 			tags: true,
+			width:300,
 		    data:data
 		}).on('select2:select', function (evt) {
 			street = evt.params.data.text;
@@ -176,6 +180,7 @@ function init(){
 		$('#healthy_report_sysHealthyBaseInfo_garden').select2({
 			placeholder: "请选择",
 			tags: true,
+			width:300,
 		    data:data
 		}).on('select2:select', function (evt) {
 			garden = evt.params.data.text;

@@ -32,19 +32,19 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class SysHealthyBaseInfoService extends BaseServiceImpl<SysHealthyBaseInfo> implements BaseService<SysHealthyBaseInfo> {
-
+	
 	@Autowired
 	SysHealthyBaseInfoDao sysHealthyBaseInfoDao;
-
+	
 	@Override
 	public Page<SysHealthyBaseInfo> page(Pagination<SysHealthyBaseInfo> vo) {
-
+		
 		Order order = Order.desc("createTime");
 		Sort sort = Sort.by(order);
 		PageRequest request = PageRequest.of(vo.getPageNumber() - 1, vo.getPageSize(), sort);
 		return sysHealthyBaseInfoDao.findAll(new Specification<SysHealthyBaseInfo>() {
 			private static final long serialVersionUID = 1L;
-			
+
 			@Override
 			public Predicate toPredicate(Root<SysHealthyBaseInfo> root, CriteriaQuery<?> query, CriteriaBuilder criteriaBuilder) {
 				List<Predicate> predicates = new ArrayList<>();
@@ -60,13 +60,25 @@ public class SysHealthyBaseInfoService extends BaseServiceImpl<SysHealthyBaseInf
 				if (StringUtils.isNotBlank(vo.getInfo().getDisableCard())) {
 					predicates.add(criteriaBuilder.like(root.<String> get("disableCard"), "%" + vo.getInfo().getDisableCard() + "%"));
 				}
+				// area
+				if (StringUtils.isNotBlank(vo.getInfo().getArea())) {
+					predicates.add(criteriaBuilder.equal(root.<String> get("area"), vo.getInfo().getArea()));
+				}
+				// street
+				if (StringUtils.isNotBlank(vo.getInfo().getStreet())) {
+					predicates.add(criteriaBuilder.equal(root.<String> get("street"), vo.getInfo().getStreet()));
+				}
+				// garden
+				if (StringUtils.isNotBlank(vo.getInfo().getGarden())) {
+					predicates.add(criteriaBuilder.equal(root.<String> get("garden"), vo.getInfo().getGarden()));
+				}
 				predicates.add(criteriaBuilder.notEqual(root.<String> get("deleteFlag"), "1"));
 				query.where(predicates.toArray(new Predicate[predicates.size()]));
 				return query.getRestriction();
 			}
 		}, request);
 	}
-	
+
 	/**
 	 * TODO(这里用一句话描述这个方法的作用)
 	 *
@@ -75,7 +87,7 @@ public class SysHealthyBaseInfoService extends BaseServiceImpl<SysHealthyBaseInf
 	 * @参考 @see org.danyuan.application.common.base.BaseServiceImpl#delete(java.lang.Object)
 	 * @author Administrator
 	 */
-	
+
 	@Override
 	public void delete(SysHealthyBaseInfo entity) {
 		entity.setDeleteFlag(1);

@@ -30,19 +30,27 @@
 			$.each(result.data,function(index,data){
 				var imgtype = [ 'jpg', 'webp', 'bmp', 'pcx', 'tif', 'gif', 'jpeg', 'tag', 'exif' , 'fpx', 'svg', 'psd', 'cdr', 'pcd', 'dxf', 'ufo', 'eps' , 'ai' , 'png', 'hdri', 'raw', 'wmf', 'flic', 'emf', 'ico' ];
 				var videotype = [ 'mpeg','mpg', 'webp', 'avi', 'navi', 'asf', 'mov','swf', 'wmv', 'wma','wav', 'mmf','au','3gp', 'ram' ,'arm' ,'aac','flac' ,'rm' , 'rmvb', 'flv', 'f4v', 'mkv', 'mp3', 'mp4','divx','xvid'];
+				var img = "";
 				if($.inArray(data.fileExt, imgtype)>-1){
-					var img = "<div class=\"col-lg-3 col-xs-12\"><img src=\""+data.fileLocalPath+"\" class=\"demo-image index"+index+"\" data-image=\""+data.fileLocalPath+"\" data-title=\"\" data-caption=\"\"/></div>";
+					img = "<div class=\"col-lg-3 col-xs-12\"><img src=\""+data.fileLocalPath+"\" class=\"demo-image index"+index+"\" data-image=\""+data.fileLocalPath+"\" data-title=\"\" data-caption=\"\"/><a class=\"btn btn-danger pull-right\" data-uuid=\""+data.uuid+"\" data-path=\""+data.fileLocalPath+"\">删除</a></div>";
 					content.append(img);
 					Intense(document.querySelectorAll('.index'+index ));
 				}else if($.inArray(data.fileExt, videotype)>-1){
-					var img = "<div class=\"col-lg-3 col-xs-12\"><video src=\""+data.fileLocalPath+"\" type=\"video/mp4\" autoplay controls  preload=\"metadata\" class=\"demo-video index"+index+"\" data-image=\""+data.fileName+"\" data-title=\"\" data-caption=\"\"></video></div>";
+					img = "<div class=\"col-lg-3 col-xs-12\"><video src=\""+data.fileLocalPath+"\" type=\"video/mp4\" autoplay controls  preload=\"metadata\" class=\"demo-video index"+index+"\" data-image=\""+data.fileName+"\" data-title=\"\" data-caption=\"\"></video><a class=\"btn btn-danger pull-right\" data-uuid=\""+data.uuid+"\" data-path=\""+data.fileLocalPath+"\">删除</a></div>";
 					content.append(img);
 				}else{
-					var img = "<div class=\"col-lg-3 col-xs-12 \"><a href=\""+data.fileLocalPath+"\" class=\"demo-file index"+index+"\" target='_blank' \"><i class=\"glyphicon glyphicon-save-file col-xs-12\" style=\"font-size:280.27px;\"></i>"+data.fileName+"</a></div>";
+					img = "<div class=\"col-lg-3 col-xs-12 \"><a href=\""+data.fileLocalPath+"\" class=\"demo-file index"+index+"\" target='_blank' \"><i class=\"glyphicon glyphicon-save-file col-xs-12\" style=\"font-size:280.27px;\"></i>"+data.fileName+"</a><a class=\"btn btn-danger pull-right\" data-uuid=\""+data.uuid+"\" data-path=\""+data.fileLocalPath+"\">删除</a></div>";
 					content.append(img);
 				}
+				
 			});
+			
+			content.find("a.btn.btn-danger.pull-right").bind("click",function(){
+				ajaxPost("/upload/deleteInfo",{uuid : $(this).data("uuid"),baseUuid : sysHealthyBaseInfoUuid,fileLocalPath : $(this).data("path")},loadImg);
+			})
 		}
+		
+		
 			
 		var code = "";
 		$("#file").fileinput({
