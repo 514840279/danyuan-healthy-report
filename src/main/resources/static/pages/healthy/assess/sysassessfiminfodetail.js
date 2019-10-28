@@ -97,6 +97,7 @@ function reloadSysAssessFimInfoDetail(result){
 		$("#healthy_assess_sysAssessFimInfo_edit_button").css({"display":""});
 		$("#healthy_assess_sysAssessFimInfo_save_button").css({"display":"none"});
 //		$("#healthy_assess_sysAssessInfo_fim").val($("#totle-score").text());
+		toastr.success("数据修改成功！","提示");
 	}else{
 		toastr.error(result.message,"error");
 	}

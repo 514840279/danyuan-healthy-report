@@ -34,59 +34,71 @@
 				</div>
 			</div>
 			<div class="box-body">
-					<div class="row" id="search_healthy_report-group">
-						<div class=" col-md-3">
+				<div id="search_healthy_report-group">
+					<div class="row">
+						<div class="col-lg-3 col-xs-12" >
+							<select id="search_healthy_report_sysHealthyBaseInfo_area"></select>
+						</div>
+						<div class="col-lg-3 col-xs-12" style="margin-top: 5px;">
+							<select id="search_healthy_report_sysHealthyBaseInfo_street"></select>
+						</div>
+						<div class="col-lg-3 col-xs-12" style="margin-top: 5px;">
+							<select id="search_healthy_report_sysHealthyBaseInfo_garden"></select>
+						</div>
+					</div>
+					<div class="row" style="margin-top: 3px;">
+						<div class="col-lg-3 col-xs-12" style="margin-top: 5px;">
 							<input type="text" class="form-control" id="search_healthy_report_sysHealthyBaseInfo_idcard" name="idcard" placeholder="身份证" />
 						</div>
-						<div class=" col-md-3">
+						<div class="col-lg-3 col-xs-12" style="margin-top: 5px;">
 							<input type="text" class="form-control" id="search_healthy_report_sysHealthyBaseInfo_name" name="name" placeholder="姓名" />
 						</div>
-						<div class=" col-md-4">
+						<div class="col-lg-4 col-xs-12" style="margin-top: 5px;">
 							<input type="text" class="form-control" id="search_healthy_report_sysHealthyBaseInfo_disableCard" name="disableCard" placeholder="残疾证号" />
 						</div>
-						<div class=" col-md-2 ">
-								<button class="btn btn-primary" id="make_sure_search_healthy_report_sysHealthyBaseInfo_button_id">查询</button>
-								<button class="btn btn-primary" onclick="addNewbase()">新建</button>
-								<button class="btn btn-danger pull-right" onclick="showdeletebutton()" id="showdeletebutton_id">删除</button>
-								<button class="btn btn-danger pull-right" onclick="makesuredelete()"  id="makesuredelete_id" style="display: none;">确定</button>
-						</div>
-					</div>
-			</div>
-		</div>
-		
-		<div class="list_d ">
-			<div  id="main_context" style="width: 100%;">
-				<div class="item box " style="margin-top: 0px;display: none;">
-					<div class="item_a row_a">
-						<div class="item_a_a col_1"><span  style="color: #3861a4;cursor: pointer;"></span></div>
-						<div class="item_a_b">
-							<span></span>
-							<span></span>
-						</div>
-					</div>
-					<div class="item_b row_a">
-						<div style="display: none;margin-left: 2px;">
-							<span class="label label-primary" > </span>
-						</div>
-					</div>
-					<div class="item_c" ></div>
-					<div class="item_d row_a " >
-						<div class="row" style="width: 100%;">
-							<span class="col-lg-7 col-xs-12 item_d_a"></span> 
-							<span class="col-lg-2 col-xs-12 item_d_b"></span>
-							<span class="col-lg-3 col-xs-12 item_d_c" style="padding: 0;"><span class="col-xs-9 "></span><span class="col-xs-2 pull-right"><a class="btn btn-sm btn-danger" style="padding: 0;margin-right: 0px;">删除</a></span></span>
+						<div class="col-lg-2 col-xs-12 " style="margin-top: 5px;">
+							<button class="btn btn-primary" id="make_sure_search_healthy_report_sysHealthyBaseInfo_button_id">查询</button>
+							<button class="btn btn-primary" onclick="addNewbase()">新建</button>
+							<button class="btn btn-danger pull-right" onclick="showdeletebutton()" id="showdeletebutton_id">删除</button>
+							<button class="btn btn-danger pull-right" onclick="makesuredelete()" id="makesuredelete_id" style="display: none;">确定</button>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	
+
+		<div class="list_d ">
+			<div id="main_context" style="width: 100%;">
+				<div class="item box " style="margin-top: 0px; display: none;">
+					<div class="item_a row_a">
+						<div class="item_a_a col_1">
+							<span style="color: #3861a4; cursor: pointer;"></span>
+						</div>
+						<div class="item_a_b">
+							<span></span> <span></span>
+						</div>
+					</div>
+					<div class="item_b row_a">
+						<div style="display: none; margin-left: 2px;">
+							<span class="label label-primary"> </span>
+						</div>
+					</div>
+					<div class="item_c"></div>
+					<div class="item_d row_a ">
+						<div class="row" style="width: 100%;">
+							<span class="col-lg-7 col-xs-12 item_d_a"></span> <span class="col-lg-2 col-xs-12 item_d_b"></span> <span class="col-lg-3 col-xs-12 item_d_c" style="padding: 0;"><span class="col-xs-9 "></span><span class="col-xs-2 pull-right"><a class="btn btn-sm btn-danger" style="padding: 0; margin-right: 0px;">删除</a></span></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<div class="page-box text-center">
 			<ul id="example"></ul>
 		</div>
 	</section>
-	
-	
+
+
 	<script type="text/javascript" src="/plugins/bootstrap/bootstrap-paginator.min.js"></script>
 	<script type="text/javascript" src="/pages/healthy/report/syshealthybaseinfo.js"></script>
 </body>

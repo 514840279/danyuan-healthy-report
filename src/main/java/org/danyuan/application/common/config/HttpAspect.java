@@ -129,7 +129,7 @@ public class HttpAspect {
 			String requestHeader = request.getHeader("User-Agent");
 			int index_one = requestHeader.indexOf("(");
 			String requestBody = requestHeader.substring(index_one + 1);
-			String userInfo = requestBody.substring(0, requestBody.indexOf(")"));
+			String userInfo = requestBody.substring(0, requestBody.indexOf(")") > 0 ? requestBody.indexOf(")") : requestBody.length());
 			String[] userInfoList = userInfo.split(";");
 			for (String string : userInfoList) {
 				if (string.contains("Build")) {

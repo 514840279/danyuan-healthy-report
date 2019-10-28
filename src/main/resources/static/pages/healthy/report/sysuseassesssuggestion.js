@@ -196,6 +196,7 @@ function init() {
 // 表格重载 事件
 function refreshSysUseAssessSuggestion(){
 	$('#healthy_report_sysUseAssessSuggestion_datagrid').bootstrapTable('refresh');
+	toastr.success("数据修改成功！","提示");
 }
 
 // 窗口大小改变时 重设表头

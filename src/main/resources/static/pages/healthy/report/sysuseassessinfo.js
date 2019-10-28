@@ -203,6 +203,7 @@ function init() {
 // 表格重载 事件
 function refreshSysUseAssessInfo(){
 	$('#healthy_report_sysUseAssessInfo_datagrid').bootstrapTable('refresh');
+	toastr.success("数据修改成功！","提示");
 }
 
 

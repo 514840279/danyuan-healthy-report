@@ -61,6 +61,22 @@ public class SysHealthyBaseInfo extends BaseEntity implements Serializable {
 	@Column(name = "disable_type")
 	private String				disableType;
 	
+	// 省份
+	@Column(name = "province")
+	private String				province;
+	// 城市
+	@Column(name = "city")
+	private String				city;
+	// 地区
+	@Column(name = "area")
+	private String				area;
+	// 街道
+	@Column(name = "street")
+	private String				street;
+	// 小区
+	@Column(name = "garden")
+	private String				garden;
+	
 	// 家庭地址
 	@Column(name = "home_address")
 	private String				homeAddress;
@@ -371,6 +387,91 @@ public class SysHealthyBaseInfo extends BaseEntity implements Serializable {
 	 */
 	public void setSecondAssessPerson(String secondAssessPerson) {
 		this.secondAssessPerson = secondAssessPerson;
+	}
+	
+	/**
+	 * @方法名 getProvince
+	 * @功能 返回变量 province 的值
+	 * @return String
+	 */
+	public String getProvince() {
+		return province;
+	}
+	
+	/**
+	 * @方法名 setProvince
+	 * @功能 设置变量 province 的值
+	 */
+	public void setProvince(String province) {
+		this.province = province;
+	}
+	
+	/**
+	 * @方法名 getCity
+	 * @功能 返回变量 city 的值
+	 * @return String
+	 */
+	public String getCity() {
+		return city;
+	}
+	
+	/**
+	 * @方法名 setCity
+	 * @功能 设置变量 city 的值
+	 */
+	public void setCity(String city) {
+		this.city = city;
+	}
+	
+	/**
+	 * @方法名 getArea
+	 * @功能 返回变量 area 的值
+	 * @return String
+	 */
+	public String getArea() {
+		return area;
+	}
+	
+	/**
+	 * @方法名 setArea
+	 * @功能 设置变量 area 的值
+	 */
+	public void setArea(String area) {
+		this.area = area;
+	}
+	
+	/**
+	 * @方法名 getStreet
+	 * @功能 返回变量 street 的值
+	 * @return String
+	 */
+	public String getStreet() {
+		return street;
+	}
+	
+	/**
+	 * @方法名 setStreet
+	 * @功能 设置变量 street 的值
+	 */
+	public void setStreet(String street) {
+		this.street = street;
+	}
+	
+	/**
+	 * @方法名 getGarden
+	 * @功能 返回变量 garden 的值
+	 * @return String
+	 */
+	public String getGarden() {
+		return garden;
+	}
+	
+	/**
+	 * @方法名 setGarden
+	 * @功能 设置变量 garden 的值
+	 */
+	public void setGarden(String garden) {
+		this.garden = garden;
 	}
 	
 }

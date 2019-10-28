@@ -113,6 +113,7 @@ function reloadSysAssessInfoDetail(result){
 		$("#section_healthy_assess_sysAssessInfo").find(".box-body").find('.row input').attr("disabled","disabled");
 		$("#healthy_assess_sysAssessInfo_edit_button").css({"display":""});
 		$("#healthy_assess_sysAssessInfo_save_button").css({"display":"none"});
+		toastr.success("数据修改成功！","提示");
 	}else{
 		toastr.error(result.message,"error");
 	}

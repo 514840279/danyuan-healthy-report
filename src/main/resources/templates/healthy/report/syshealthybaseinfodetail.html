@@ -66,6 +66,24 @@
 					<input type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_contactTelphone" name="contactTelphone" th:value="${sysHealthyBaseInfo['contactTelphone']}" placeholder="联系电话" disabled="disabled" />
 				</div>
 			</div>
+			<div class="col-lg-4 row form-group">
+				<label class="col-sm-3 control-label text-right font16" style="height: 34px; padding-top: 5px;">地区:</label>
+				<div class="col-sm-9">
+					<select id="healthy_report_sysHealthyBaseInfo_area"></select>
+				</div>
+			</div>
+			<div class="col-lg-4 row form-group">
+				<label class="col-sm-3 control-label text-right font16" style="height: 34px; padding-top: 5px;">街道:</label>
+				<div class="col-sm-9">
+					<select id="healthy_report_sysHealthyBaseInfo_street"></select>
+				</div>
+			</div>
+			<div class="col-lg-4 row form-group">
+				<label class="col-sm-3 control-label text-right font16" style="height: 34px; padding-top: 5px;">社区:</label>
+				<div class="col-sm-9">
+					<select id="healthy_report_sysHealthyBaseInfo_garden"></select>
+				</div>
+			</div>
 			<div class="col-lg-12 row form-group">
 				<label class="col-lg-1 col-sm-3 control-label text-right font16" style="height: 34px; padding-top: 5px;">家庭地址:</label>
 				<div class="col-lg-11 col-sm-9">
@@ -106,13 +124,15 @@
 			<div class="col-lg-4 row form-group">
 				<label class="col-sm-3 control-label text-right font16" style="height: 34px; padding-top: 5px;">主评人:</label>
 				<div class="col-sm-9">
-					<input type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_mainAssessPerson" name="mainAssessPerson" th:value="${sysHealthyBaseInfo['mainAssessPerson']}" placeholder="主评人签字" disabled="disabled" />
+<!-- 					<input type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_mainAssessPerson" name="mainAssessPerson" th:value="${sysHealthyBaseInfo['mainAssessPerson']}" placeholder="主评人签字" disabled="disabled" /> -->
+					<select id="healthy_report_sysHealthyBaseInfo_mainAssessPerson"></select>
 				</div>
 			</div>
 			<div class="col-lg-4 row form-group">
 				<label class="col-sm-3 control-label text-right font16" style="height: 34px; padding-top: 5px;">副评人:</label>
 				<div class="col-sm-9">
-					<input type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_secondAssessPerson" name="secondAssessPerson" th:value="${sysHealthyBaseInfo['secondAssessPerson']}" placeholder="副评人签字" disabled="disabled" />
+<!-- 					<input type="text" class="form-control" id="healthy_report_sysHealthyBaseInfo_secondAssessPerson" name="secondAssessPerson" th:value="${sysHealthyBaseInfo['secondAssessPerson']}" placeholder="副评人签字" disabled="disabled" /> -->
+					<select id="healthy_report_sysHealthyBaseInfo_secondAssessPerson"></select>
 				</div>
 			</div>
 			<div class="col-lg-4 row form-group">

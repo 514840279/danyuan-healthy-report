@@ -53,6 +53,7 @@ function reloadSysAssessRiskInfoDetail(result){
 		$("#section_healthy_assess_sysAssessRiskInfo").find(".box-body").find('.row input').attr("disabled","disabled");
 		$("#healthy_assess_sysAssessRiskInfo_edit_button").css({"display":""});
 		$("#healthy_assess_sysAssessRiskInfo_save_button").css({"display":"none"});
+		toastr.success("数据修改成功！","提示");
 	}else{
 		toastr.error(result.message,"error");
 	}

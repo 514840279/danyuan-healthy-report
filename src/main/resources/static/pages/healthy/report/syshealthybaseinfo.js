@@ -30,12 +30,86 @@
 //		});
 //	}
 //}
+
+var area=null;
+var street=null;
+var garden=null;
 $(function() {
-	
+	init();
 	// 查询按钮事件
 	searchButtonClick()
 });
-
+function init(){
+	
+	// 地区
+	var url = "/sysDicName/findkeyList";
+	var param={code:"addr_area"};
+	ajaxPost(url, param, searchAreaSuccess);
+	function searchAreaSuccess(result){
+		var data=[{id:'请选择地区',text:'请选择地区'}]
+		$.each(result,function(index,value){
+			data.push({id:value.keyValue,text:value.keyword})
+		})
+		$('#search_healthy_report_sysHealthyBaseInfo_area').select2({
+			placeholder: "请选择地区",
+			tags: true,
+			width:165,
+		    data:data
+		}).on('select2:select', function (evt) {
+			area = evt.params.data.text;
+			if(area=='请选择地区'){
+				area=null;
+			}
+		});
+		
+	}
+	
+	// 街道
+	var url = "/sysDicName/findkeyList";
+	var param={code:"addr_street"};
+	ajaxPost(url, param, searchStreetSuccess);
+	function searchStreetSuccess(result){
+		var data=[{id:'请选择街道',text:'请选择街道'}]
+		$.each(result,function(index,value){
+			data.push({id:value.keyValue,text:value.keyword})
+		})
+		$('#search_healthy_report_sysHealthyBaseInfo_street').select2({
+			placeholder: "请选择街道",
+			tags: true,
+			width:165,
+		    data:data
+		}).on('select2:select', function (evt) {
+			street = evt.params.data.text;
+			if(street=='请选择街道'){
+				street=null;
+			}
+		});
+		
+	}
+	
+	// 社区
+	var url = "/sysDicName/findkeyList";
+	var param={code:"addr_garden"};
+	ajaxPost(url, param, searchGardenSuccess);
+	function searchGardenSuccess(result){
+		var data=[{id:'请选择社区',text:'请选择社区'}]
+		$.each(result,function(index,value){
+			data.push({id:value.keyValue,text:value.keyword})
+		})
+		$('#search_healthy_report_sysHealthyBaseInfo_garden').select2({
+			placeholder: "请选择社区",
+			tags: true,
+			width:300,
+		    data:data
+		}).on('select2:select', function (evt) {
+			garden = evt.params.data.text;
+			if(garden=='请选择社区'){
+				garden=null;
+			}
+		});
+		
+	}
+}
 
 function searchButtonClick() {
 	// 绑定提交
@@ -47,7 +121,10 @@ function searchButtonClick() {
 					"idcard" : $("#search_healthy_report_sysHealthyBaseInfo_idcard").val(),
 					"name" : $("#search_healthy_report_sysHealthyBaseInfo_name").val(),
 					"disableCard" : $("#search_healthy_report_sysHealthyBaseInfo_disableCard").val(),
-					"username":username
+					"username":username,
+					area:area,
+					street:street,
+					garden:garden,
 				}
 			}
 		var url = '/sysHealthyBaseInfo/page';
@@ -68,7 +145,10 @@ function searchButtonClick() {
 						"idcard" : $("#search_healthy_report_sysHealthyBaseInfo_idcard").val(),
 						"name" : $("#search_healthy_report_sysHealthyBaseInfo_name").val(),
 						"disableCard" : $("#search_healthy_report_sysHealthyBaseInfo_disableCard").val(),
-						"username":username
+						"username":username,
+						area:area,
+						street:street,
+						garden:garden,
 					},
 					sortOrder:"desc",
 					sortName:"createTime",
@@ -217,7 +297,10 @@ function findAllBaseInfoSucess(result){
 						"idcard" : $("#search_healthy_report_sysHealthyBaseInfo_idcard").val(),
 						"name" : $("#search_healthy_report_sysHealthyBaseInfo_name").val(),
 						"disableCard" : $("#search_healthy_report_sysHealthyBaseInfo_disableCard").val(),
-						"username":username
+						"username":username,
+						area:area,
+						street:street,
+						garden:garden,
 					}
 				};
 				var url = '/sysHealthyBaseInfo/page';
@@ -241,7 +324,10 @@ function reloadAllBaseInfoSucess(){
 			"idcard" : $("#search_healthy_report_sysHealthyBaseInfo_idcard").val(),
 			"name" : $("#search_healthy_report_sysHealthyBaseInfo_name").val(),
 			"disableCard" : $("#search_healthy_report_sysHealthyBaseInfo_disableCard").val(),
-			"username":username
+			"username":username,
+			area:area,
+			street:street,
+			garden:garden,
 		}
 	};
 	var url = '/sysHealthyBaseInfo/page';
@@ -254,7 +340,10 @@ function addNewbase(){
 		"name" : $("#search_healthy_report_sysHealthyBaseInfo_name").val(),
 		"disableCard" : $("#search_healthy_report_sysHealthyBaseInfo_disableCard").val(),
 		"username":username,
-		"createUser":username
+		"createUser":username,
+		area:area,
+		street:street,
+		garden:garden,
 	};
 	var url="/sysHealthyBaseInfo/save";
 	ajaxPost(url,param,successAddnewBase);

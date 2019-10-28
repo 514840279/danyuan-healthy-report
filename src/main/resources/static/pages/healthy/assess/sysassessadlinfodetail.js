@@ -80,6 +80,7 @@ function reloadSysAssessAdlInfoDetail(result){
 		$("#healthy_assess_sysAssessAdlInfo_edit_button").css({"display":""});
 		$("#healthy_assess_sysAssessAdlInfo_save_button").css({"display":"none"});
 //		$("#healthy_assess_sysAssessInfo_adl").val($("#adl_sore").text());
+		toastr.success("数据修改成功！","提示");
 	}else{
 		toastr.error(result.message,"error");
 	}

@@ -86,6 +86,7 @@ function reloadSysAssessBrunnstromDetail(result){
 //			}
 //		})
 //		$("#healthy_assess_sysAssessInfo_burnnstrom").val(brunnstromscore);
+		toastr.success("数据修改成功！","提示");
 	}else{
 		toastr.error(result.message,"error");
 	}

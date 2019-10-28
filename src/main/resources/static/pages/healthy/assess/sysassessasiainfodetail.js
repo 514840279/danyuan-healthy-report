@@ -64,6 +64,7 @@ function reloadSysAssessAsiaInfoDetail(result){
 		$("#healthy_assess_sysAssessAsiaInfo_save_button").css({"display":"none"});
 //		$("#healthy_assess_sysAssessInfo_asia").val($("#asia_jibie").text());
 		modals.closeWin("healthy_assess_sysAssessInfo_asia_modal");
+		toastr.success("数据修改成功！","提示");
 	}else{
 		toastr.error(result.message,"error");
 	}
