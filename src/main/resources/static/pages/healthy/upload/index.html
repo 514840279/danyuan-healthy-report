@@ -32,7 +32,7 @@
 				var videotype = [ 'mpeg','mpg', 'webp', 'avi', 'navi', 'asf', 'mov','swf', 'wmv', 'wma','wav', 'mmf','au','3gp', 'ram' ,'arm' ,'aac','flac' ,'rm' , 'rmvb', 'flv', 'f4v', 'mkv', 'mp3', 'mp4','divx','xvid'];
 				var img = "";
 				if($.inArray(data.fileExt, imgtype)>-1){
-					img = "<div class=\"col-lg-3 col-xs-12\"><img src=\""+data.fileLocalPath+"\" class=\"demo-image index"+index+"\" data-image=\""+data.fileLocalPath+"\" data-title=\"\" data-caption=\"\"/><a class=\"btn btn-danger pull-right\" data-uuid=\""+data.uuid+"\" data-path=\""+data.fileLocalPath+"\">删除</a></div>";
+					img = "<div class=\"col-lg-3 col-xs-12\"><img src=\""+data.fileNameSmall+"\" class=\"demo-image index"+index+"\" data-image=\""+data.fileNameSmall+"\" data-title=\"\" data-caption=\"\"/><a class=\"btn btn-danger pull-right\" data-uuid=\""+data.uuid+"\" data-path=\""+data.fileLocalPath+"\">删除</a></div>";
 					content.append(img);
 					Intense(document.querySelectorAll('.index'+index ));
 				}else if($.inArray(data.fileExt, videotype)>-1){
@@ -46,10 +46,27 @@
 			});
 			
 			content.find("a.btn.btn-danger.pull-right").bind("click",function(){
-				ajaxPost("/upload/deleteInfo",{uuid : $(this).data("uuid"),baseUuid : sysHealthyBaseInfoUuid,fileLocalPath : $(this).data("path")},loadImg);
+				ajaxPost("/upload/deleteInfo",{uuid : $(this).data("uuid"),baseUuid : sysHealthyBaseInfoUuid,fileLocalPath : $(this).data("path")},removeImg);
 			})
 		}
 		
+		function removeImg(info){
+			console.log(info)
+			var content = $("#imgcontent");
+			$.each(content.find("div"),function(index,el){
+				console.log($(el).find("img,videl,a").data("uuid"))
+				if($(el).find("img").data("uuid") == info.uuid){
+					$(el).remove();
+				}
+				if($(el).find("video").data("uuid") == info.uuid){
+					$(el).remove();
+				}
+				if($(el).find("a").data("uuid") == info.uuid){
+					$(el).remove();
+				}
+				
+			});
+		}
 		
 			
 		var code = "";

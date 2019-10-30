@@ -28,10 +28,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/upload")
 public class FileUploadController extends BaseControllerImpl<SysFileImgInfo> implements BaseController<SysFileImgInfo> {
-
+	
 	@Autowired
 	SysFileImgInfoService sysFileImgInfoService;
-	
+
 	@RequestMapping(path = "/uploadImg")
 	public BaseResult<List<SysFileImgInfo>> uploadImg(HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
 		String username = request.getParameter("username");
@@ -43,24 +43,28 @@ public class FileUploadController extends BaseControllerImpl<SysFileImgInfo> imp
 		}
 		SysFileImgInfo sysFileImgInfo = new SysFileImgInfo();
 		sysFileImgInfo.setBaseUuid(baseUuid);
-
+		
 		return ResultUtil.success(sysFileImgInfoService.findAll(sysFileImgInfo));
 	}
-	
+
 	@RequestMapping(path = "/deleteInfo")
-	public BaseResult<List<SysFileImgInfo>> deleteInfo(@RequestBody SysFileImgInfo info) throws UnsupportedEncodingException {
+	public SysFileImgInfo deleteInfo(@RequestBody SysFileImgInfo info) throws UnsupportedEncodingException {
 		sysFileImgInfoService.delete(info);
 		File file = new File(System.getProperty("user.dir") + "/fileupload" + info.getFileLocalPath());
 		if (file.exists()) {
 			file.delete();
-			File dir = new File(file.getParent());
-			if (dir.listFiles() == null || dir.listFiles().length == 0) {
-				dir.delete();
-			}
+		}
+		File smfile = new File(System.getProperty("user.dir") + "/fileupload" + info.getFileLocalPath().replace(".png", ".small.jpg"));
+		if (smfile.exists()) {
+			smfile.delete();
+		}
+		File dir = new File(file.getParent());
+		if (dir.listFiles() == null || dir.listFiles().length == 0) {
+			dir.delete();
 		}
 		SysFileImgInfo sysFileImgInfo = new SysFileImgInfo();
 		sysFileImgInfo.setBaseUuid(info.getBaseUuid());
-		return ResultUtil.success(sysFileImgInfoService.findAll(sysFileImgInfo));
+		return info;
 	}
-
+	
 }

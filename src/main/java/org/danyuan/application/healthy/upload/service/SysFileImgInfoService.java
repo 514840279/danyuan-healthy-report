@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -22,6 +23,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
+
+import net.coobird.thumbnailator.Thumbnails;
 
 /**
  * @author wth
@@ -71,9 +74,13 @@ public class SysFileImgInfoService extends BaseServiceImpl<SysFileImgInfo> imple
 			}
 			fos.close();
 			inputStream.close();
-
-			// 图片压缩
-//			Thumbnails.of(path).scale(1f).outputQuality(0.5f).toFile(path.replace(".png", ".small.jpg"));
+			String ext = filename.substring(filename.lastIndexOf(".") + 1).toLowerCase();
+			
+			String[] imgtype = { "jpg", "webp", "bmp", "pcx", "tif", "gif", "jpeg", "tag", "exif", "fpx", "svg", "psd", "cdr", "pcd", "dxf", "ufo", "eps", "ai", "png", "hdri", "raw", "wmf", "flic", "emf", "ico" };
+			if (Arrays.asList(imgtype).contains(ext)) {
+				// 图片压缩
+				Thumbnails.of(path).scale(1f).outputQuality(0.5f).toFile(path.replace(".png", ".small.jpg"));
+			}
 
 			// 保存信息
 
@@ -83,10 +90,10 @@ public class SysFileImgInfoService extends BaseServiceImpl<SysFileImgInfo> imple
 				sysFileImgInfo.setBaseUuid(baseUuid);
 				sysFileImgInfo.setFileName(filename);
 				sysFileImgInfo.setCreateUser(username);
-				sysFileImgInfo.setFileNameSmall("/" + simpleDateFormat.format(new Date()) + "/" + URLEncoder.encode(filename, "utf-8"));
+				sysFileImgInfo.setFileNameSmall("/" + simpleDateFormat.format(new Date()) + "/" + URLEncoder.encode(filename.replace(".png", ".small.jpg"), "utf-8"));
 				sysFileImgInfo.setDeleteFlag(0);
 				sysFileImgInfo.setFileSize(Long.toString(multipartFile.getSize()));
-				sysFileImgInfo.setFileExt(filename.substring(filename.lastIndexOf(".") + 1).toLowerCase());
+				sysFileImgInfo.setFileExt(ext);
 				save(sysFileImgInfo);
 			}
 			
